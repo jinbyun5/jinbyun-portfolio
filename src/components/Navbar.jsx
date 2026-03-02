@@ -1,0 +1,65 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import primaryLogoBlue from '../assets/primary-logo-blue.svg';
+
+import { ListIcon, XIcon } from '@phosphor-icons/react';
+
+function Navbar() {
+    
+    const [isOpen, setIsOpen] = useState(false);
+    const [visible, setVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                setVisible(false);
+                setIsOpen(false);
+            } else {
+                setVisible(true);
+            }
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
+
+    return (
+        <nav className={`fixed top-0 left-0 right-0 max-w-[1440px] mx-auto w-full z-50 transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+            <div className="px-5 w-full flex justify-between items-center py-6 md:py-8 lg:px-14">
+                <Link to="/" onClick={() => setIsOpen(false)}>
+                    <img src={primaryLogoBlue} alt="JB Logo" className="w-8 m-1 lg:w-9"/>
+                </Link>
+
+                {/* Desktop Menu */}
+                <ul className="hidden md:flex gap-12 items-center d6 uppercase">
+                    <li><Link to="/about" className="relative group py-1">About<span className="nav-desktop-hover"></span></Link></li>
+                    <li><Link to="/works" className="relative group py-1">Works<span className="nav-desktop-hover"></span></Link></li>
+                    <li><Link to="/play" className="relative group py-1">Play!<span className="nav-desktop-hover"></span></Link></li>
+                    <li><a href="/resume.pdf" target="_blank" className="border border-jb-blue rounded-oval px-4 py-2 hover-blue">Resume</a></li>
+                </ul>
+                
+                <button onClick={() => setIsOpen(!isOpen)} className="md:hidden w-10 h-10 flex justify-center items-center rounded-full border border-jb-blue">
+                    {isOpen ? <XIcon size={24}/> : <ListIcon size={22}/>}
+                </button>
+            </div>
+
+            {/* Mobile Menu */}
+            <div className={`md:hidden absolute w-full px-5 transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+                <div className="bg-jb-blue py-8 transition-all duration-300 ease-out shadow-2xl" onClick={(e) => e.stopPropagation()}>
+                    <ul className="w-full flex flex-col items-center justify-center text-jb-white uppercase gap-4 d3">
+                        <li><Link to="/about" onClick={() => setIsOpen(false)} className="nav-mobile-hover">About</Link></li>
+                        <li><Link to="/works" onClick={() => setIsOpen(false)} className="nav-mobile-hover">Works</Link></li>
+                        <li><Link to="/play" onClick={() => setIsOpen(false)} className="nav-mobile-hover">Play!</Link></li>
+                        <li className="pt-4 pb-2"><a href="/resume.pdf" target="_blank" onClick={() => setIsOpen(false)} className="d4 border border-jb-white rounded-oval px-4 py-2 hover:bg-jb-white hover:text-jb-blue transition-all duration-300 ease-out">Resume</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    );
+}
+
+export default Navbar;
