@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -8,6 +9,7 @@ import 'swiper/css/navigation';
 
 import { ArrowLeftIcon } from '@phosphor-icons/react';
 
+import ProjectHeader from '../../components/ProjectHeader';
 import WorkSectionLayout from '../../components/WorkSectionLayout';
 import HighlightCard from '../../components/HighlightCard';
 import ProjectCard from '../../components/ProjectCard';
@@ -15,13 +17,22 @@ import ProjectCard from '../../components/ProjectCard';
 import { projects } from '../../data/projects';
 
 import thumbHm from '../../assets/hm/thumb-hm.webp';
+import competitiveAnalysis from '../../assets/hm/competitive-analysis.webp';
 import journeyMap from '../../assets/hm/journey-map.webp';
+import userFlow from '../../assets/hm/user-flow.webp';
 import lofiWireframes from '../../assets/hm/lofi-wireframes.webp';
 import hifiWireframes from '../../assets/hm/hifi-wireframes.webp';
-import solution1 from '../../assets/hm/solution-1.jpg';
+
+import solution1 from '../../assets/hm/solution-1.webp';
+import solution2 from '../../assets/hm/solution-2.webp'
+import solution3 from '../../assets/hm/solution-3.webp'
+import solution4 from '../../assets/hm/solution-4.webp'
 
 function HM() {
 
+    const [activeWireframe, setActiveWireframe] = useState('lofi');
+
+    const project = projects.find(p => p.slug === 'hm-app-redesign');
     const otherProjects = projects.filter(p => p.slug !== 'hm-app-redesign');
 
     return (
@@ -38,41 +49,9 @@ function HM() {
                         <span className="transition-transform duration-500 ease-in-out group-hover:translate-x-1">All Works</span>
                     </Link>
                 </nav>
-                
+
                 {/* Header */}
-                <header className="col-span-4 md:col-span-12 grid grid-cols-4 md:grid-cols-12 items-end gap-x-4">
-                    <div className="col-span-4 md:col-span-6">
-                        <div className="flex flex-col gap-4 text-center md:text-start">
-                            <div className="flex items-center justify-center md:justify-start gap-2 text-jb-blue">
-                                <span className="text-xl md:text-2xl animate-pulse">★</span>
-                                <span className="text-sm font-medium tracking-widest uppercase md:text-base">UX Case Study</span>
-                            </div>
-                        <h1 className="text-4xl font-bold leading-tight md:text-6xl lg:text-7xl pb-4">H&M App <br className="hidden md:block" /> Redesign</h1>
-                        <p className="text-gray-500 md:text-lg">Identifying usability issues and proposing a clearer, more cohesive redesign.</p>
-                        </div>
-                    </div>
-                    
-                    {/* Project Info */}
-                    <div className="col-span-4 md:col-span-5 md:col-start-8 md:mt-0 space-y-6 mt-12">
-                        <div className="flex items-center justify-between border-b border-gray-300 pb-2">
-                            <h6 className="font-sans md:text-lg font-bold  tracking-wider">TOOLS</h6>
-                            <p className="lg:b5">Figma, Photoshop</p>
-                        </div>
-                        <div className="flex items-center justify-between border-b border-gray-300 pb-2">
-                            <h6 className="font-sans md:text-lg font-bold">ROLE</h6>
-                            <p className="lg:b5">UX/UI Designer</p>
-                        </div>
-                        <div className="flex items-center justify-between border-b border-gray-300 pb-2">
-                            <h6 className="font-sans md:text-lg font-bold">TIMLINE</h6>
-                            <p className="lg:b5">2 weeks</p>
-                        </div>
-                        <div className="flex items-center justify-between border-b border-gray-300 pb-2">
-                            <h6 className="font-sans md:text-lg font-bold">INDUSTRY</h6>
-                            <p className="lg:b5">E-commerce, Fashion Retail</p>
-                        </div>
-                        
-                    </div>
-                </header>
+                <ProjectHeader {...project} />
 
                 {/* Thumbnail Image */}
                 <figure className="col-span-4 md:col-span-12 py-16 md:py-20">
@@ -86,11 +65,11 @@ function HM() {
                 </figure>
 
                 {/* Project Content */}
-                <article className="col-span-4 md:col-span-12 mt-10 space-y-20 bg-jb-white px-10 py-12">
+                <article className="col-span-4 md:col-span-12 mt-10 space-y-20 bg-jb-white px-6 md:px-10 py-12 -mx-5 md:mx-0">
 
                     {/* 01 Project Overview */}
                     <WorkSectionLayout number="01" title="Project Overview">
-                        <h4 className="b4 md:text-3xl">Reimagining the fashion shopping experience.</h4>
+                        <h4 className="b4 md:text-3xl">Reimagining the fashion shopping experience</h4>
                         <div className="space-y-4 md:text-lg">
                             <p>This project focused on identifying usability and interface design issues in the H&M mobile app and proposing design improvements to create a clearer and more intuitive shopping experience.</p>
                             <p>By closely analyzing the app experience, I aimed to understand where users might feel confused or uncertain and to identify opportunities to improve usability, visual consistency, and interaction feedback through more cohesive UX/UI design.</p>
@@ -99,7 +78,7 @@ function HM() {
 
                     {/* 02 Challenge */}
                     <WorkSectionLayout number="02" title="The Challenge">
-                        <h4 className="b4 md:text-3xl">Common tasks required uncommon effort.</h4>
+                        <h4 className="b4 md:text-3xl">Common tasks required uncommon effort</h4>
                         <div className="space-y-4 md:text-lg">
                             <p>As a regular user of the H&M app, I noticed that common tasks often felt more complicated than necessary. Navigating the app required extra effort due to unclear icons, inconsistent layouts, and limited feedback during interactions. These issues made the overall experience feel less intuitive and harder to use than expected.</p>
                         </div>
@@ -117,26 +96,26 @@ function HM() {
                             <ul className="list-disc list-outside ml-8 space-y-1">
                                 <li>Heuristic Evaluation using Nielsen's 10 Usability Heuristics </li>
                                 <li>Personal use analysis</li>
-                                <li>Competitive benchmarking with similar retail apps (Zara, Blackup)</li>
+                                <li>Competitive benchmarking with similar retail apps</li>
                             </ul>
                         </div>
 
                         {/* Competitive Analysis */}
-                        <div className="space-y-8 md:text-lg py-10">
+                        <div className="space-y-8 md:text-lg py-8">
                             <h4 className="b4 md:text-3xl">Competitive Analysis</h4>
-                            {/* <p>After analyzing the competitors, I mapped the current shopping journey to identify where usability issues create the most friction and frustration, and to uncover opportunities for improvement.</p>
-                            <img src={journeyMap} className="w-full rounded-xl" alt="User Journey Map" /> */}
+                            <p>After analyzing the competitors, I mapped the current shopping journey to identify where usability issues create the most friction and frustration, and to uncover opportunities for improvement.</p>
+                            <img src={competitiveAnalysis} className="w-full rounded-xl" alt="Competitive Analysis" />
                         </div>
 
                         {/* User Journey Map */}
-                        <div className="space-y-8 md:text-lg py-10">
-                            <h4 className="b4 md:text-3xl">Mapping the friction points.</h4>
+                        <div className="space-y-8 md:text-lg py-8">
+                            <h4 className="b4 md:text-3xl">Mapping the friction points</h4>
                             <p>After analyzing the competitors, I mapped the current shopping journey to identify where usability issues create the most friction and frustration, and to uncover opportunities for improvement.</p>
                             <img src={journeyMap} className="w-full rounded-xl" alt="User Journey Map" />
                         </div>
                         
                         {/* Key Pain Points */}
-                        <div className="py-10 space-y-6">
+                        <div className="py-8 space-y-6">
                             <h4 className="b4 md:text-3xl">Key Pain Points</h4>
                             <p className="md:text-lg">
                                 Through this research, I identified three critical areas affecting shopping experience:
@@ -160,15 +139,33 @@ function HM() {
                     <WorkSectionLayout number="04" title="Design Process">
                         <h4 className="b4 md:text-3xl">User flow</h4>
                         <div className="space-y-4 md:text-lg">
-                            {/* <p></p> */}
-                            {/* <img src={journeyMap} className="w-full rounded-xl" alt="User Journey Map" /> */}
+                            <p>The flow illustrates two browsing entry points — via home sections or the bottom navigation — both leading to the same journey through product listing, detail, and checkout. Rather than restructuring the flow, the redesign focused on reducing friction at each stage so users can move through the journey with minimal confusion and make purchase decisions with confidence.</p>
+                            <img src={userFlow} className="w-full rounded-xl" alt="User Flow" />
                         </div>
 
                         <div className="space-y-8 md:text-lg py-10">
-                            <h4 className="b4 md:text-3xl">wireframes</h4>
+                            <h4 className="b4 md:text-3xl">Shaping the Solutions</h4>
                             <p>To explore solutions, I created wireframes ranging from low-fidelity sketches to high-fidelity mock-ups. This iterative process allowed me to test different layout approaches and validate key redesign decisions before finalizing the interface.</p>
-                            <img src={lofiWireframes} className="w-full rounded-xl" alt="Low Fidelity Wireframes" />
-                            <img src={hifiWireframes} className="w-full rounded-xl" alt="High Fidelity Wireframes" />
+                            <div className="flex gap-3 mb-4 items-center justify-center">
+                                <button 
+                                    onClick={() => setActiveWireframe('lofi')}
+                                    className={`px-4 py-2 rounded-full text-sm md:text-base font-medium
+                                        ${activeWireframe === 'lofi' ? 'bg-jb-blue text-jb-white' : 'border border-jb-blue text-jb-blue'}`}
+                                >
+                                    Low Fidelity
+                                </button>
+                                <button 
+                                    onClick={() => setActiveWireframe('hifi')}
+                                    className={`px-4 py-2 rounded-full text-sm md:text-base font-medium
+                                        ${activeWireframe === 'hifi' ? 'bg-jb-blue text-jb-white' : 'border border-jb-blue text-jb-blue'}`}
+                                >
+                                    High Fidelity
+                                </button>
+                            </div>
+                            {activeWireframe === 'lofi' 
+                                ? <img src={lofiWireframes} className="w-full rounded-xl" alt="Low Fidelity Wireframes" />
+                                : <img src={hifiWireframes} className="w-full rounded-xl" alt="High Fidelity Wireframes" />
+                            }
                         </div>
                     </WorkSectionLayout>
 
@@ -177,8 +174,28 @@ function HM() {
                         <h4 className="b4 md:text-3xl">Before & After</h4>
                         <div className="space-y-4 md:text-lg">
                             <p>To address these usability issues, I redesigned key interface elements with a focus on clarity, consistency, and intuitive interaction.</p>
-                            <img src={solution1} className="w-full rounded-xl" alt="User Journey Map" />
-                            <p>The original navigation had several friction points — users couldn't tell the page was swipeable, had to scroll back up to access the nav bar, and struggled with unclear icons and low-contrast active states. To resolve this, I fixed the nav bar, added a page indicator, replaced the ambiguous '+' with a familiar hamburger menu positioned for thumb reachability, and introduced colored backgrounds to make the active state immediately clear.</p>
+                            <div className="space-y-12 pt-4">
+                                <div className="space-y-4">
+                                    <h3 className="b5 md:b4 before:content-['•'] before:mr-2">Navigation</h3>
+                                    <p>Following Jakob's Law, I replaced the ambiguous '+' with a familiar hamburger menu to reduce cognitive load and positioned it to the right for thumb reachability. I also fixed the nav bar for persistent access, added a swipe indicator for discoverability, and introduced color-coded active states to reflect Nielsen's Visibility of system status heuristic.</p>
+                                    <img src={solution1} className="w-full rounded-xl" alt="Solution 1" />
+                                </div>
+                                <div className="space-y-4">
+                                    <h3 className="b5 md:b4 before:content-['•'] before:mr-2">Categories</h3>
+                                    <p>I separated promotions as banner images for visual differentiation and reorganized categories in a body-order sequence aligning with users' mental models of how they think about getting dressed. This also follows the principle of progressive disclosure, guiding users from broader clothing types to more specific items naturally.</p>
+                                    <img src={solution2} className="w-full rounded-xl" alt="Solution 2" />
+                                </div>
+                                <div className="space-y-4">
+                                    <h3 className="b5 md:b4 before:content-['•'] before:mr-2">Product Listing Page</h3>
+                                    <p>Applying the Gestalt Law of Common Region, I replaced the card grid with a swipeable layout to give each item a distinct boundary for clearer separation. I also removed the redundant "Explore" CTA, replacing it with underlined titles to signal clickability through affordance. Finally, I strengthened visual hierarchy with bolder, larger titles and added white space for better visual balance.</p>
+                                    <img src={solution3} className="w-full rounded-xl" alt="Solution 3" />
+                                </div>
+                                <div className="space-y-4">
+                                    <h3 className="b5 md:b4 before:content-['•'] before:mr-2">Product Detail Page</h3>
+                                    <p>Applying the Gestalt figure-ground principle, I added backgrounds to navigation icons to ensure visibility against any image. Following Nielsen's visibility of system status, I improved size selection with filled indicators and color-coded stock availability for immediate recognition. Finally, applying Fitts's Law, I fixed the ADD button for persistent access, reducing friction in the purchase flow.</p>
+                                    <img src={solution4} className="w-full rounded-xl" alt="Solution 4" />
+                                </div>
+                            </div>
                         </div>
                     </WorkSectionLayout>
 

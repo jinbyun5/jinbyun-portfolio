@@ -11,6 +11,14 @@ export const projects = [
         tags: ["UX/UI", "Case Study"],
         description: "A redesign of the H&M mobile app with a smoother browsing experience.",
         slug: "hm-app-redesign",
+
+        titleLine1: 'H&M App',
+        titleLine2: 'Redesign',
+        subtitle: 'Identifying usability issues and proposing improvements to create a clearer, more intuitive shopping experience.',
+        tools: 'Figma, Photoshop',
+        role: 'UX/UI Designer',
+        timeline: '2 weeks',
+        industry: 'E-commerce, Fashion Retail',
     },
     {
         id: 2,

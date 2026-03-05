@@ -28,9 +28,9 @@ function ProjectCard({image, title, tags, description, onClick}) {
                 <div className="flex flex-col gap-3 px-2 md:px-3">
                     <h5>{title}</h5>
                     <p className="text-gray-500 mb-1">{description}</p>
-                    <div className="flex items-center gap-2 border-t-[1px] border-dashed border-jb-blue/50">
+                    <div className="flex items-center pt-4 pb-3 flex-wrap gap-2 border-t-[1px] border-dashed border-jb-blue/50">
                         {tags.map((tag, index) => (
-                             <span key={index} className="mobile-tag my-3 mt-4">{tag}</span>
+                             <span key={index} className="mobile-tag">{tag}</span>
                         ))}
                     </div>
                 </div>
