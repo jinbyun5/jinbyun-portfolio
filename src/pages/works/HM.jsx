@@ -103,8 +103,9 @@ function HM() {
                         {/* Competitive Analysis */}
                         <div className="space-y-8 md:text-lg py-8">
                             <h4 className="b4 md:text-3xl">Competitive Analysis</h4>
-                            <p>After analyzing the competitors, I mapped the current shopping journey to identify where usability issues create the most friction and frustration, and to uncover opportunities for improvement.</p>
+                            <p>To identify design opportunities for H&M, I analyzed three key competitors across navigation, category structure, product listing, item selection, and CTA placement — looking for patterns that balance visual appeal with usability.</p>
                             <img src={competitiveAnalysis} className="w-full rounded-xl" alt="Competitive Analysis" />
+                            <p>Zara and Mango prioritized visual immersion with minimal design, while Uniqlo leaned toward functional clarity. Given H&M's shift toward a more premium positioning, the visual-first approach informed design decisions, with usability refinements drawn from patterns across all three.</p>
                         </div>
 
                         {/* User Journey Map */}
@@ -177,7 +178,7 @@ function HM() {
                             <div className="space-y-12 pt-4">
                                 <div className="space-y-4">
                                     <h3 className="b5 md:b4 before:content-['•'] before:mr-2">Navigation</h3>
-                                    <p>Following Jakob's Law, I replaced the ambiguous '+' with a familiar hamburger menu to reduce cognitive load and positioned it to the right for thumb reachability. I also fixed the nav bar for persistent access, added a swipe indicator for discoverability, and introduced color-coded active states to reflect Nielsen's Visibility of system status heuristic.</p>
+                                    <p>Following Jakob's Law, I replaced the ambiguous "+" with a familiar chevron dropdown to reduce cognitive load and positioned it to the right for thumb reachability. I added the H&M logo for consistent brand presence, as H&M was the only competitor without a brand touchpoint within the app. I also added a swipe indicator for discoverability and introduced color-coded active states to reflect Nielsen's Visibility of system status heuristic.</p>
                                     <img src={solution1} className="w-full rounded-xl" alt="Solution 1" />
                                 </div>
                                 <div className="space-y-4">
@@ -207,7 +208,7 @@ function HM() {
                                 <div style={{ paddingBottom: '200%' }}>
                                     <iframe
                                         className="absolute inset-0 w-full h-full"
-                                        src="https://embed.figma.com/proto/4mSahZ2KiFZZcaX90j0HP7/H-M-Redesign?node-id=400-441&viewport=143%2C146%2C0.14&scaling=scale-down&content-scaling=fixed&starting-point-node-id=400%3A441&page-id=400%3A440&embed-host=share"
+                                        src="https://embed.figma.com/proto/4mSahZ2KiFZZcaX90j0HP7/H-M-Redesign?node-id=852-4767&p=f&viewport=1438%2C104%2C0.39&scaling=scale-down&content-scaling=fixed&starting-point-node-id=852%3A4767&page-id=852%3A4766&embed-host=share"
                                         allowFullScreen
                                         title="H&M App Redesign Interactive Prototype"
                                     />
