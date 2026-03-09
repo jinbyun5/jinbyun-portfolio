@@ -18,7 +18,7 @@ function ProjectCard({image, title, tags, description, onClick}) {
         className="group bg-white rounded-2xl overflow-hidden border-jb-blue border-[0.5px] hover:shadow-md transition-shadow cursor-pointer"
         >
             <div className="p-2">
-                <div className="aspect-[16/9] mb-4 md:mb-5 overflow-hidden rounded-t-xl">
+                <div className="aspect-[4/3] mb-4 md:mb-5 overflow-hidden rounded-t-xl">
                     <img
                         src={image}
                         alt={title}

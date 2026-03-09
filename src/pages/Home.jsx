@@ -124,7 +124,7 @@ function Home() {
                     {/* <p className="hidden md:block text-gray-400 text-sm">View more works →</p> */}
                 </header>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-11">
                     {projects.map((project) => (
                         <ProjectCard key={project.id} {...project} onClick={() => {navigate(`/works/${project.slug}`);}}></ProjectCard>
                     ))}

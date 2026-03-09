@@ -16,7 +16,7 @@ import ProjectCard from '../../components/ProjectCard';
 
 import { projects } from '../../data/projects';
 
-import thumbHm from '../../assets/hm/thumb-hm.webp';
+import heroImage from '../../assets/hm/hero-image.webp';
 import competitiveAnalysis from '../../assets/hm/competitive-analysis.webp';
 import journeyMap from '../../assets/hm/journey-map.webp';
 import userFlow from '../../assets/hm/user-flow.webp';
@@ -57,9 +57,9 @@ function HM() {
                 <figure className="col-span-4 md:col-span-12 py-16 md:py-20">
                     <div className="w-full aspect-[4/3] md:aspect-[21/9] rounded-2xl overflow-hidden">
                         <img 
-                            src={thumbHm}
+                            src={heroImage}
                             alt="H&M App Redesign Overview" 
-                            className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105" 
+                            className="w-full h-full object-cover object-center" 
                         />
                     </div>
                 </figure>
@@ -208,7 +208,7 @@ function HM() {
                                 <div style={{ paddingBottom: '200%' }}>
                                     <iframe
                                         className="absolute inset-0 w-full h-full"
-                                        src="https://embed.figma.com/proto/4mSahZ2KiFZZcaX90j0HP7/H-M-Redesign?node-id=852-4767&p=f&viewport=1438%2C104%2C0.39&scaling=scale-down&content-scaling=fixed&starting-point-node-id=852%3A4767&page-id=852%3A4766&embed-host=share"
+                                        src="https://embed.figma.com/proto/QV5iVjqPfbXkafgrNaJDJ7/H-M-Redesign--New-?node-id=3001-1597&viewport=269%2C204%2C0.71&scaling=scale-down&content-scaling=fixed&page-id=400%3A440&starting-point-node-id=3001%3A1597&embed-host=share"
                                         allowFullScreen
                                         title="H&M App Redesign Interactive Prototype"
                                     />

@@ -9,7 +9,7 @@ function ProjectHeader({ titleLine1, titleLine2, subtitle, tags, tools, role, ti
                             <span key={index} className="mobile-tag">{tag}</span>
                         ))}
                     </div>
-                    <h1 className="text-4xl font-bold md:text-6xl lg:text-7xl md:pb-4">
+                    <h1 className="text-4xl font-bold md:text-6xl md:pb-4">
                         <span className="md:block">{titleLine1} </span>
                         <span className="md:block md:mt-2">{titleLine2}</span>
                     </h1>
