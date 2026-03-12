@@ -39,9 +39,16 @@ export const projects = [
     {
         id: 4,
         image: thumbThePapery,
-        title: "The Papery Website Design",
+        title: "The Papery ",
         tags: ["UX/UI", "Case Study"],
-        description: "An e-commerce website for a stationery shop covering the shopping flow.",
+        description: "Refining the stationery shopping experience through iterative UX design.",
         slug: "the-papery",
+
+        titleLine1: 'The Papery',
+        subtitle: 'A UX case study focused on designing and iterating a complete e-commerce shopping flow through usability testing.',
+        tools: 'Figma, Maze',
+        role: 'UX/UI Designer',
+        timeline: '4 weeks',
+        industry: 'E-commerce',
     },
 ];

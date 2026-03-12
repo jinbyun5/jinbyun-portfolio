@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { ArrowLeftIcon } from '@phosphor-icons/react';
+import { ArrowLeftIcon, CrosshairIcon, SmileySadIcon, NetworkSlashIcon, EyeSlashIcon } from '@phosphor-icons/react';
 
 import ProjectHeader from '../../components/ProjectHeader';
 import WorkSectionLayout from '../../components/WorkSectionLayout';
@@ -65,11 +65,11 @@ function HM() {
                 </figure>
 
                 {/* Project Content */}
-                <article className="col-span-4 md:col-span-12 mt-10 space-y-20 bg-jb-white px-6 md:px-10 py-12 -mx-5 md:mx-0">
+                <article className="col-span-4 md:col-span-12 mt-10 space-y-20 bg-[#fbfbfb] rounded-2xl px-6 md:px-10 py-12 -mx-5 md:mx-0">
 
                     {/* 01 Project Overview */}
                     <WorkSectionLayout number="01" title="Project Overview">
-                        <h4 className="b4 md:text-3xl">Reimagining the fashion shopping experience</h4>
+                        <h4 className="b4 md:b2">Reimagining the fashion shopping experience</h4>
                         <div className="space-y-4 md:text-lg">
                             <p>This project focused on identifying usability and interface design issues in the H&M mobile app and proposing design improvements to create a clearer and more intuitive shopping experience.</p>
                             <p>By closely analyzing the app experience, I aimed to understand where users might feel confused or uncertain and to identify opportunities to improve usability, visual consistency, and interaction feedback through more cohesive UX/UI design.</p>
@@ -78,12 +78,13 @@ function HM() {
 
                     {/* 02 Challenge */}
                     <WorkSectionLayout number="02" title="The Challenge">
-                        <h4 className="b4 md:text-3xl">Common tasks required uncommon effort</h4>
+                        <h4 className="b4 md:b2">Common tasks required uncommon effort</h4>
                         <div className="space-y-4 md:text-lg">
                             <p>As a regular user of the H&M app, I noticed that common tasks often felt more complicated than necessary. Navigating the app required extra effort due to unclear icons, inconsistent layouts, and limited feedback during interactions. These issues made the overall experience feel less intuitive and harder to use than expected.</p>
                         </div>
                         {/* Mission */}
-                        <HighlightCard 
+                        <HighlightCard
+                            icon={<CrosshairIcon size={24} />}
                             title="The Mission" 
                             content="To improve the shopping experience by clarifying navigation, strengthening visual hierarchy, and improving interaction feedback through a more cohesive UI design.">
                         </HighlightCard>
@@ -102,7 +103,7 @@ function HM() {
 
                         {/* Competitive Analysis */}
                         <div className="space-y-8 md:text-lg py-8">
-                            <h4 className="b4 md:text-3xl">Competitive Analysis</h4>
+                            <h4 className="b4 md:b2">Competitive analysis</h4>
                             <p>To identify design opportunities for H&M, I analyzed three key competitors across navigation, category structure, product listing, item selection, and CTA placement — looking for patterns that balance visual appeal with usability.</p>
                             <img src={competitiveAnalysis} className="w-full rounded-xl" alt="Competitive Analysis" />
                             <p>Zara and Mango prioritized visual immersion with minimal design, while Uniqlo leaned toward functional clarity. Given H&M's shift toward a more premium positioning, the visual-first approach informed design decisions, with usability refinements drawn from patterns across all three.</p>
@@ -110,47 +111,52 @@ function HM() {
 
                         {/* User Journey Map */}
                         <div className="space-y-8 md:text-lg py-8">
-                            <h4 className="b4 md:text-3xl">Mapping the friction points</h4>
+                            <h4 className="b4 md:b2">Mapping the friction points</h4>
                             <p>After analyzing the competitors, I mapped the current shopping journey to identify where usability issues create the most friction and frustration, and to uncover opportunities for improvement.</p>
                             <img src={journeyMap} className="w-full rounded-xl" alt="User Journey Map" />
                         </div>
                         
                         {/* Key Pain Points */}
                         <div className="py-8 space-y-6">
-                            <h4 className="b4 md:text-3xl">Key Pain Points</h4>
+                            <h4 className="b4 md:b2">Key pain points</h4>
                             <p className="md:text-lg">
                                 Through this research, I identified three critical areas affecting shopping experience:
                             </p>
                             <HighlightCard 
-                                title="1) Unclear Navigation" 
+                                icon={<SmileySadIcon size={24} />}
+                                title="Unclear Navigation" 
                                 content="The top navigation bar disappears when scrolling, forcing users to scroll back up. There's no visual indicator for swipe interactions, and the '+' icon doesn't clearly communicate its menu function.">
                             </HighlightCard>
-                            <HighlightCard 
-                                title="2) Weak Visual Hierarchy" 
-                                content="Oversized images and undersized text reduce readability. Text positioning is inconsistent, color swatches are too small, and product cards lack spacing and contrast.">
-                            </HighlightCard>
-                            <HighlightCard 
-                                title="3) Lack of Feedback" 
-                                content="Clickable text appears as plain text, icons have low contrast against dark backgrounds, and key actions like adding to cart require unnecessary scrolling.">
-                            </HighlightCard>
+                            <div className="flex flex-col md:flex-row gap-6">
+                                <HighlightCard 
+                                    icon={<NetworkSlashIcon size={24} />}
+                                    title="Weak Visual Hierarchy" 
+                                    content="Oversized images and undersized text reduce readability. Text positioning is inconsistent, color swatches are too small, and product cards lack spacing and contrast.">
+                                </HighlightCard>
+                                <HighlightCard 
+                                    icon={<EyeSlashIcon size={24} />}
+                                    title="Lack of Feedback" 
+                                    content="Clickable text appears as plain text, icons have low contrast against dark backgrounds, and key actions like adding to cart require unnecessary scrolling.">
+                                </HighlightCard>
+                            </div>
                         </div>
                     </WorkSectionLayout>
 
                     {/* 04 Design Process */}
                     <WorkSectionLayout number="04" title="Design Process">
-                        <h4 className="b4 md:text-3xl">User flow</h4>
+                        <h4 className="b4 md:b2">User flow</h4>
                         <div className="space-y-4 md:text-lg">
                             <p>The flow illustrates two browsing entry points — via home sections or the bottom navigation — both leading to the same journey through product listing, detail, and checkout. Rather than restructuring the flow, the redesign focused on reducing friction at each stage so users can move through the journey with minimal confusion and make purchase decisions with confidence.</p>
                             <img src={userFlow} className="w-full rounded-xl" alt="User Flow" />
                         </div>
 
                         <div className="space-y-8 md:text-lg py-10">
-                            <h4 className="b4 md:text-3xl">Shaping the Solutions</h4>
+                            <h4 className="b4 md:b2">Shaping the solutions</h4>
                             <p>To explore solutions, I created wireframes ranging from low-fidelity sketches to high-fidelity mock-ups. This iterative process allowed me to test different layout approaches and validate key redesign decisions before finalizing the interface.</p>
                             <div className="flex gap-3 mb-4 items-center justify-center">
                                 <button 
                                     onClick={() => setActiveWireframe('lofi')}
-                                    className={`px-4 py-2 rounded-full text-sm md:text-base font-medium
+                                    className={`px-4 py-2 rounded-full text-sm md:text-base font-medium 
                                         ${activeWireframe === 'lofi' ? 'bg-jb-blue text-jb-white' : 'border border-jb-blue text-jb-blue'}`}
                                 >
                                     Low Fidelity
@@ -172,10 +178,10 @@ function HM() {
 
                     {/* 05 The Solution */}
                     <WorkSectionLayout number="05" title="The Solution">
-                        <h4 className="b4 md:text-3xl">Before & After</h4>
+                        <h4 className="b4 md:b2">Before & After</h4>
                         <div className="space-y-4 md:text-lg">
                             <p>To address these usability issues, I redesigned key interface elements with a focus on clarity, consistency, and intuitive interaction.</p>
-                            <div className="space-y-12 pt-4">
+                            <div className="space-y-16 pt-6">
                                 <div className="space-y-4">
                                     <h3 className="b5 md:b4 before:content-['•'] before:mr-2">Navigation</h3>
                                     <p>Following Jakob's Law, I replaced the ambiguous "+" with a familiar chevron dropdown to reduce cognitive load and positioned it to the right for thumb reachability. I added the H&M logo for consistent brand presence, as H&M was the only competitor without a brand touchpoint within the app. I also added a swipe indicator for discoverability and introduced color-coded active states to reflect Nielsen's Visibility of system status heuristic.</p>
@@ -202,10 +208,10 @@ function HM() {
 
                     {/* 06 Final Design */}
                     <WorkSectionLayout number="06" title="Final Design">
-                        <h4 className="b4 md:text-3xl">Interactive Prototype</h4>
+                        <h4 className="b4 md:b2">Interactive Prototype</h4>
                         <div className="space-y-4 md:text-lg">
-                            <div className="relative w-full max-w-[400px] bg-gray-100 rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
-                                <div style={{ paddingBottom: '200%' }}>
+                            <div className="relative w-full  bg-gray-100 rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+                                <div style={{ paddingBottom: '90%' }}>
                                     <iframe
                                         className="absolute inset-0 w-full h-full"
                                         src="https://embed.figma.com/proto/QV5iVjqPfbXkafgrNaJDJ7/H-M-Redesign--New-?node-id=3001-1597&viewport=269%2C204%2C0.71&scaling=scale-down&content-scaling=fixed&page-id=400%3A440&starting-point-node-id=3001%3A1597&embed-host=share"
@@ -220,12 +226,12 @@ function HM() {
                     {/* 07 Reflection */}
                     <WorkSectionLayout number="07" title="Reflection">
                         <div className="space-y-4 md:text-lg">
-                            <h4 className="b4 md:text-3xl">What I learned</h4>
+                            <h4 className="b4 md:b2">What I learned</h4>
                             <p>This project started with my own frustration using the H&M app, but through systematic analysis, I learned to look beyond personal preferences and identify genuine usability issues. The heuristic evaluation and user scenario helped me understand that seemingly small problems can significantly impact the shopping experience.</p>
                             <p>I discovered that impactful UX improvements don't always require dramatic redesigns. Many of my solutions involved subtle refinements: making navigation always visible, enlarging color swatches, and strengthening visual feedback. These changes respect H&M's existing design language while meaningfully improving usability. The challenge of working within brand constraints actually made me a more thoughtful designer, forcing me to justify each decision and find elegant solutions to complex problems.</p>
                         </div>
                         <div className="space-y-4 md:text-lg">
-                            <h4 className="b4 md:text-3xl">Next Steps</h4>
+                            <h4 className="b4 md:b2">Next Steps</h4>
                             <ul className="list-disc list-outside ml-8 space-y-1">
                                 <li>Conduct usability testing to validate improvements with real users</li>
                                 <li>Measure impact on task completion time and error rates</li>

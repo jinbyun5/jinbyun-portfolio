@@ -19,6 +19,7 @@ export default {
         'jb-white': '#F2F2F2',
         'jb-brown': '#120B03',
         'jb-yellow': '#F9DC4A',
+        'jb-accent': '#d2691e',
       },
       backgroundImage: {
         'paper': "url('/bg-paper.webp')",
@@ -41,13 +42,13 @@ export default {
         'h1': ['2.5rem', '2.75rem'],
         'h2': ['1.875rem', '2.375rem'],
         'h3': ['1.625rem', '1.875rem'],
-        'h4': ['1.5rem', '1.75rem'],
+        'h4': ['1.5rem', '2rem'],
         'h5': ['1.25rem', '1.75rem'],
         'h6': ['1rem', '1.375rem'],
 
         // Body
-        'b1': ['2rem', '2.375rem'],
-        'b2': ['1.75rem', '2.125rem'],
+        'b1': ['2rem', '2.5rem'],
+        'b2': ['1.875rem', '2.5rem'],
         'b3': ['1.5rem', '1.875rem'],
         'b4': ['1.25rem', '1.625rem'],
         'b5': ['1.125rem', '1.5rem'],

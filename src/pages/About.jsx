@@ -170,7 +170,7 @@ function About() {
                             <li>Illustrator</li>
                             <li>Indesign</li>
                             <li>After Effects</li>
-                            <li>CMS (WordPress, W)</li>
+                            <li>CMS (WordPress, Wix)</li>
                         </ul>
                     </div>
 

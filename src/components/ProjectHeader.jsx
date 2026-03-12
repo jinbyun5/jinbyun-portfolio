@@ -9,9 +9,15 @@ function ProjectHeader({ titleLine1, titleLine2, subtitle, tags, tools, role, ti
                             <span key={index} className="mobile-tag">{tag}</span>
                         ))}
                     </div>
-                    <h1 className="text-4xl font-bold md:text-6xl md:pb-4">
-                        <span className="md:block">{titleLine1} </span>
-                        <span className="md:block md:mt-2">{titleLine2}</span>
+                    <h1 className="text-4xl font-bold md:text-[3.25rem] md:space-y-6 md:py-4">
+                        {titleLine2 ? (
+                            <>
+                            <span className="md:block">{titleLine1}</span>
+                            <span className="md:block md:mt-2">{titleLine2}</span>
+                            </>
+                        ) : (
+                            <span>{titleLine1}</span>
+                        )}
                     </h1>
                     <p className="text-gray-500 md:text-lg">{subtitle}</p>
                 </div>
