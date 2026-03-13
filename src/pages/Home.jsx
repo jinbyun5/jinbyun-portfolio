@@ -117,17 +117,23 @@ function Home() {
                 </div>
             </section>
 
-            <section className="border-b-[1px] border-dashed border-jb-blue/50 py-14">
-                <header className="flex items-center gap-3 mb-10 md:mb-12">
-                    <span className="text-2xl md:text-3xl">★</span>
-                    <h3 className="md:text-h2">Selected Works</h3>
+            <section className="border-b-[1px] border-dashed border-jb-blue/50 pb-14">
+                <header className="flex items-center gap-3 py-12 md:py-14">
+                    <span className="text-2xl md:text-3xl animate-pulse">★</span>
+                    <h2 className="italic md:text-[2.125rem]">Selected Works</h2>
                     {/* <p className="hidden md:block text-gray-400 text-sm">View more works →</p> */}
                 </header>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-11">
-                    {projects.map((project) => (
+                    {/* {projects.map((project) => (
                         <ProjectCard key={project.id} {...project} onClick={() => {navigate(`/works/${project.slug}`);}}></ProjectCard>
-                    ))}
+                    ))} */}
+                    {projects
+                        .filter(p => ['hm-app-redesign', 'the-papery'].includes(p.slug))
+                        .map(project => (
+                            <ProjectCard key={project.id} {...project} onClick={() => navigate(`/works/${project.slug}`)} />
+                        ))
+                    }
                 </div>
             </section>
 

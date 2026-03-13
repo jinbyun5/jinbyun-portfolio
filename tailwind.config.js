@@ -55,7 +55,7 @@ export default {
         'b6': ['1rem', '1.5rem'],
 
         'emphasis': ['1.125rem', '1.6'],
-        'tag': ['0.875rem', '1.4'],
+        'tag': ['0.75rem', '1.4'],
       },
       letterSpacing: {
         tightest: '-.1em',

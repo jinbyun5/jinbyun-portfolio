@@ -43,7 +43,7 @@
     @apply absolute bottom-0 left-0 w-full h-[1.5px] bg-jb-blue scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out;
   }
   .mobile-tag {
-    @apply tag bg-jb-blue text-white px-3 py-1 rounded-full;
+    @apply tag text-xs md:text-[13px] uppercase tracking-wide bg-jb-blue text-white px-3.5 py-1 md:py-1.5 rounded-full;
   }
   .hover-blue {
     @apply hover:bg-jb-blue hover:text-jb-white transition-all;

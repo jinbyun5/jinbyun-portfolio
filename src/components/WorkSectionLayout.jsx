@@ -11,7 +11,7 @@ function WorkSectionLayout({ number, title, children }) {
             </div>
   
             {/* Content */}
-            <div className="col-span-4 md:col-span-8 md:col-start-5 space-y-8 [&_p]:md:text-lg [&_p]:md:text-jb-brown/70 [&_ul_li]:md:text-jb-brown/70">
+            <div className="col-span-4 md:col-span-8 md:col-start-5 space-y-8 [&_p]:md:text-lg [&_h4]:font-medium [&_h5]:font-medium ">
                 {children}
             </div>
         </section>

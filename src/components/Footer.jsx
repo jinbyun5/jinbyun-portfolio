@@ -19,7 +19,7 @@ function Footer() {
 
     return (
         <footer className="flex flex-col gap-12 pt-48">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 lg:px-24">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 md:px-12 lg:px-[6.25rem] max-w-[1440px]">
                 <h2 className="font-normal leading-10 tracking-normal md:text-h1 md:leading-snug">Let’s bring<br/>better ideas to life</h2>
 
                 <div className="flex justify-center items-center gap-20 lg:justify-start md:gap-40 lg:gap-32">

@@ -20,8 +20,8 @@ function Works() {
         <>
             <section className="border-b-[1px] border-dashed border-jb-blue/50 py-12">
                 <div className="flex items-center gap-3 mb-10 md:mb-12">
-                    <span className="text-2xl md:text-3xl">★</span>
-                    <h3 className="md:text-h2">Works</h3>
+                    <span className="text-2xl md:text-3xl animate-pulse">★</span>
+                    <h2 className="italic md:text-[2.125rem]">Works</h2>
                 </div>
 
                 <div className="border-b-[1px] border-dashed border-jb-blue/50 mb-10"></div>
@@ -40,9 +40,15 @@ function Works() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
-                    {filteredProjects.map((project) => (
+                    {/* {filteredProjects.map((project) => (
                         <ProjectCard key={project.id} {...project} onClick={() => {navigate(`/works/${project.slug}`);}}></ProjectCard>
-                    ))}
+                    ))} */}
+                    {filteredProjects
+                        .filter(p => ['hm-app-redesign', 'the-papery'].includes(p.slug))
+                        .map(project => (
+                            <ProjectCard key={project.id} {...project} onClick={() => navigate(`/works/${project.slug}`)} />
+                        ))
+                    }
                 </div>
             </section>
 
