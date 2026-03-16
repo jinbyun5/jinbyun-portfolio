@@ -13,7 +13,7 @@ function ProjectHeader({ titleLine1, titleLine2, subtitle, tags, tools, role, ti
                         {titleLine2 ? (
                             <>
                             <span className="md:block">{titleLine1}</span>
-                            <span className="md:block md:mt-2">{titleLine2}</span>
+                            <span className="md:block md:mt-2"> {titleLine2}</span>
                             </>
                         ) : (
                             <span>{titleLine1}</span>
@@ -33,7 +33,7 @@ function ProjectHeader({ titleLine1, titleLine2, subtitle, tags, tools, role, ti
                 ].map(({ label, value }) => (
                     <div key={label} className="flex items-center justify-between border-b border-gray-300 pb-2">
                         <h6 className="font-sans md:text-lg font-bold tracking-wider">{label}</h6>
-                        <p>{value}</p>
+                        <p className="md:b5">{value}</p>
                     </div>
                 ))}
             </div>

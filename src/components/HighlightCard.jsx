@@ -1,6 +1,6 @@
 function HighlightCard({ icon, title, content }) {
     return (
-        <div className="flex-1 p-7 md:p-8 bg-jb-blue/5 rounded-xl border border-jb-blue/10 space-y-5 shadow-sm">
+        <div className="flex-1 p-7 md:p-8 bg-[#efeff3] rounded-xl border border-jb-blue/5 space-y-5 shadow-md">
             {/* Title */}
             <div className="flex items-end gap-3">
                 {icon && (

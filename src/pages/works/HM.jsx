@@ -13,6 +13,8 @@ import ProjectHeader from '../../components/ProjectHeader';
 import WorkSectionLayout from '../../components/WorkSectionLayout';
 import HighlightCard from '../../components/HighlightCard';
 import ProjectCard from '../../components/ProjectCard';
+import ToggleTabs from '../../components/ToggleTabs';
+import SolutionCard from '../../components/SolutionCard';
 
 import { projects } from '../../data/projects';
 
@@ -153,22 +155,14 @@ function HM() {
                         <div className="space-y-8 md:text-lg py-10">
                             <h4 className="b4 md:b2">Shaping the solutions</h4>
                             <p>To explore solutions, I created wireframes ranging from low-fidelity sketches to high-fidelity mock-ups. This iterative process allowed me to test different layout approaches and validate key redesign decisions before finalizing the interface.</p>
-                            <div className="flex gap-3 mb-4 items-center justify-center">
-                                <button 
-                                    onClick={() => setActiveWireframe('lofi')}
-                                    className={`px-4 py-2 rounded-full text-sm md:text-base font-medium 
-                                        ${activeWireframe === 'lofi' ? 'bg-jb-blue text-jb-white' : 'border border-jb-blue text-jb-blue'}`}
-                                >
-                                    Low Fidelity
-                                </button>
-                                <button 
-                                    onClick={() => setActiveWireframe('hifi')}
-                                    className={`px-4 py-2 rounded-full text-sm md:text-base font-medium
-                                        ${activeWireframe === 'hifi' ? 'bg-jb-blue text-jb-white' : 'border border-jb-blue text-jb-blue'}`}
-                                >
-                                    High Fidelity
-                                </button>
-                            </div>
+                            <ToggleTabs
+                                tabs={[
+                                    { key: 'lofi', label: 'Low Fidelity' },
+                                    { key: 'hifi', label: 'High Fidelity' },
+                                ]}
+                                activeTab={activeWireframe}
+                                onTabChange={setActiveWireframe}
+                            />
                             {activeWireframe === 'lofi' 
                                 ? <img src={lofiWireframes} className="w-full rounded-xl" alt="Low Fidelity Wireframes" />
                                 : <img src={hifiWireframes} className="w-full rounded-xl" alt="High Fidelity Wireframes" />
@@ -181,27 +175,31 @@ function HM() {
                         <h4 className="b4 md:b2">Before & After</h4>
                         <div className="space-y-4 md:text-lg">
                             <p>To address these usability issues, I redesigned key interface elements with a focus on clarity, consistency, and intuitive interaction.</p>
-                            <div className="space-y-16 pt-6">
-                                <div className="space-y-4">
-                                    <h3 className="b5 md:b4 before:content-['•'] before:mr-2">Navigation</h3>
-                                    <p>Following Jakob's Law, I replaced the ambiguous "+" with a familiar chevron dropdown to reduce cognitive load and positioned it to the right for thumb reachability. I added the H&M logo for consistent brand presence, as H&M was the only competitor without a brand touchpoint within the app. I also added a swipe indicator for discoverability and introduced color-coded active states to reflect Nielsen's Visibility of system status heuristic.</p>
-                                    <img src={solution1} className="w-full rounded-xl" alt="Solution 1" />
-                                </div>
-                                <div className="space-y-4">
-                                    <h3 className="b5 md:b4 before:content-['•'] before:mr-2">Categories</h3>
-                                    <p>I separated promotions as banner images for visual differentiation and reorganized categories in a body-order sequence aligning with users' mental models of how they think about getting dressed. This also follows the principle of progressive disclosure, guiding users from broader clothing types to more specific items naturally.</p>
-                                    <img src={solution2} className="w-full rounded-xl" alt="Solution 2" />
-                                </div>
-                                <div className="space-y-4">
-                                    <h3 className="b5 md:b4 before:content-['•'] before:mr-2">Product Listing Page</h3>
-                                    <p>Applying the Gestalt Law of Common Region, I replaced the card grid with a swipeable layout to give each item a distinct boundary for clearer separation. I also removed the redundant "Explore" CTA, replacing it with underlined titles to signal clickability through affordance. Finally, I strengthened visual hierarchy with bolder, larger titles and added white space for better visual balance.</p>
-                                    <img src={solution3} className="w-full rounded-xl" alt="Solution 3" />
-                                </div>
-                                <div className="space-y-4">
-                                    <h3 className="b5 md:b4 before:content-['•'] before:mr-2">Product Detail Page</h3>
-                                    <p>Applying the Gestalt figure-ground principle, I added backgrounds to navigation icons to ensure visibility against any image. Following Nielsen's visibility of system status, I improved size selection with filled indicators and color-coded stock availability for immediate recognition. Finally, applying Fitts's Law, I fixed the ADD button for persistent access, reducing friction in the purchase flow.</p>
-                                    <img src={solution4} className="w-full rounded-xl" alt="Solution 4" />
-                                </div>
+                            <div className="space-y-10 pt-4">
+                                <SolutionCard
+                                    title="Navigation"
+                                    after="Following Jakob's Law, I replaced the ambiguous '+' with a familiar chevron dropdown to reduce cognitive load and positioned it to the right for thumb reachability. I added the H&M logo for consistent brand presence, as H&M was the only competitor without a brand touchpoint within the app. I also added a swipe indicator for discoverability and introduced color-coded active states to reflect Nielsen's Visibility of system status heuristic."
+                                    image={solution1}
+                                    alt="Solution 1"
+                                />
+                                <SolutionCard
+                                    title="Categories"
+                                    after="I separated promotions as banner images for visual differentiation and reorganized categories in a body-order sequence aligning with users' mental models of how they think about getting dressed. This also follows the principle of progressive disclosure, guiding users from broader clothing types to more specific items naturally."
+                                    image={solution2}
+                                    alt="Solution 2"
+                                />
+                                <SolutionCard
+                                    title="Product Listing Page"
+                                    after="Applying the Gestalt Law of Common Region, I replaced the card grid with a swipeable layout to give each item a distinct boundary for clearer separation. I also removed the redundant 'Explore' CTA, replacing it with underlined titles to signal clickability through affordance. Finally, I strengthened visual hierarchy with bolder, larger titles and added white space for better visual balance."
+                                    image={solution3}
+                                    alt="Solution 3"
+                                />
+                                <SolutionCard
+                                    title="Product Detail Page"
+                                    after="Applying the Gestalt figure-ground principle, I added backgrounds to navigation icons to ensure visibility against any image. Following Nielsen's visibility of system status, I improved size selection with filled indicators and color-coded stock availability for immediate recognition. Finally, applying Fitts's Law, I fixed the ADD button for persistent access, reducing friction in the purchase flow."
+                                    image={solution4}
+                                    alt="Solution 4"
+                                />
                             </div>
                         </div>
                     </WorkSectionLayout>
