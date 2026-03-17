@@ -242,7 +242,7 @@ function HM() {
                 <div className="col-span-4 md:col-span-12 border-b border-jb-blue/50 border-dashed py-20"></div>
 
                 {/* View More Works */}
-                <div className="relative col-span-4 md:col-span-12 py-20 overflow-hidden">
+                {/* <div className="relative col-span-4 md:col-span-12 py-20 overflow-hidden">
                     <div className="pb-12 text-center">
                         <span className="text-jb-blue font-bold tracking-[0.2em] uppercase text-xs md:text-sm">Next Project</span>
                         <h3 className="text-2xl md:text-3xl font-bold mt-3 text-jb-brown">View More Works</h3>
@@ -273,7 +273,7 @@ function HM() {
                             ))}
                         </Swiper>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     );
