@@ -26,6 +26,7 @@ import journeyMap from '../../assets/the-papery/journey-map.webp';
 import bookmarkFlow from '../../assets/the-papery/userflow-bookmark.webp';
 import checkoutFlow from '../../assets/the-papery/userflow-checkout.webp';
 import initialfiWireframes from '../../assets/the-papery/initial-wireframes2.webp';
+import styleguide from '../../assets/the-papery/style-guide.webp';
 import solution1 from '../../assets/the-papery/solution-1.webp';
 import solution2 from '../../assets/the-papery/solution-2.webp';
 import solution3 from '../../assets/the-papery/solution-3.webp';
@@ -133,10 +134,10 @@ function ThePapery() {
                         </div>
 
                         {/* Key Insights */}
-                        <div className="py-8 space-y-6">
-                            <h4 className="b4 md:b2">Key insights</h4>
+                        <h4 className="b4 md:b2 pt-8">Key insights</h4>
+                        <div className="space-y-6 md:text-lg">
                             <p className="md:text-lg">
-                                Based on my analysis of user behavior and the pain points identified in competitor sites, I found three critical areas for improvement:
+                                Based on my analysis of user behavior and the pain points identified in competitor sites, I found three critical areas for improvement.
                             </p>
                             <HighlightCard
                                 icon={<ArrowsInIcon size={24} />}
@@ -161,26 +162,32 @@ function ThePapery() {
                     {/* 04 Design Process */}
                     <WorkSectionLayout number="04" title="Design Process">
                         <h4 className="b4 md:b2">Mapping the flow</h4>
-                        <div className="space-y-4 md:text-lg">
-                            <p>Based on the research findings and user flow, I created low-fidelity wireframes to establish the layout and structure of each key screen.</p>
+                        <div className="space-y-6 md:text-lg">
+                            <p className="md:text-lg">Based on the research findings and user flow, I created low-fidelity wireframes to establish the layout and structure of each key screen.</p>
+
+                            <ToggleTabs
+                                tabs={[
+                                    { key: 'bookmark', label: 'Bookmark Flow' },
+                                    { key: 'checkout', label: 'Checkout Flow' },
+                                ]}
+                                activeTab={activeUserflow}
+                                onTabChange={setActiveUserflow}
+                            />
+                            {activeUserflow === 'bookmark' 
+                                ? <img src={bookmarkFlow} className="w-full rounded-xl" alt="Bookmark Flow" />
+                                : <img src={checkoutFlow} className="w-full rounded-xl" alt="Checkout Flow" />
+                            }
                         </div>
-                        <ToggleTabs
-                            tabs={[
-                                { key: 'bookmark', label: 'Bookmark Flow' },
-                                { key: 'checkout', label: 'Checkout Flow' },
-                            ]}
-                            activeTab={activeUserflow}
-                            onTabChange={setActiveUserflow}
-                        />
-                        {activeUserflow === 'bookmark' 
-                            ? <img src={bookmarkFlow} className="w-full rounded-xl" alt="Bookmark Flow" />
-                            : <img src={checkoutFlow} className="w-full rounded-xl" alt="Checkout Flow" />
-                        }
-                        <div className="space-y-8 md:text-lg py-10">
-                            <h4 className="b4 md:b2">Initial drafts</h4>
-                            <p>I started with early wireframes and prototypes, leaving room for iteration based on user testing findings.</p>
+                        <h4 className="b4 md:b2 pt-8">Visual designs</h4>
+                        <div className="space-y-6">
+                            <img src={styleguide} className="w-full rounded-xl" alt="Style Guide" />
+                        </div>
+                        <h4 className="b4 md:b2 pt-8">Starting with initial drafts</h4>
+                        <div className="space-y-6">
+                            <p className="md:text-lg">I started with early wireframes and prototypes, leaving room for iteration based on user testing findings.</p>
                             <img src={initialfiWireframes} className="w-full rounded-xl" alt="Initial Wireframes" />
                         </div>
+                        
                     </WorkSectionLayout>
 
                     {/* 05 Usability Testing */}
@@ -250,7 +257,7 @@ function ThePapery() {
                                 <div style={{ paddingBottom: '90%' }}>
                                     <iframe
                                         className="absolute inset-0 w-full h-full"
-                                        src="https://embed.figma.com/proto/htjDnzk9yXggt7GvEzx23P/The-Papery--Revision-?page-id=2437%3A2353&node-id=2437-2354&p=f&viewport=331%2C18%2C0.24&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2437%3A2354&embed-host=share"
+                                        src="https://embed.figma.com/proto/htjDnzk9yXggt7GvEzx23P/The-Papery--Revision-?page-id=2258%3A3440&node-id=2258-3441&p=f&viewport=-7%2C166%2C0.11&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2258%3A3441&embed-host=share"
                                         allowFullScreen
                                         title="The Papery Interactive Prototype"
                                     />
