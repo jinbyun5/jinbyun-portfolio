@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ProjectCard from '../components/ProjectCard';
-import ScrollToTop from '../components/ScrollToTop';
 
 import { projects } from '../data/projects';
 
@@ -51,8 +50,6 @@ function Works() {
                     }
                 </div>
             </section>
-
-            <ScrollToTop/>
         </>
     );
 }

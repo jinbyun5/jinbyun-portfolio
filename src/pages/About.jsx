@@ -5,7 +5,6 @@ import HTMLFlipBook from 'react-pageflip';
 
 import { ArrowBendDownRightIcon } from '@phosphor-icons/react';
 
-import ScrollToTop from '../components/ScrollToTop';
 import FlipPage from '../components/FlipPage';
 
 import polaroid from '../assets/about-polaroid-3.webp';
@@ -249,8 +248,6 @@ function About() {
                     </HTMLFlipBook>
                 </div>
             </section>
-            
-            <ScrollToTop/>
         </>
     );
 }

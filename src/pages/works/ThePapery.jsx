@@ -276,7 +276,7 @@ function ThePapery() {
                         <div className="space-y-4 md:text-lg">
                             <h4 className="b4 md:b2">Next Steps</h4>
                             <ul className="list-disc list-outside ml-8 space-y-1">
-                                <li>Designing for additional user flows, such as the search and filter experience</li>
+                                <li>Designing for additional user flows, such as the search experience</li>
                                 <li>Expanding the prototype to cover more pages and interactions</li>
                             </ul>
                         </div>

@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { motion, AnimatePresence } from "motion/react";
 import { CaretDoubleUpIcon } from '@phosphor-icons/react';
@@ -6,7 +7,14 @@ import { CaretDoubleUpIcon } from '@phosphor-icons/react';
 function ScrollToTop() {
 
     const [showScroll, setShowScroll] = useState(false);
+    const { pathname } = useLocation();
 
+    // Scroll to the top when navigating pages
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    // Button visibility
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 10) {
@@ -17,7 +25,6 @@ function ScrollToTop() {
         };
 
         window.addEventListener('scroll', handleScroll);
-
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }

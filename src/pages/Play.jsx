@@ -2,8 +2,6 @@ import { useState } from 'react';
 
 import Masonry from 'react-masonry-css';
 
-import ScrollToTop from '../components/ScrollToTop';
-
 import walkingFlower from '../assets/graphic-walking-flower.svg';
 import playPostcard from '../assets/play-postcard.webp';
 import playMemopad from '../assets/play-memopad.webp';
@@ -110,9 +108,6 @@ function Play() {
                     </Masonry>
                 </div>
             </section>
-
-            <ScrollToTop/>
-
         </>
     );
 }

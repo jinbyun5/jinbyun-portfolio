@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from "motion/react";
 
 import ProjectCard from '../components/ProjectCard';
-import ScrollToTop from '../components/ScrollToTop';
 
 import { projects } from '../data/projects';
 
@@ -136,8 +135,6 @@ function Home() {
                     }
                 </div>
             </section>
-
-            <ScrollToTop/>
         </>
     );
 }
