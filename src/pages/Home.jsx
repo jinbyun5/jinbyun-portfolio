@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { motion } from "motion/react";
 
+import FadeUp from '../components/FadeUp';
 import ProjectCard from '../components/ProjectCard';
 
 import { projects } from '../data/projects';
@@ -73,68 +74,72 @@ function Home() {
 
     return (
         <>
-            <section
-                ref={dragAreaRef}
-                className="flex justify-center items-start border-b-[1px] border-dashed border-jb-blue/50 pt-5 pb-40"
-            >
-                <div className="relative">
-                    <div className="absolute font-mono text-xs md:text-sm bg-jb-blue text-jb-white py-1 px-3 w-fit top-8 left-6 -rotate-6 md:px-4 md:top-5 md:left-32">Based in Vancouver</div>
+            <FadeUp>
+                <section
+                    ref={dragAreaRef}
+                    className="flex justify-center items-start border-b-[1px] border-dashed border-jb-blue/50 pt-5 pb-40"
+                >
+                    <div className="relative">
+                        <div className="absolute font-mono text-xs md:text-sm bg-jb-blue text-jb-white py-1 px-3 w-fit top-8 left-6 -rotate-6 md:px-4 md:top-5 md:left-32">Based in Vancouver</div>
 
-                    {/* flower sticker */}
-                    <div></div>
-                    
-                    <div className="flex flex-col justify-center items-center py-20 gap-8 md:gap-12 text-center">
-                        <div className="emphasis text-3xl md:text-4xl">Jin Byun</div>
-                        <div className="d6 leading-8 md:d5 md:leading-10 max-w-64 md:max-w-xl">A <span className="underline underline-offset-4 decoration-wavy decoration-2 decoration-jb-yellow">UX/UI designer</span> with a front-end background, creating practical and user-centered experiences.</div>
-                        <div className="d5 md:d4 flex justify-center items-center gap-5 mt-4 md:gap-6">
-                            <span>I'm a</span>
-                            <span className="inline-flex items-center justify-center border border-jb-blue rounded-full w-32 h-9 leading-none md:w-36 md:h-10">
-                                <span 
-                                    key={index} 
-                                    className="emphasis text-lg md:text-xl animate-fade-in-out"
-                                >
-                                    {keywords[index]}
+                        {/* flower sticker */}
+                        <div></div>
+                        
+                        <div className="flex flex-col justify-center items-center py-20 gap-8 md:gap-12 text-center">
+                            <div className="emphasis text-3xl md:text-4xl">Jin Byun</div>
+                            <div className="d6 leading-8 md:d5 md:leading-10 max-w-64 md:max-w-xl">A <span className="underline underline-offset-4 decoration-wavy decoration-2 decoration-jb-yellow">UX/UI designer</span> with a front-end background, creating practical and user-centered experiences.</div>
+                            <div className="d5 md:d4 flex justify-center items-center gap-5 mt-4 md:gap-6">
+                                <span>I'm a</span>
+                                <span className="inline-flex items-center justify-center border border-jb-blue rounded-full w-32 h-9 leading-none md:w-36 md:h-10">
+                                    <span 
+                                        key={index} 
+                                        className="emphasis text-lg md:text-xl animate-fade-in-out"
+                                    >
+                                        {keywords[index]}
+                                    </span>
                                 </span>
-                            </span>
-                            <span>designer.</span>
+                                <span>designer.</span>
+                            </div>
                         </div>
+
+                        {stickers.map((sticker) => (
+                            <motion.div
+                            key={`${sticker.id}-${isMobile}`}
+                                drag
+                                dragConstraints={dragAreaRef}
+                                dragMomentum={false}
+                                initial={{ rotate: sticker.rotate }}
+                                className={`absolute cursor-grab active:cursor-grabbing ${sticker.size} ${sticker.pos}`}
+                            >
+                                <img src={sticker.src} alt="sticker" className="drop-shadow-lg pointer-events-none"/>
+                            </motion.div>
+                        ))}
+
                     </div>
+                </section>
+            </FadeUp>
 
-                    {stickers.map((sticker) => (
-                        <motion.div
-                        key={`${sticker.id}-${isMobile}`}
-                            drag
-                            dragConstraints={dragAreaRef}
-                            dragMomentum={false}
-                            initial={{ rotate: sticker.rotate }}
-                            className={`absolute cursor-grab active:cursor-grabbing ${sticker.size} ${sticker.pos}`}
-                        >
-                            <img src={sticker.src} alt="sticker" className="drop-shadow-lg pointer-events-none"/>
-                        </motion.div>
-                    ))}
+            <FadeUp>
+                <section className="border-b-[1px] border-dashed border-jb-blue/50 pb-14">
+                    <header className="flex items-center gap-3 py-12 md:py-14">
+                        <span className="text-2xl md:text-3xl animate-pulse">★</span>
+                        <h2 className="italic md:text-[2.125rem]">Selected Works</h2>
+                        {/* <p className="hidden md:block text-gray-400 text-sm">View more works →</p> */}
+                    </header>
 
-                </div>
-            </section>
-
-            <section className="border-b-[1px] border-dashed border-jb-blue/50 pb-14">
-                <header className="flex items-center gap-3 py-12 md:py-14">
-                    <span className="text-2xl md:text-3xl animate-pulse">★</span>
-                    <h2 className="italic md:text-[2.125rem]">Selected Works</h2>
-                    {/* <p className="hidden md:block text-gray-400 text-sm">View more works →</p> */}
-                </header>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-11">
-                    {/* {projects.map((project) => (
-                        <ProjectCard key={project.id} {...project} onClick={() => {navigate(`/works/${project.slug}`);}}></ProjectCard>
-                    ))} */}
-                    {projects
-                        .filter(p => ['hm-app-redesign', 'the-papery'].includes(p.slug))
-                        .map(project => (
-                            <ProjectCard key={project.id} {...project} onClick={() => navigate(`/works/${project.slug}`)} />
-                        ))
-                    }
-                </div>
-            </section>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-11">
+                        {/* {projects.map((project) => (
+                            <ProjectCard key={project.id} {...project} onClick={() => {navigate(`/works/${project.slug}`);}}></ProjectCard>
+                        ))} */}
+                        {projects
+                            .filter(p => ['hm-app-redesign', 'the-papery'].includes(p.slug))
+                            .map(project => (
+                                <ProjectCard key={project.id} {...project} onClick={() => navigate(`/works/${project.slug}`)} />
+                            ))
+                        }
+                    </div>
+                </section>
+            </FadeUp>
         </>
     );
 }

@@ -78,11 +78,11 @@
   offset-path: path('M 0,22 A 64,22 0 1,1 128,22 A 64,22 0 1,1 0,22 Z');
   offset-distance: var(--start);
   animation: starOrbit 3s linear infinite;
-  animation-play-state: paused;
-}
+  animation-play-state: running;
+} 
 
 .group:hover .star-moving {
-  animation-play-state: running;
+  animation-play-state: paused;
 }
 
 .stf__wrapper {
