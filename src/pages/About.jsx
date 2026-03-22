@@ -142,7 +142,7 @@ function About() {
             
             <FadeUp>
                 {/* What I Do */}
-                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 py-32 lg:mt-20">
+                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 py-32 lg:my-10">
         
                     <div className="col-span-4 lg:col-span-12 mb-12 lg:mb-0">
                         <div className="flex items-center gap-2">

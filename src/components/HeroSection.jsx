@@ -36,12 +36,12 @@ function CameraSticker({ sticker }) {
         <motion.div
             drag
             dragMomentum={false}
-            className={`absolute ${sticker.className} cursor-grab active:cursor-grabbing select-none`}
+            className={`absolute ${sticker.className} z-10 cursor-grab active:cursor-grabbing select-none`}
             style={{ rotate: `${sticker.rotate}deg`, scale: hovered ? 1.05 : 1 }}
             onDragStart={() => setDragging(true)}
             onDragEnd={() => setDragging(false)}
             onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
-            onMouseLeave={() => { setHovered(false); stop(); }}
+            onMouseLeave={() => { if (dragging) return; setHovered(false); stop(); }}
         >
             <div className="relative flex flex-col items-start">
                 <img
@@ -70,12 +70,12 @@ function PlateSticker({ sticker }) {
         <motion.div
             drag
             dragMomentum={false}
-            className={`absolute ${sticker.className} cursor-grab active:cursor-grabbing select-none`}
+            className={`absolute ${sticker.className} z-10 cursor-grab active:cursor-grabbing select-none`}
             style={{ rotate: `${sticker.rotate}deg` }}
             onDragStart={() => setDragging(true)}
             onDragEnd={() => setDragging(false)}
             onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
-            onMouseLeave={() => { setHovered(false); stop(); }}
+            onMouseLeave={() => { if (dragging) return; setHovered(false); stop(); }}
         >
             <div className={`relative transition-transform duration-200 ${hovered ? 'scale-105 rotate-6' : 'scale-100'}`}>
                 <img
@@ -123,12 +123,12 @@ function MessageSticker({ sticker }) {
         <motion.div
             drag
             dragMomentum={false}
-            className={`absolute ${sticker.className} cursor-grab active:cursor-grabbing select-none`}
+            className={`absolute ${sticker.className} z-10 cursor-grab active:cursor-grabbing select-none`}
             style={{ rotate: `${sticker.rotate}deg` }}
             onDragStart={() => setDragging(true)}
             onDragEnd={() => setDragging(false)}
             onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
-            onMouseLeave={() => { setHovered(false); stop(); }}
+            onMouseLeave={() => { if (dragging) return; setHovered(false); stop(); }}
         >
             {/* iMessage reaction bubble */}
             <div className={`absolute -top-12 left-1/2 -translate-x-1/2 transition-all duration-300 ${hovered ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'}`}>
@@ -167,12 +167,12 @@ function BookSticker({ sticker }) {
         <motion.div
             drag
             dragMomentum={false}
-            className={`absolute ${sticker.className} cursor-grab active:cursor-grabbing select-none`}
+            className={`absolute ${sticker.className} z-10 cursor-grab active:cursor-grabbing select-none`}
             style={{ rotate: `${sticker.rotate}deg` }}
             onDragStart={() => setDragging(true)}
             onDragEnd={() => setDragging(false)}
             onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
-            onMouseLeave={() => { setHovered(false); stop(); }}
+            onMouseLeave={() => { if (dragging) return; setHovered(false); stop(); }}
         >
             <div className={`transition-transform duration-300 ${hovered ? 'scale-105 -rotate-6' : 'scale-100'}`}>
                 <img
@@ -195,12 +195,12 @@ function VinylSticker({ sticker }) {
         <motion.div
             drag
             dragMomentum={false}
-            className={`absolute ${sticker.className} cursor-grab active:cursor-grabbing select-none`}
+            className={`absolute ${sticker.className} z-10 cursor-grab active:cursor-grabbing select-none`}
             style={{ rotate: `${sticker.rotate}deg` }}
             onDragStart={() => setDragging(true)}
             onDragEnd={() => setDragging(false)}
             onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
-            onMouseLeave={() => { setHovered(false); stop(); }}
+            onMouseLeave={() => { if (dragging) return; setHovered(false); stop(); }}
         >
             <div className={`transition-transform duration-300 ${hovered ? 'scale-105 rotate-6' : 'scale-100'}`}>
                 <img
@@ -229,12 +229,12 @@ function CatSticker({ sticker }) {
         <motion.div
             drag
             dragMomentum={false}
-            className={`absolute ${sticker.className} cursor-grab active:cursor-grabbing select-none`}
+            className={`absolute ${sticker.className} z-10 cursor-grab active:cursor-grabbing select-none`}
             style={{ rotate: `${sticker.rotate}deg` }}
             onDragStart={() => setDragging(true)}
             onDragEnd={() => setDragging(false)}
             onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
-            onMouseLeave={() => { setHovered(false); stop(); }}
+            onMouseLeave={() => { if (dragging) return; setHovered(false); stop(); }}
         >
             {/* open to work badge */}
             <div className={`absolute -top-10 left-10 md:left-20 whitespace-nowrap transition-all duration-300 ${hovered ? 'opacity-100 -translate-y-1' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
@@ -293,7 +293,7 @@ function HeroSection() {
                 <div className="hidden font-mono text-sm text-gray-400 md:flex items-center gap-1.5 tracking-wide">
                     <span><HandTapIcon size={18}/></span>click to play
                 </div>
-                <div className="flex flex-col justify-center items-center gap-10 text-center z-10 pointer-events-none">
+                <div className="flex flex-col justify-center items-center gap-10 text-center pointer-events-none">
 
                     <div
                         className="relative flex flex-col items-center gap-2 pointer-events-auto cursor-default"
