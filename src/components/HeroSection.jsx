@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { motion } from 'motion/react';
 
 import { heroStickers, plateTools } from '../data/stickers';
 
@@ -29,12 +30,17 @@ function playSound(src) {
 function CameraSticker({ sticker }) {
     const [hovered, setHovered] = useState(false);
     const { play, stop } = playSound(sticker.audio);
+    const [dragging, setDragging] = useState(false);
 
     return (
-        <div
-            className={`absolute ${sticker.className} cursor-pointer select-none transition-transform duration-300 ${hovered ? 'scale-105' : 'scale-100'}`}
-            style={{ transform: `rotate(${sticker.rotate}deg) ${hovered ? 'scale(1.05)' : ''}` }}
-            onMouseEnter={() => { setHovered(true); play(); }}
+        <motion.div
+            drag
+            dragMomentum={false}
+            className={`absolute ${sticker.className} cursor-grab active:cursor-grabbing select-none`}
+            style={{ rotate: `${sticker.rotate}deg`, scale: hovered ? 1.05 : 1 }}
+            onDragStart={() => setDragging(true)}
+            onDragEnd={() => setDragging(false)}
+            onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
             onMouseLeave={() => { setHovered(false); stop(); }}
         >
             <div className="relative flex flex-col items-start">
@@ -51,19 +57,24 @@ function CameraSticker({ sticker }) {
                     draggable={false}
                 />
             </div>
-        </div>
+        </motion.div>
     );
 }
 
 function PlateSticker({ sticker }) {
     const [hovered, setHovered] = useState(false);
     const { play, stop } = playSound(sticker.audio);
+    const [dragging, setDragging] = useState(false);
 
     return (
-        <div
-            className={`absolute ${sticker.className} cursor-pointer select-none`}
-            style={{ transform: `rotate(${sticker.rotate}deg)` }}
-            onMouseEnter={() => { setHovered(true); play(); }}
+        <motion.div
+            drag
+            dragMomentum={false}
+            className={`absolute ${sticker.className} cursor-grab active:cursor-grabbing select-none`}
+            style={{ rotate: `${sticker.rotate}deg` }}
+            onDragStart={() => setDragging(true)}
+            onDragEnd={() => setDragging(false)}
+            onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
             onMouseLeave={() => { setHovered(false); stop(); }}
         >
             <div className={`relative transition-transform duration-200 ${hovered ? 'scale-105 rotate-6' : 'scale-100'}`}>
@@ -97,21 +108,26 @@ function PlateSticker({ sticker }) {
                     </div>
                 ))}
             </div>
-        </div>
+        </motion.div>
     );
 }
 
 function MessageSticker({ sticker }) {
     const [hovered, setHovered] = useState(false);
     const { play, stop } = playSound(sticker.audio);
+    const [dragging, setDragging] = useState(false);
 
     const Reactions = ['❤️', '👍', '😂', '✨', '🔥'];
 
     return (
-        <div
-            className={`absolute ${sticker.className} cursor-pointer select-none`}
-            style={{ transform: `rotate(${sticker.rotate}deg)` }}
-            onMouseEnter={() => { setHovered(true); play(); }}
+        <motion.div
+            drag
+            dragMomentum={false}
+            className={`absolute ${sticker.className} cursor-grab active:cursor-grabbing select-none`}
+            style={{ rotate: `${sticker.rotate}deg` }}
+            onDragStart={() => setDragging(true)}
+            onDragEnd={() => setDragging(false)}
+            onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
             onMouseLeave={() => { setHovered(false); stop(); }}
         >
             {/* iMessage reaction bubble */}
@@ -138,19 +154,24 @@ function MessageSticker({ sticker }) {
                     draggable={false}
                 />
             </div>
-        </div>
+        </motion.div>
     );
 }
 
 function BookSticker({ sticker }) {
     const [hovered, setHovered] = useState(false);
     const { play, stop } = playSound(sticker.audio);
+    const [dragging, setDragging] = useState(false);
 
     return (
-        <div
-            className={`absolute ${sticker.className} cursor-pointer select-none`}
-            style={{ transform: `rotate(${sticker.rotate}deg)` }}
-            onMouseEnter={() => { setHovered(true); play(); }}
+        <motion.div
+            drag
+            dragMomentum={false}
+            className={`absolute ${sticker.className} cursor-grab active:cursor-grabbing select-none`}
+            style={{ rotate: `${sticker.rotate}deg` }}
+            onDragStart={() => setDragging(true)}
+            onDragEnd={() => setDragging(false)}
+            onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
             onMouseLeave={() => { setHovered(false); stop(); }}
         >
             <div className={`transition-transform duration-300 ${hovered ? 'scale-105 -rotate-6' : 'scale-100'}`}>
@@ -161,46 +182,58 @@ function BookSticker({ sticker }) {
                     draggable={false}
                 />
             </div>
-        </div>
+        </motion.div>
     );
 }
 
 function VinylSticker({ sticker }) {
     const [hovered, setHovered] = useState(false);
     const { play, stop } = playSound(sticker.audio);
+    const [dragging, setDragging] = useState(false);
 
     return (
-        <div
-            className={`absolute ${sticker.className} cursor-pointer select-none transition-transform duration-300 ${hovered ? 'scale-105 rotate-6' : 'scale-100'}`}
+        <motion.div
+            drag
+            dragMomentum={false}
+            className={`absolute ${sticker.className} cursor-grab active:cursor-grabbing select-none`}
             style={{ rotate: `${sticker.rotate}deg` }}
-            onMouseEnter={() => { setHovered(true); play(); }}
+            onDragStart={() => setDragging(true)}
+            onDragEnd={() => setDragging(false)}
+            onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
             onMouseLeave={() => { setHovered(false); stop(); }}
         >
-            <img
-                src={sticker.turntableSrc}
-                alt="turntable"
-                className="w-full drop-shadow-md"
-                draggable={false}
-            />
-            <img
-                src={sticker.src}
-                alt="vinyl"
-                className="absolute top-[7%] left-[4%] w-[71%] animate-spin-slow"
-                draggable={false}
-            />
-        </div>
+            <div className={`transition-transform duration-300 ${hovered ? 'scale-105 rotate-6' : 'scale-100'}`}>
+                <img
+                    src={sticker.turntableSrc}
+                    alt="turntable"
+                    className="w-full drop-shadow-md"
+                    draggable={false}
+                />
+                <img
+                    src={sticker.src}
+                    alt="vinyl"
+                    className="absolute top-[7%] left-[4%] w-[71%] animate-spin-slow"
+                    draggable={false}
+                />
+            </div>
+        </motion.div>
     );
 }
 
 function CatSticker({ sticker }) {
     const [hovered, setHovered] = useState(false);
     const { play, stop } = playSound(sticker.audio);
+    const [dragging, setDragging] = useState(false);
 
     return (
-        <div
-            className={`absolute ${sticker.className} cursor-pointer select-none`}
-            style={{ transform: `rotate(${sticker.rotate}deg)` }}
-            onMouseEnter={() => { setHovered(true); play(); }}
+        <motion.div
+            drag
+            dragMomentum={false}
+            className={`absolute ${sticker.className} cursor-grab active:cursor-grabbing select-none`}
+            style={{ rotate: `${sticker.rotate}deg` }}
+            onDragStart={() => setDragging(true)}
+            onDragEnd={() => setDragging(false)}
+            onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
             onMouseLeave={() => { setHovered(false); stop(); }}
         >
             {/* open to work badge */}
@@ -219,7 +252,7 @@ function CatSticker({ sticker }) {
                     draggable={false}
                 />
             </div>
-        </div>
+        </motion.div>
     );
 }
 
@@ -250,7 +283,7 @@ function HeroSection() {
     }, []);
 
     return (
-        <section className="relative h-screen w-full flex flex-col justify-center items-center border-b border-dashed border-jb-blue/50 overflow-hidden pb-20">
+        <section className="relative w-screen h-screen flex flex-col justify-center items-center border-b border-dashed border-jb-blue/50 overflow-hidden pb-20 left-1/2 -translate-x-1/2">
 
             {heroStickers.map((sticker) => (
                 <StickerItem key={sticker.id} sticker={sticker} />
@@ -258,7 +291,7 @@ function HeroSection() {
 
             <div className="flex flex-col justify-center items-center gap-6">
                 <div className="hidden font-mono text-sm text-gray-400 md:flex items-center gap-1.5 tracking-wide">
-                    <span><HandTapIcon size={18}/></span> play around
+                    <span><HandTapIcon size={18}/></span> click to play
                 </div>
                 <div className="flex flex-col justify-center items-center gap-10 text-center z-10 pointer-events-none">
 
