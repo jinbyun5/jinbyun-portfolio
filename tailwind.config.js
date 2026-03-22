@@ -15,7 +15,7 @@ export default {
     },
     extend: {
       colors: {
-        'jb-blue': '#081DC3',
+        'jb-blue': '#1D40B4',
         'jb-white': '#F2F2F2',
         'jb-brown': '#120B03',
         'jb-yellow': '#F9DC4A',

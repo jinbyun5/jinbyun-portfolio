@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
       <Navbar/>
         <ScrollToTop />
-        <main className="container max-w-[1440px] min-w-[320px] min-h-screen pt-20 md:pt-24">
+        <main className="container max-w-[1440px] min-w-[320px]">
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/about" element={<About/>}/>
