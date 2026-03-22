@@ -283,7 +283,7 @@ function HeroSection() {
     }, []);
 
     return (
-        <section className="relative w-screen h-screen flex flex-col justify-center items-center border-b border-dashed border-jb-blue/50 overflow-hidden pb-20 left-1/2 -translate-x-1/2">
+        <section className="relative w-screen h-screen flex flex-col justify-center items-center border-b border-dashed border-jb-blue/50 overflow-hidden pb-20 left-1/2 -translate-x-1/2 -mt-20 md:-mt-24">
 
             {heroStickers.map((sticker) => (
                 <StickerItem key={sticker.id} sticker={sticker} />
@@ -291,7 +291,7 @@ function HeroSection() {
 
             <div className="flex flex-col justify-center items-center gap-6">
                 <div className="hidden font-mono text-sm text-gray-400 md:flex items-center gap-1.5 tracking-wide">
-                    <span><HandTapIcon size={18}/></span> click to play
+                    <span><HandTapIcon size={18}/></span>click to play
                 </div>
                 <div className="flex flex-col justify-center items-center gap-10 text-center z-10 pointer-events-none">
 
@@ -324,7 +324,10 @@ function HeroSection() {
             </div>
 
             {/* scroll chevron */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-0.5 animate-bounce opacity-40">
+            <div 
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-0.5 animate-bounce opacity-60 cursor-pointer" 
+                onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+            >
                 <CaretDoubleDownIcon size={24}/>
             </div>
         </section>

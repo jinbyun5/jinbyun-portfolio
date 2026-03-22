@@ -28,8 +28,8 @@ function Navbar() {
     }, [lastScrollY]);
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 max-w-[1440px] mx-auto w-full z-50 transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
-            <div className="px-5 w-full flex justify-between items-center py-6 md:py-8 lg:px-14">
+        <nav className={`fixed top-0 left-0 right-0 mx-auto w-full z-50  transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+            <div className="px-5 md:px-12 lg:px-[6.25rem] flex justify-between items-center py-6 md:py-8 md:max-w-[1440px] md:mx-auto" >
                 <Link to="/" onClick={() => setIsOpen(false)}>
                     <img src={primaryLogoBlue} alt="JB Logo" className="w-8 m-1 lg:w-9"/>
                 </Link>
@@ -49,7 +49,7 @@ function Navbar() {
 
             {/* Mobile Menu */}
             <div className={`md:hidden absolute w-full px-5 transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-                <div className="bg-jb-blue py-8 transition-all duration-300 ease-out shadow-2xl" onClick={(e) => e.stopPropagation()}>
+                <div className="bg-jb-blue py-8 transition-all duration-300 ease-out shadow-2xl rounded-3xl" onClick={(e) => e.stopPropagation()}>
                     <ul className="w-full flex flex-col items-center justify-center text-jb-white uppercase gap-4 d3">
                         <li><Link to="/about" onClick={() => setIsOpen(false)} className="nav-mobile-hover">About</Link></li>
                         <li><Link to="/works" onClick={() => setIsOpen(false)} className="nav-mobile-hover">Works</Link></li>

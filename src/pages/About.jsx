@@ -52,7 +52,7 @@ function About() {
     return (
         <>
             <FadeUp>
-                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 py-16">
+                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 lg:h-screen items-center mt-10 md:-mt-24">
 
                     {/* Mobile Headings */}
                     <header className="col-span-4 lg:hidden flex flex-col items-center gap-6 border-b-[1px] border-dashed border-jb-blue/50 pb-2 lg:pb-12">
@@ -79,16 +79,16 @@ function About() {
                         </h4>
                     </header>
 
-                    {/* About Me */}
-                    <div className="col-span-4 lg:col-span-5 lg:col-start-1 flex items-start justify-center py-10 md:py-6 lg:py-0 lg:-mt-9">
+                    {/* About Me Image */}
+                    <div className="col-span-4 lg:col-span-5 lg:col-start-1 flex items-start justify-center py-10 md:py-6 lg:py-0 lg:-mt-28">
                         <div className="relative">
-                            <img src={polaroid} alt="About Me Polaroid" className="relative w-80 h-auto drop-shadow-2xl md:w-[22rem]" />
+                            <img src={polaroid} alt="About Me Polaroid" className="relative w-80 h-auto drop-shadow-2xl" />
 
-                            <div className="absolute -top-3 left-7 w-10 h-10 md:-top-1 md:left-10 bg-jb-blue rounded-full" />
+                            <div className="absolute -top-1 left-10 w-9 h-9 bg-jb-blue rounded-full" />
 
-                            <img src={speechBubble} alt="Nice to meet you!" className="absolute bottom-48 left-52 w-28 h-auto -rotate-[32deg] md:w-32 md:bottom-56 md:left-56" />
+                            <img src={speechBubble} alt="Nice to meet you!" className="absolute bottom-48 left-52 w-28 h-auto -rotate-[32deg]" />
 
-                            <div className="absolute -bottom-52 left-1/2 -translate-x-1/2 w-[135%] -rotate-6 md:w-[118%] lg:w-[112%] md:-bottom-52 lg:-bottom-48">
+                            <div className="absolute -bottom-52 left-1/2 -translate-x-1/2 w-[135%] -rotate-6">
                                 <img src={memo} alt="Memo" className="w-full h-auto"/>
                                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center gap-3 mt-8">
                                     <h5>Hi there, this is Jin.</h5>
@@ -98,9 +98,9 @@ function About() {
                                 </div>
                             </div>
 
-                            <img src={tulip} alt="Tulip" className="absolute -bottom-8 -left-12 w-36 h-auto -rotate-12 md:-bottom-4 md:-left-10" />
+                            <img src={tulip} alt="Tulip" className="absolute -bottom-8 -left-12 w-36 h-auto -rotate-12" />
 
-                            <img src={cloud} alt="Cloud" className="absolute -bottom-12 -left-10 w-16 h-auto -rotate-12 md:-left-5 md:-bottom-11" />
+                            <img src={cloud} alt="Cloud" className="absolute -bottom-12 -left-10 w-16 h-auto -rotate-12" />
                         </div>
                     </div>
 
@@ -142,7 +142,7 @@ function About() {
             
             <FadeUp>
                 {/* What I Do */}
-                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 py-20 lg:mt-20">
+                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 py-32 lg:mt-20">
         
                     <div className="col-span-4 lg:col-span-12 mb-12 lg:mb-0">
                         <div className="flex items-center gap-2">
@@ -194,7 +194,7 @@ function About() {
 
             <FadeUp>
                 {/* Little Joys */}
-                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 py-12 border-b-[1px] border-dashed border-jb-blue/50">
+                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4">
                     
                     <div className="col-span-4 lg:col-span-12 mb-12">
                         <div className="flex items-center gap-2">
