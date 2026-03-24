@@ -12,7 +12,7 @@
 - [ ] Each page includes name and email contact link
 - [ ] Overall design is professional and visually consistent
 
-## Cross-Browser Testing
+## Browser Support
 - [ ] Chrome (latest)
 - [ ] Firefox (latest)
 - [ ] Safari (latest)
@@ -37,11 +37,17 @@
 - [ ] 404 page exists for unknown routes
 - [ ] No `console.log` statements left in production code
 
-## Accessibility
-- [ ] Color contrast meets WCAG AA standard
-- [ ] Focus states are visible on all interactive elements
+## CMS
+- [ ] N/A
 
-## Content
+## Metadata & SEO
+- [ ] Unique `<title>` tag on every page
+- [ ] Meta description present on every page
+- [ ] Open Graph tags present (`og:title`, `og:description`, `og:image`)
+- [ ] Favicon displays correctly in browser tab
+- [ ] All images have descriptive `alt` text
+
+## Content Accuracy & Quality
 - [ ] No spelling or grammar errors on any page
 - [ ] All project descriptions are complete and accurate
 - [ ] No placeholder text (e.g. "Lorem ipsum") remaining
@@ -53,9 +59,6 @@
 - [ ] All images are appropriately resized (under 500kb)
 - [ ] No copyrighted material used without permission
 
-## Metadata & SEO
-- [ ] Unique `<title>` tag on every page
-- [ ] Meta description present on every page
-- [ ] Open Graph tags present (`og:title`, `og:description`, `og:image`)
-- [ ] Favicon displays correctly in browser tab
-- [ ] All images have descriptive `alt` text
+## Accessibility
+- [ ] Color contrast meets WCAG AA standard
+- [ ] Focus states are visible on all interactive elements
