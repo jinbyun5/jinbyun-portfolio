@@ -313,7 +313,7 @@ function HeroSection() {
 
                     <div className="d6 md:d5 flex justify-center items-center gap-4 md:gap-6 mt-2 pointer-events-auto">
                         <span>I'm a</span>
-                        <span className="inline-flex items-center justify-center border border-jb-blue rounded-full w-32 h-9 leading-none md:w-32 md:h-10">
+                        <span className="inline-flex items-center justify-center border border-jb-blue border-dashed w-32 h-9 leading-none md:w-32 md:h-10">
                             <span key={index} className="emphasis text-lg md:text-xl animate-fade-in-out">
                                 {keywords[index]}
                             </span>

@@ -20,6 +20,6 @@ const RotatingStar = ({start}) => {
             </text>
         </svg>
     );
-  };
+};
 
-  export default RotatingStar;
+export default RotatingStar;
