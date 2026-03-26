@@ -1,27 +1,28 @@
 import { useState, useEffect } from 'react';
 
 import { motion } from 'motion/react'
+
 import HTMLFlipBook from 'react-pageflip';
 
 import { ArrowBendDownRightIcon } from '@phosphor-icons/react';
 
+import FadeUp from '../components/FadeUp';
 import FlipPage from '../components/FlipPage';
 
-import polaroid from '../assets/about-polaroid-3.webp';
-import tulip from '../assets/about-tulip.webp';
-import speechBubble from '../assets/about-speech-bubble.webp';
-import memo from '../assets/about-memo.webp';
-import cloud from '../assets/graphic-cloud.svg';
-import blueTape from '../assets/about-tape.webp';
-import note from '../assets/about-note.webp';
+import polaroid from '../assets/about/about-polaroid.webp';
+import tulip from '../assets/about/white-tulip.webp';
+import speechBubble from '../assets/about/speech-bubble.webp';
+import memo from '../assets/about/about-memo.webp';
+import cloud from '../assets/about/cloud.webp';
+import blueTape from '../assets/about/blue-tape.webp';
+import note from '../assets/about/blue-line-note.webp';
 
-import joy1 from '../assets/about-joy-1.jpg';
-import joy2 from '../assets/about-joy-2.jpg';
-import joy3 from '../assets/about-joy-3.jpg';
-import joy4 from '../assets/about-joy-4.jpg';
-import joy5 from '../assets/about-joy-5.jpg';
-import joy6 from '../assets/about-joy-6.jpg';
-import FadeUp from '../components/FadeUp';
+import joy1 from '../assets/about/about-joy-1.webp';
+import joy2 from '../assets/about/about-joy-2.webp';
+import joy3 from '../assets/about/about-joy-3.webp';
+import joy4 from '../assets/about/about-joy-4.webp';
+import joy5 from '../assets/about/about-joy-5.webp';
+import joy6 from '../assets/about/about-joy-6.webp';
 
 function About() {
 
@@ -41,18 +42,18 @@ function About() {
     }, []);
 
     const joyList = [
-        { image: joy1, title: 'film photography', text: 'I enjoy wandering through the streets, noticing quiet details and hidden beauty along the way.' },
-        { image: joy2, title: 'hiking', text: 'I feel most grounded when I hike. Moving at my own pace clears my thoughts and keeps me steady.' },
-        { image: joy3, title: 'cooking', text: 'I see cooking as a way of caring. I love preparing food for the people around me and seeing how something small can brighten someone’s day.' },
-        { image: joy4, title: 'coffee & books', text: 'I love getting lost in another world through books, with ☕️ in hand. It helps me slow down and see the world a little differently.' },
-        { image: joy5, title: 'travel', text: 'I am reminded how much there is to discover whenever I travel. Being in unfamiliar places keeps me curious and open to new perspectives.' },
-        { image: joy6, title: 'paddleboarding', text: 'I love heading out with the hope of spotting a seal, open to whatever the water brings.🌊🌊' }
+        { image: joy1, title: 'Film photography', text: 'I enjoy wandering through the streets, noticing quiet details and hidden beauty along the way.' },
+        { image: joy2, title: 'Hiking', text: 'I feel most grounded when I hike. Moving at my own pace clears my thoughts and keeps me steady.' },
+        { image: joy3, title: 'Cooking', text: 'I see cooking as a way of caring. I love preparing food for the people around me and seeing how something small can brighten someone’s day.' },
+        { image: joy4, title: 'Coffee & Books', text: 'I love getting lost in another world through books, with ☕️ in hand. It helps me slow down and see the world a little differently.' },
+        { image: joy5, title: 'Travel', text: 'I am reminded how much there is to discover whenever I travel. Being in unfamiliar places keeps me curious and open to new perspectives.' },
+        { image: joy6, title: 'Paddleboarding', text: 'I love heading out with the hope of spotting a seal, open to whatever the water brings.🌊🌊' }
     ];
 
     return (
         <>
             <FadeUp>
-                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 lg:h-screen items-center mt-10 md:-mt-24">
+                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 lg:h-screen items-center mt-10 lg:-mt-24">
 
                     {/* Mobile Headings */}
                     <header className="col-span-4 lg:hidden flex flex-col items-center gap-6 border-b-[1px] border-dashed border-jb-blue/50 pb-2 lg:pb-12">
@@ -206,15 +207,15 @@ function About() {
                     <div className="col-span-4 lg:col-start-1 lg:col-span-4 flex flex-col">
                         <div className="flex items-center justify-center gap-4">
                             <div className="relative w-[18%] min-w-[65px] max-w-[70px]"> 
-                                <img src={blueTape} className="w-full h-auto rotate-1" />
+                                <img src={blueTape} alt="Things I love" className="w-full h-auto rotate-1" />
                                 <span className="absolute inset-0 flex items-center justify-center emphasis text-jb-white -rotate-90 whitespace-nowrap">Things I love</span>
                             </div>
 
                             <div className="relative w-[75%] min-w-[285px] max-w-[320px] rounded-r-lg overflow-hidden">
-                                <img src={note} className="w-full h-auto drop-shadow-lg rounded-r-lg" />
+                                <img src={note} alt="Things I love list" className="w-full h-auto drop-shadow-lg rounded-r-lg" />
                                 <ul className="absolute inset-0 flex flex-col items-start justify-center text-jb-brown gap-1 list-disc font-mono text-sm pl-16">
                                     {joyList.map((joy, index) => (
-                                        <li>{joy.title}</li>
+                                        <li key={index}>{joy.title}</li>
                                     ))}
                                 </ul>
                             </div>
@@ -244,6 +245,7 @@ function About() {
                                 <FlipPage
                                     key={index}
                                     image={joy.image}
+                                    alt={joy.title}
                                     title={joy.title}
                                     text={joy.text}
                                     isLeft={index % 2 === 0}
