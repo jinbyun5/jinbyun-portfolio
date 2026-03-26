@@ -22,7 +22,7 @@ export default {
         'jb-accent': '#d2691e',
       },
       backgroundImage: {
-        'paper': "url('./src/assets/bg-paper.webp')",
+        'paper': "url('/src/assets/bg-paper.webp')",
       },
       fontFamily: {
         'mono': ['"IBM Plex Mono"', 'monospace'],
