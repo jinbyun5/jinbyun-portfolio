@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import primaryLogoBlue from '../assets/primary-logo-blue.svg';
+import primaryLogo from '../assets/logo.svg';
 
 import { ListIcon, XIcon } from '@phosphor-icons/react';
 
@@ -29,9 +29,9 @@ function Navbar() {
 
     return (
         <nav className={`fixed top-0 left-0 right-0 mx-auto w-full z-50  transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
-            <div className="px-5 md:px-12 lg:px-[6.25rem] flex justify-between items-center py-6 md:py-8 md:max-w-[1440px] md:mx-auto" >
+            <div className="px-5 md:px-12 lg:px-[6.25rem] flex justify-between items-start py-6 md:py-10 md:max-w-[1440px] md:mx-auto" >
                 <Link to="/" onClick={() => setIsOpen(false)}>
-                    <img src={primaryLogoBlue} alt="JB Logo" className="w-8 m-1 lg:w-9"/>
+                    <img src={primaryLogo} alt="Jin Byun Logo" className="w-14 md:w-16"/>
                 </Link>
 
                 {/* Desktop Menu */}
@@ -39,7 +39,7 @@ function Navbar() {
                     <li><Link to="/about" className="relative group py-1">About<span className="nav-desktop-hover"></span></Link></li>
                     <li><Link to="/works" className="relative group py-1">Works<span className="nav-desktop-hover"></span></Link></li>
                     <li><Link to="/play" className="relative group py-1">Play!<span className="nav-desktop-hover"></span></Link></li>
-                    <li><a href="/resume.pdf" target="_blank" className="border border-jb-blue rounded-oval px-4 py-2 hover-blue">Resume</a></li>
+                    <li><a href="/resume.pdf" target="_blank" className="border border-jb-blue bg-jb-blue text-jb-white rounded-oval px-4 py-2 hover:border hover:bg-jb-white hover:text-jb-blue transition-all duration-300 ease-out">Resume</a></li>
                 </ul>
                 
                 <button onClick={() => setIsOpen(!isOpen)} className="md:hidden w-10 h-10 flex justify-center items-center rounded-full border border-jb-blue">
