@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Works from './pages/Works';
 import Play from './pages/Play';
+import NotFound from './pages/NotFound';
 
 import HM from './pages/works/HM';
 import DeepBlueRescue from './pages/works/DeepBlueRescue';
@@ -29,7 +30,7 @@ function App() {
             <Route path="/works/deep-blue-rescue" element={<DeepBlueRescue/>}/>
             <Route path="/works/glow-bites" element={<GlowBites/>}/>
             <Route path="/works/the-papery" element={<ThePapery/>}/>
-            {/* <Route path="*" element={<NotFound />} /> */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer/>

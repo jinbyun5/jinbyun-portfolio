@@ -39,10 +39,14 @@ function Navbar() {
                     <li><Link to="/about" className="relative group py-1">About<span className="nav-desktop-hover"></span></Link></li>
                     <li><Link to="/works" className="relative group py-1">Works<span className="nav-desktop-hover"></span></Link></li>
                     <li><Link to="/play" className="relative group py-1">Play!<span className="nav-desktop-hover"></span></Link></li>
-                    <li><a href="/resume.pdf" target="_blank" className="border border-jb-blue bg-jb-blue text-jb-white rounded-oval px-4 py-2 hover:border hover:bg-jb-white hover:text-jb-blue transition-all duration-300 ease-out">Resume</a></li>
+                    <li><a href="/resume.pdf" target="_blank" className="border border-jb-blue bg-jb-blue text-jb-white rounded-oval px-4 py-2 hover:bg-jb-blue/30 hover:text-jb-blue transition-all duration-300 ease-out">Resume</a></li>
                 </ul>
                 
-                <button onClick={() => setIsOpen(!isOpen)} className="md:hidden w-10 h-10 flex justify-center items-center rounded-full border border-jb-blue">
+                <button
+                    aria-label={isOpen ? "Close menu" : "Open menu"}
+                    onClick={() => setIsOpen(!isOpen)} 
+                    className="md:hidden w-10 h-10 flex justify-center items-center rounded-full border border-jb-blue"
+                >
                     {isOpen ? <XIcon size={24}/> : <ListIcon size={22}/>}
                 </button>
             </div>
