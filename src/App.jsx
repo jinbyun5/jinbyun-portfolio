@@ -14,8 +14,6 @@ import DeepBlueRescue from './pages/works/DeepBlueRescue';
 import GlowBites from './pages/works/GlowBites';
 import ThePapery from './pages/works/ThePapery';
 
-// import './App.css'
-
 function App() {
   return (
     <BrowserRouter>
