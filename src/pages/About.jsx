@@ -85,7 +85,7 @@ function About() {
                         <div className="relative">
                             <img src={polaroid} alt="About Me Polaroid" className="relative w-80 h-auto drop-shadow-2xl" />
 
-                            <div className="absolute -top-1 left-10 w-9 h-9 bg-jb-blue rounded-full" />
+                            <div className="absolute -top-1 left-10 w-7 h-7 bg-jb-blue rounded-full" />
 
                             <img src={speechBubble} alt="Nice to meet you!" className="absolute bottom-48 left-52 w-28 h-auto -rotate-[32deg]" />
 
