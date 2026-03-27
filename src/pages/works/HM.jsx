@@ -16,6 +16,7 @@ import HighlightCard from '../../components/HighlightCard';
 import ProjectCard from '../../components/ProjectCard';
 import ToggleTabs from '../../components/ToggleTabs';
 import SolutionCard from '../../components/SolutionCard';
+import FigmaEmbed from '../../components/FigmaEmbed';
 
 import { projects } from '../../data/projects';
 
@@ -209,18 +210,11 @@ function HM() {
                         {/* 06 Final Design */}
                         <WorkSectionLayout number="06" title="Final Design">
                             <h4 className="b4 md:b2">Interactive Prototype</h4>
-                            <div className="space-y-4 md:text-lg">
-                                <div className="relative w-full  bg-gray-100 rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
-                                    <div style={{ paddingBottom: '90%' }}>
-                                        <iframe
-                                            className="absolute inset-0 w-full h-full"
-                                            src="https://embed.figma.com/proto/QV5iVjqPfbXkafgrNaJDJ7/H-M-Redesign--New-?node-id=3001-1597&viewport=269%2C204%2C0.71&scaling=scale-down&content-scaling=fixed&page-id=400%3A440&starting-point-node-id=3001%3A1597&embed-host=share"
-                                            allowFullScreen
-                                            title="H&M App Redesign Interactive Prototype"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
+                            <FigmaEmbed
+                                src="https://embed.figma.com/proto/QV5iVjqPfbXkafgrNaJDJ7/H-M-Redesign--New-?node-id=3001-1597&viewport=269%2C204%2C0.71&scaling=scale-down&content-scaling=fixed&page-id=400%3A440&starting-point-node-id=3001%3A1597&embed-host=share"
+                                paddingBottom="90%"
+                                title="H&M App Redesign Interactive Prototype"
+                            />
                         </WorkSectionLayout>
 
                         {/* 07 Reflection */}

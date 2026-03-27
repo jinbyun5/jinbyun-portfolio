@@ -16,6 +16,7 @@ import HighlightCard from '../../components/HighlightCard';
 import StatCard from '../../components/StatCard';
 import ToggleTabs from '../../components/ToggleTabs';
 import SolutionCard from '../../components/SolutionCard';
+import FigmaEmbed from '../../components/FigmaEmbed';
 import ProjectCard from '../../components/ProjectCard';
 
 import { projects } from '../../data/projects';
@@ -254,18 +255,11 @@ function ThePapery() {
                         {/* 07 Final Design */}
                         <WorkSectionLayout number="07" title="Final Design">
                             <h4 className="b4 md:b2">Interactive Prototype</h4>
-                            <div className="space-y-4 md:text-lg">
-                                <div className="relative w-full  bg-gray-100 rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
-                                    <div style={{ paddingBottom: '90%' }}>
-                                        <iframe
-                                            className="absolute inset-0 w-full h-full"
-                                            src="https://embed.figma.com/proto/htjDnzk9yXggt7GvEzx23P/The-Papery--Revision-?page-id=2258%3A3440&node-id=2258-3441&p=f&viewport=-7%2C166%2C0.11&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2258%3A3441&embed-host=share"
-                                            allowFullScreen
-                                            title="The Papery Interactive Prototype"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
+                            <FigmaEmbed
+                                src="https://embed.figma.com/proto/htjDnzk9yXggt7GvEzx23P/The-Papery--Revision-?page-id=2258%3A3440&node-id=2258-3441&p=f&viewport=-7%2C166%2C0.11&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2258%3A3441&embed-host=share"
+                                paddingBottom="90%"
+                                title="The Papery Interactive Prototype"
+                            />
                         </WorkSectionLayout>
 
                         {/* 08 Reflection */}
