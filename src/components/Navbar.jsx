@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import primaryLogo from '../assets/logo.svg';
+import primaryLogo from '../assets/primary-logo.svg';
 
 import { ListIcon, XIcon } from '@phosphor-icons/react';
 
@@ -31,7 +31,7 @@ function Navbar() {
         <nav className={`fixed top-0 left-0 right-0 mx-auto w-full z-50  transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="px-5 md:px-12 lg:px-[6.25rem] flex justify-between items-start py-6 md:py-10 md:max-w-[1440px] md:mx-auto" >
                 <Link to="/" onClick={() => setIsOpen(false)}>
-                    <img src={primaryLogo} alt="Jin Byun Logo" className="w-14 md:w-16"/>
+                    <img src={primaryLogo} alt="Jin Byun Logo" className="w-9 md:w-12"/>
                 </Link>
 
                 {/* Desktop Menu */}
