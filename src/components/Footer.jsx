@@ -20,7 +20,7 @@ function Footer() {
     return (
         <footer className="flex flex-col gap-12 pt-64">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 md:px-12 lg:px-[6.25rem] max-w-[1440px] mx-auto w-full">
-                <h2 className="font-normal leading-10 tracking-normal md:text-h1 md:leading-snug">Let’s bring<br/>better ideas to life</h2>
+                <p className="font-caslon leading-[3rem] tracking-normal text-[2rem] md:text-[2.5rem] md:leading-snug">Let’s bring<br/>better ideas to life</p>
 
                 <div className="flex justify-center items-center gap-20 lg:justify-start md:gap-40 lg:gap-32">
                     <button

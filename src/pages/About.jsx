@@ -57,8 +57,8 @@ function About() {
 
                     {/* Mobile Headings */}
                     <header className="col-span-4 lg:hidden flex flex-col items-center gap-6 border-b-[1px] border-dashed border-jb-blue/50 pb-2 lg:pb-12">
-                        <h3 className="italic text-5xl font-medium">About me</h3>
-                        <h4 className="flex self-end tracking-tightest font-medium text-xl">
+                        <h1 className="italic text-5xl font-medium">About me</h1>
+                        <p className="font-caslon flex self-end tracking-tightest font-medium text-xl">
                             {subHeading.split("").map((char, index) => (
                                 <motion.span
                                     key={index}
@@ -77,7 +77,7 @@ function About() {
                                     {char}
                                 </motion.span>
                             ))}
-                        </h4>
+                        </p>
                     </header>
 
                     {/* About Me Image */}
@@ -92,7 +92,7 @@ function About() {
                             <div className="absolute -bottom-52 left-1/2 -translate-x-1/2 w-[135%] -rotate-6">
                                 <img src={memo} alt="Memo" className="w-full h-auto"/>
                                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center gap-3 mt-8">
-                                    <h5>Hi there, this is Jin.</h5>
+                                    <h2 className="text-xl">Hi there, this is Jin.</h2>
                                     <p className="text-sm font-mono leading-6">
                                         A Vancouver-based UX/UI designer with a front-end background and a passion for meaningful digital experiences.
                                     </p>
@@ -108,8 +108,8 @@ function About() {
                     {/* Desktop Headings */}
                     <div className="col-span-4 lg:col-start-6 lg:col-span-7 mt-52 space-y-8 lg:mt-12 lg:flex lg:flex-col lg:justify-center lg:self-center">
                         <div className="hidden lg:flex flex-col gap-3 border-b border-dashed border-jb-blue/50 pb-4">
-                            <h3 className="italic text-5xl font-medium">About me</h3>
-                            <h4 className="flex self-end tracking-tightest font-medium text-xl">
+                            <h1 className="italic text-5xl font-medium">About me</h1>
+                            <p className="font-caslon flex self-end tracking-tightest font-medium text-xl">
                                 {subHeading.split("").map((char, index) => (
                                     <motion.span
                                         key={index}
@@ -128,7 +128,7 @@ function About() {
                                         {char}
                                     </motion.span>
                                 ))}
-                            </h4>
+                            </p>
                         </div>
                         <p className="text-jb-brown md:text-lg">
                             My design journey began in web development, where I discovered not only the logic behind building things, but also a growing curiosity about how people feel when using them. This curiosity gradually led me toward designing experiences that make everyday interactions feel simpler and more enjoyable.
@@ -148,14 +148,14 @@ function About() {
                     <div className="col-span-4 lg:col-span-12 mb-12 lg:mb-0">
                         <div className="flex items-center gap-2">
                             <ArrowBendDownRightIcon size={20}/>                    
-                            <h3 className="d5 font-normal bg-jb-blue text-white px-4 py-1 tracking-widest uppercase">What I Do</h3>
+                            <h2 className="d6 md:d5 font-normal bg-jb-blue text-white px-4 py-1.5 tracking-widest uppercase">What I Do</h2>
                         </div>
                     </div>
 
                     <div className="col-span-4 lg:col-span-8 lg:col-start-6 space-y-10">
                         {/* Design Skills */}
                         <div className="grid grid-cols-2 gap-4 border-b border-gray-300 pb-10">
-                            <h6 className="col-span-1 d6 font-semibold lg:d5">[DESIGN SKILLS]</h6>
+                            <h3 className="col-span-1 d6 font-semibold lg:d5">[DESIGN SKILLS]</h3>
                             <ul className="col-span-1 list-disc space-y-1 text-jb-brown b6 lg:b5 lg:space-y-1.5">
                                 <li>Wireframing</li>
                                 <li>Prototyping</li>
@@ -167,7 +167,7 @@ function About() {
 
                         {/* Design Tools */}
                         <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 border-b border-gray-300 pb-10">
-                            <h4 className="col-span-1 d6 font-semibold lg:d5">[DESIGN TOOLS]</h4>
+                            <h3 className="col-span-1 d6 font-semibold lg:d5">[DESIGN TOOLS]</h3>
                             <ul className="col-span-1 list-disc space-y-1 text-jb-brown b6 lg:b5 lg:space-y-1.5">
                                 <li>Figma</li>
                                 <li>Photoshop</li>
@@ -180,7 +180,7 @@ function About() {
 
                         {/* Web Tech */}
                         <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 border-b border-gray-300 pb-10">
-                            <h4 className="col-span-1 d6 font-semibold lg:d5">[WEB TECH]</h4>
+                            <h3 className="col-span-1 d6 font-semibold lg:d5">[WEB TECH]</h3>
                             <ul className="col-span-1 list-disc space-y-1 text-jb-brown b6 lg:b5 lg:space-y-1.5">
                                 <li>HTML/CSS</li>
                                 <li>JavaScript</li>
@@ -200,7 +200,7 @@ function About() {
                     <div className="col-span-4 lg:col-span-12 mb-12">
                         <div className="flex items-center gap-2">
                             <ArrowBendDownRightIcon size={20}/>                    
-                            <h3 className="d5 font-normal bg-jb-blue text-white px-4 py-1 tracking-widest uppercase">Little Joys</h3>
+                            <h2 className="d6 md:d5 font-normal bg-jb-blue text-white px-4 py-1.5 tracking-widest uppercase">Little Joys</h2>
                         </div>
                     </div>
 
@@ -228,7 +228,7 @@ function About() {
 
                     {/* Book Flip */}
                     <div className="col-span-4 lg:col-start-5 lg:col-span-8 flex flex-col items-center justify-center lg:items-end py-12 lg:py-0 lg:-mt-10">
-                        <h6 className="emphasis mb-4 self-center lg:pl-20">Take a closer look</h6>
+                        <p className="emphasis font-semibold mb-4 self-center lg:pl-20">Take a closer look</p>
 
                         <HTMLFlipBook 
                             key={isTwoPage ? 'two-page' : 'one-page'}

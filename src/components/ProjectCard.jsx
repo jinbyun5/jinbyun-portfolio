@@ -26,7 +26,7 @@ function ProjectCard({image, title, tags, description, onClick}) {
                     />
                 </div>
                 <div className="flex flex-col gap-3 px-2 md:px-3">
-                    <h5 className="md:text-[1.375rem]">{title}</h5>
+                    <h3 className="text-xl md:text-[1.375rem]">{title}</h3>
                     <p className="text-gray-500 mb-1">{description}</p>
                     <div className="flex items-center pt-4 pb-3 flex-wrap gap-2 border-t-[1px] border-dashed border-jb-blue/50">
                         {tags.map((tag, index) => (
