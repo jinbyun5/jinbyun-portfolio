@@ -29,23 +29,23 @@ function Play() {
             image: playMemopad,
             title: "Memo Pad",
             category: "Graphic Design",
-            description: "tationery design with a focus on tactile, analog aesthetics.",
+            description: "Stationery design with a focus on tactile, analog aesthetics.",
             ratio: "aspect-video"
         },
         {
             id: 3,
             image: playPoster,
-            title: "Let the Right One In",
-            category: "Illustration",
-            description: "Fan illustration inspired by the cult vampire film.",
+            title: "Born to Bloom",
+            category: "Graphic Design",
+            description: "Collage-style poster mixing photography and hand-lettering.",
             ratio: "aspect-[4/5]"
         },
         {
             id: 4,
             image: playMoviePoster,
-            title: "Born to Bloom",
-            category: "Graphic Design",
-            description: "Collage-style poster mixing photography and hand-lettering.",
+            title: "Let the Right One In",
+            category: "Illustration",
+            description: "Fan illustration inspired by the cult vampire film.",
             ratio: "aspect-[4/5]"
         },
     ];
@@ -64,7 +64,7 @@ function Play() {
             <section className="grid grid-cols-4 lg:grid-cols-12 border-b-[1px] border-dashed border-jb-blue/50 py-12">
                 <div className="col-span-4 lg:col-span-12 flex items-center gap-3">
                     <span className="text-2xl md:text-3xl animate-pulse">★</span>
-                    <h2 className="italic md:text-4xl">Play!</h2>
+                    <h1 className="italic text-3xl md:text-4xl">Play!</h1>
                 </div>
 
                 <div className="col-span-4 lg:col-span-12 lg:col-start-6 flex flex-col lg:flex-row items-center justify-center gap-2 lg:gap-4">
@@ -96,13 +96,13 @@ function Play() {
                         columnClassName="my-masonry-grid_column"
                     >
                         {filteredProjects.map((project) => (
-                            <FadeUp key={project.id} className="mb-8 group">
-                                <div className={`relative ${project.ratio} w-full rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-xl hover:scale-[1.01]`}>
+                            <FadeUp key={project.id} className="mb-8">
+                                <div className={`group relative ${project.ratio} w-full rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-xl hover:scale-[1.01]`}>
                                     <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                                     <div className="absolute inset-0 bg-white/30 p-8 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
                                         <div className="space-y-3 text-center">
                                             <p className="text-xs font-mono uppercase tracking-widest">{project.category}</p>
-                                            <h5 className="text-jb-brown">{project.title}</h5>
+                                            <h3 className="text-xl text-jb-brown">{project.title}</h3>
                                         </div>
                                     </div>
                                 </div>
