@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import primaryLogo from '../assets/primary-logo.svg';
+import logoWhite from '../assets/logo-white.svg';
+import logoBlue from '../assets/logo-blue.svg';
 
 import { ListIcon, XIcon } from '@phosphor-icons/react';
 
@@ -28,10 +29,11 @@ function Navbar() {
     }, [lastScrollY]);
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 mx-auto w-full z-50  transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+        <nav className={`fixed top-0 left-0 right-0 mx-auto w-full z-50 transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="px-5 md:px-12 lg:px-[6.25rem] flex justify-between items-start py-6 md:py-10 md:max-w-[1440px] md:mx-auto" >
-                <Link to="/" onClick={() => setIsOpen(false)}>
-                    <img src={primaryLogo} alt="Jin Byun Logo" className="w-9 md:w-12"/>
+                <Link to="/" onClick={() => setIsOpen(false)} className="group relative w-14 md:w-20">
+                    <img src={logoWhite} className="transition-opacity duration-300 group-hover:opacity-0" alt="Jin Byun Logo" />
+                    <img src={logoBlue} className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" alt="Jin Byun Logo" />
                 </Link>
 
                 {/* Desktop Menu */}
@@ -39,7 +41,7 @@ function Navbar() {
                     <li><Link to="/about" className="relative group py-1">About<span className="nav-desktop-hover"></span></Link></li>
                     <li><Link to="/works" className="relative group py-1">Works<span className="nav-desktop-hover"></span></Link></li>
                     <li><Link to="/play" className="relative group py-1">Play!<span className="nav-desktop-hover"></span></Link></li>
-                    <li><a href="/resume.pdf" target="_blank" className="border border-jb-blue bg-jb-blue text-jb-white rounded-oval px-4 py-2 hover:bg-jb-blue/30 hover:text-jb-blue transition-all duration-300 ease-out">Resume</a></li>
+                    <li><a href="/resume.pdf" target="_blank" className="border border-jb-blue bg-jb-white rounded-oval px-4 py-2 hover:bg-jb-blue hover:text-jb-white transition-all duration-300 ease-out">Resume</a></li>
                 </ul>
                 
                 <button
