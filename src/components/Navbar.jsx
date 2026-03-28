@@ -31,9 +31,9 @@ function Navbar() {
     return (
         <nav className={`fixed top-0 left-0 right-0 mx-auto w-full z-50 transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="px-5 md:px-12 lg:px-[6.25rem] flex justify-between items-start py-6 md:py-10 md:max-w-[1440px] md:mx-auto" >
-                <Link to="/" onClick={() => setIsOpen(false)} className="group relative w-14 md:w-20">
-                    <img src={logoWhite} className="transition-opacity duration-300 group-hover:opacity-0" alt="Jin Byun Logo" />
-                    <img src={logoBlue} className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" alt="Jin Byun Logo" />
+                <Link to="/" onClick={() => setIsOpen(false)}>
+                    <img src={logoWhite} alt="Jin Byun Logo" className="w-14 md:w-20"/>
+
                 </Link>
 
                 {/* Desktop Menu */}
