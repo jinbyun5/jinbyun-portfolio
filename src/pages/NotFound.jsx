@@ -8,13 +8,13 @@ function NotFound() {
     return (
         <div className="flex flex-col items-center justify-center min-h-[20vh] text-center gap-4 mt-28">
         <h1 className="text-8xl font-bold">404</h1>
-        <p className="text-2xl font-medium">Page Not Found</p>
-        <p className="text-jb-blue/60">Sorry, the page you are looking for could not be found.</p>
+        <p className="text-2xl font-caslon font-semibold italic">Page Not Found</p>
+        <p className="text-jb-blue/90">Sorry, the page you are looking for could not be found.</p>
         <button 
             onClick={() => navigate('/')}
-            className="flex items-center gap-2 mt-4 px-6 py-3 border bg-jb-blue text-jb-white rounded-oval hover:border-jb-blue hover:bg-jb-blue/30 hover:text-jb-blue transition-colors"
+            className="flex items-center gap-2 mt-4 px-6 py-3 border border-jb-blue bg-jb-white rounded-oval hover:bg-jb-blue hover:text-jb-white transition-all duration-300"
         >
-            <HouseLineIcon/>Return Home
+            <HouseLineIcon/><span className="font-mono uppercase">Return Home</span>
         </button>
         </div>
     );
