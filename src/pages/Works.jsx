@@ -19,7 +19,7 @@ function Works() {
     return (
         <>
             <FadeUp>
-                <section className="py-12">
+                <section className="pt-12">
                     <div className="flex items-center gap-3 mb-10 md:mb-12">
                         <span className="text-2xl md:text-3xl animate-pulse">★</span>
                         <h1 className="italic text-3xl md:text-4xl">Works</h1>

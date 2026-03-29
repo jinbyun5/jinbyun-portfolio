@@ -4,7 +4,7 @@ import { motion } from 'motion/react'
 
 import HTMLFlipBook from 'react-pageflip';
 
-import { ArrowBendDownRightIcon } from '@phosphor-icons/react';
+import { ArrowBendDownRightIcon, ArrowBendRightDownIcon } from '@phosphor-icons/react';
 
 import FadeUp from '../components/FadeUp';
 import FlipPage from '../components/FlipPage';
@@ -16,6 +16,9 @@ import memo from '../assets/about/about-memo.webp';
 import cloud from '../assets/about/cloud.webp';
 import blueTape from '../assets/about/blue-tape.webp';
 import note from '../assets/about/blue-line-note.webp';
+
+import resumeBlue from '../assets/about/resume-blue.webp';
+import resumeWhite from '../assets/about/resume-white.webp';
 
 import joy1 from '../assets/about/about-joy-1.webp';
 import joy2 from '../assets/about/about-joy-2.webp';
@@ -53,7 +56,7 @@ function About() {
     return (
         <>
             <FadeUp>
-                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 lg:h-screen items-center mt-10 lg:-mt-24">
+                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 items-center mt-10 lg:mt-10">
 
                     {/* Mobile Headings */}
                     <header className="col-span-4 lg:hidden flex flex-col items-center gap-6 border-b-[1px] border-dashed border-jb-blue/50 pb-2 lg:pb-12">
@@ -83,13 +86,13 @@ function About() {
                     {/* About Me Image */}
                     <div className="col-span-4 lg:col-span-5 lg:col-start-1 flex items-start justify-center py-10 md:py-6 lg:py-0 lg:-mt-28">
                         <div className="relative">
-                            <img src={polaroid} alt="About Me Polaroid" className="relative w-80 h-auto drop-shadow-2xl" />
+                            <img src={polaroid} alt="About Me Polaroid" className="relative w-[19rem] md:w-80 h-auto drop-shadow-2xl" />
 
                             <div className="absolute -top-1 left-10 w-7 h-7 bg-jb-blue rounded-full" />
 
-                            <img src={speechBubble} alt="Nice to meet you!" className="absolute bottom-48 left-52 w-28 h-auto -rotate-[32deg]" />
+                            <img src={speechBubble} alt="Nice to meet you!" className="absolute bottom-48 left-48 w-24 md:bottom-52 md:left-[12.25rem] md:w-28 h-auto -rotate-[32deg]" />
 
-                            <div className="absolute -bottom-52 left-1/2 -translate-x-1/2 w-[135%] -rotate-6">
+                            <div className="absolute -bottom-52 w-screen max-w-[135%] left-1/2 -translate-x-1/2 md:w-[135%] -rotate-6">
                                 <img src={memo} alt="Memo" className="w-full h-auto"/>
                                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center gap-3 mt-8">
                                     <h2 className="text-xl">Hi there, this is Jin.</h2>
@@ -99,9 +102,9 @@ function About() {
                                 </div>
                             </div>
 
-                            <img src={tulip} alt="Tulip" className="absolute -bottom-8 -left-12 w-36 h-auto -rotate-12" />
+                            <img src={tulip} alt="Tulip" className="absolute -bottom-6 -left-10 w-32 md:-bottom-8 md:-left-12 md:w-36 h-auto -rotate-12" />
 
-                            <img src={cloud} alt="Cloud" className="absolute -bottom-12 -left-10 w-16 h-auto -rotate-12" />
+                            <img src={cloud} alt="Cloud" className="absolute -bottom-12 -left-6 w-14 md:-bottom-12 md:-left-6 h-auto -rotate-12" />
                         </div>
                     </div>
 
@@ -130,12 +133,12 @@ function About() {
                                 ))}
                             </p>
                         </div>
-                        <p className="text-jb-brown md:text-lg">
-                            My design journey began in web development, where I discovered not only the logic behind building things, but also a growing curiosity about how people feel when using them. This curiosity gradually led me toward designing experiences that make everyday interactions feel simpler and more enjoyable.
+                        <p className="text-jb-brown/90 md:text-lg">
+                            My design journey began in web development, where I discovered not only the logic behind building things, but also a growing <span className="italic text-jb-blue font-semibold">curiosity</span> about how people feel when using them. This curiosity gradually led me toward designing experiences that make everyday interactions feel simpler and more enjoyable.
                         </p>
 
-                        <p className="text-jb-brown md:text-lg">
-                            As I began living abroad, my way of thinking naturally broadened. It helped me see design as a way to connect different ideas, people, and cultures. I try to carry this perspective into my work by designing with empathy, clarity, and intention. With this mindset, I aim to keep growing as a designer who creates work that not only solves problems but also brings warmth and connection to everyday life.
+                        <p className="text-jb-brown/90 md:text-lg">
+                            As I began living abroad, my way of thinking naturally broadened. It helped me see design as a way to connect different ideas, people, and cultures. I try to carry this perspective into my work by designing with <span className="italic text-jb-blue font-semibold">empathy</span>, <span className="italic text-jb-blue font-semibold">clarity</span>, and <span className="italic text-jb-blue font-semibold">intention</span>. With this mindset, I aim to keep growing as a designer who creates work that not only solves problems but also brings warmth and connection to everyday life.
                         </p>
                     </div>
                 </section>
@@ -143,7 +146,7 @@ function About() {
             
             <FadeUp>
                 {/* What I Do */}
-                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 py-32 lg:my-10">
+                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 py-36 lg:mt-24">
         
                     <div className="col-span-4 lg:col-span-12 mb-12 lg:mb-0">
                         <div className="flex items-center gap-2">
@@ -152,11 +155,21 @@ function About() {
                         </div>
                     </div>
 
-                    <div className="col-span-4 lg:col-span-8 lg:col-start-6 space-y-10">
+                    <div className="hidden lg:block lg:col-start-2 lg:col-span-4 self-end pb-20">
+                        <div 
+                            className="group relative w-full lg:w-3/4 rotate-6 drop-shadow-xl cursor-pointer hover:rotate-0 transition-transform duration-300"
+                            onClick={() => window.open('/resume.pdf', '_blank')}
+                        >
+                            <img src={resumeBlue} alt="Resume" className="w-full transition-opacity duration-300 group-hover:opacity-0" />
+                            <img src={resumeWhite} alt="Resume" className="absolute inset-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                        </div>
+                    </div>
+
+                    <div className="col-span-4 lg:col-span-8 lg:col-start-6 space-y-8">
                         {/* Design Skills */}
-                        <div className="grid grid-cols-2 gap-4 border-b border-gray-300 pb-10">
-                            <h3 className="col-span-1 d6 font-semibold lg:d5">[DESIGN SKILLS]</h3>
-                            <ul className="col-span-1 list-disc space-y-1 text-jb-brown b6 lg:b5 lg:space-y-1.5">
+                        <div className="grid grid-cols-2 gap-4 border-b border-dashed border-jb-blue/50 pb-8">
+                            <h3 className="col-span-1 text-lg uppercas italic">Design Skills</h3>
+                            <ul className="col-span-1 list-disc space-y-1 text-jb-brown/90 b6 lg:b5">
                                 <li>Wireframing</li>
                                 <li>Prototyping</li>
                                 <li>User Research</li>
@@ -166,9 +179,9 @@ function About() {
                         </div>
 
                         {/* Design Tools */}
-                        <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 border-b border-gray-300 pb-10">
-                            <h3 className="col-span-1 d6 font-semibold lg:d5">[DESIGN TOOLS]</h3>
-                            <ul className="col-span-1 list-disc space-y-1 text-jb-brown b6 lg:b5 lg:space-y-1.5">
+                        <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 border-b border-dashed border-jb-blue/50 pb-8">
+                            <h3 className="col-span-1 text-lg uppercas italic">Design Tools</h3>
+                            <ul className="col-span-1 list-disc space-y-1 text-jb-brown/90 b6 lg:b5">
                                 <li>Figma</li>
                                 <li>Photoshop</li>
                                 <li>Illustrator</li>
@@ -179,9 +192,9 @@ function About() {
                         </div>
 
                         {/* Web Tech */}
-                        <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 border-b border-gray-300 pb-10">
-                            <h3 className="col-span-1 d6 font-semibold lg:d5">[WEB TECH]</h3>
-                            <ul className="col-span-1 list-disc space-y-1 text-jb-brown b6 lg:b5 lg:space-y-1.5">
+                        <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 border-b border-dashed border-jb-blue/50 pb-8">
+                            <h3 className="col-span-1 text-lg uppercas italic">Web Tech</h3>
+                            <ul className="col-span-1 list-disc space-y-1 text-jb-brown/90 b6 lg:b5">
                                 <li>HTML/CSS</li>
                                 <li>JavaScript</li>
                                 <li>React</li>
@@ -205,7 +218,7 @@ function About() {
                     </div>
 
                     <div className="col-span-4 lg:col-start-1 lg:col-span-4 flex flex-col">
-                        <div className="flex items-center justify-center gap-4">
+                        <div className="flex items-center justify-start gap-4">
                             <div className="relative w-[18%] min-w-[65px] max-w-[70px]"> 
                                 <img src={blueTape} alt="Things I love" className="w-full h-auto rotate-1" />
                                 <span className="absolute inset-0 flex items-center justify-center emphasis text-jb-white -rotate-90 whitespace-nowrap">Things I love</span>
@@ -221,18 +234,21 @@ function About() {
                             </div>
                         </div>
 
-                        <p className="col-span-4 text-jb-brown mt-12">
+                        <p className="col-span-4 text-jb-brown/90 md:text-lg mt-16">
                             Off the clock, you’ll find me somewhere quiet — behind a film camera, on a trail, or curled up with a book and an almond latte. These are the moments that slow me down, fill me up, and remind me why I care about the details :)
                         </p>
                     </div>
 
                     {/* Book Flip */}
-                    <div className="col-span-4 lg:col-start-5 lg:col-span-8 flex flex-col items-center justify-center lg:items-end py-12 lg:py-0 lg:-mt-10">
-                        <p className="emphasis font-semibold mb-4 self-center lg:pl-20">Take a closer look</p>
+                    <div className="col-span-4 lg:col-start-5 lg:col-span-8 flex flex-col items-center justify-center lg:items-end pt-12 lg:py-0 lg:-mt-10">
+                        <p className="emphasis font-semibold mb-4 self-center lg:pl-20 flex items-end gap-2">
+                            Flip through my album
+                            <ArrowBendRightDownIcon size={18}/>
+                        </p>
 
                         <HTMLFlipBook 
                             key={isTwoPage ? 'two-page' : 'one-page'}
-                            width={isTwoPage ? 360 : 400}
+                            width={isTwoPage ? 360 : Math.min(400, window.innerWidth - 40)}
                             height={isTwoPage ? 460 : 490}
                             size="fixed"
                             maxShadowOpacity={0.5}

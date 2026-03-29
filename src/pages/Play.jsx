@@ -61,7 +61,7 @@ function Play() {
     return (
         <>
         <FadeUp>
-            <section className="grid grid-cols-4 lg:grid-cols-12 border-b-[1px] border-dashed border-jb-blue/50 py-12">
+            <section className="grid grid-cols-4 lg:grid-cols-12 border-b-[1px] border-dashed border-jb-blue/50 pt-12">
                 <div className="col-span-4 lg:col-span-12 flex items-center gap-3">
                     <span className="text-2xl md:text-3xl animate-pulse">★</span>
                     <h1 className="italic text-3xl md:text-4xl">Play!</h1>

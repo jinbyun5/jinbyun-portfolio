@@ -10,7 +10,7 @@ const FlipPage = forwardRef(({ image, alt, title, text, isLeft, isLast, isTwoPag
         <div ref={ref} className={`bg-white border-gray-200 overflow-hidden flex flex-col rounded-xl md:rounded-none ${isLeft ? 'md:rounded-l-xl' : 'md:rounded-r-xl'}`}>
             <img src={image} alt={alt} className="w-full aspect-[4/3] object-cover mb-6" />
             <div className="px-6 flex flex-col gap-2">
-                <p className="d6 text-xs  tracking-widest font-semibold">{title}</p>
+                <p className="d6 text-xs  tracking-widest font-bold">{title}</p>
                 <p className="d6 text-sm text-jb-brown leading-relaxed">{text}</p>
                 {(!isTwoPage || (!isLeft && !isLast) || (isTwoPage && isLast && isLeft)) && (
                 <motion.div
@@ -21,11 +21,11 @@ const FlipPage = forwardRef(({ image, alt, title, text, isLeft, isLast, isTwoPag
                     {isLast ? (
                         <>
                             <CaretDoubleLeftIcon />
-                            <p className="d6 text-xs">click to flip</p>
+                            <p className="d6 text-xs">Click to flip</p>
                         </>
                     ) : (
                         <>
-                            <p className="d6 text-xs">click to flip</p>
+                            <p className="d6 text-xs">Click to flip</p>
                             <CaretDoubleRightIcon />
                         </>
                     )}
