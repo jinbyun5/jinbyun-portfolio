@@ -5,7 +5,7 @@ const ToggleTabs = ({ tabs, activeTab, onTabChange }) => {
                 <button
                     key={tab.key}
                     onClick={() => onTabChange(tab.key)}
-                    className={`px-5 py-2 rounded-full text-sm font-medium tracking-wide uppercase transition-all duration-200
+                    className={`px-5 py-2 rounded-full text-base font-medium transition-all duration-200
                         ${activeTab === tab.key
                             ? 'bg-jb-blue text-jb-white'
                             : 'text-jb-blue'}`}

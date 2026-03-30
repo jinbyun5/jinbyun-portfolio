@@ -20,7 +20,7 @@ function StatCard({ icon, number, description, color = 'blue' }) {
     const style = styles[color];
 
     return (
-        <div className={`flex-1 rounded-xl border ${style.border} p-5 flex flex-col gap-3 border-b-4 shadow-md ${style.borderBottom}`}>
+        <div className={`bg-white/40 flex-1 rounded-xl border ${style.border} p-5 flex flex-col gap-3 border-b-4 shadow-md ${style.borderBottom}`}>
             <div className={`w-9 h-9 rounded-full flex items-center justify-center ${style.iconBg}`}>
                 <span className={`text-xl ${style.iconText}`}>{icon}</span>
             </div>
