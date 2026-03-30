@@ -120,8 +120,11 @@
     /* display: block; */
 }
 
-/* Swiper Pagination Custom */
-.project-swiper .swiper-pagination {
-    position: relative !important;
-    margin-top: 2rem;
+/* ZoomImage */
+[data-rmiz-modal-overlay="visible"] {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+[data-rmiz-modal-img] {
+    border-radius: 0.75rem !important;
 }

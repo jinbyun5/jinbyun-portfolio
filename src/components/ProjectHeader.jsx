@@ -19,21 +19,21 @@ function ProjectHeader({ titleLine1, titleLine2, subtitle, tags, tools, role, ti
                             <span>{titleLine1}</span>
                         )}
                     </h1>
-                    <p className="text-gray-500 md:text-lg">{subtitle}</p>
+                    <p className="text-jb-brown/70 md:text-lg">{subtitle}</p>
                 </div>
             </div>
 
             {/* Project Info */}
             <div className="col-span-4 md:col-span-5 md:col-start-8 md:mt-0 space-y-6 mt-12">
                 {[
-                    { label: 'TOOLS', value: tools },
-                    { label: 'ROLE', value: role },
-                    { label: 'TIMELINE', value: timeline },
-                    { label: 'INDUSTRY', value: industry },
+                    { label: 'Tools', value: tools },
+                    { label: 'Role', value: role },
+                    { label: 'Timeline', value: timeline },
+                    { label: 'Industry', value: industry },
                 ].map(({ label, value }) => (
                     <div key={label} className="flex items-center justify-between border-b border-gray-300 pb-2">
-                        <h6 className="font-sans md:text-lg font-bold tracking-wider">{label}</h6>
-                        <p className="md:b5">{value}</p>
+                        <h6 className="font-sans md:text-lg font-semibold">{label}</h6>
+                        <p className="md:b5 text-jb-brown/80">{value}</p>
                     </div>
                 ))}
             </div>
