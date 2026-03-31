@@ -41,15 +41,9 @@ function Works() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
-                        {/* {filteredProjects.map((project) => (
-                            <ProjectCard key={project.id} {...project} onClick={() => {navigate(`/works/${project.slug}`);}}></ProjectCard>
-                        ))} */}
-                        {filteredProjects
-                            .filter(p => ['hm-app-redesign', 'the-papery'].includes(p.slug))
-                            .map(project => (
-                                <ProjectCard key={project.id} {...project} onClick={() => navigate(`/works/${project.slug}`)} />
-                            ))
-                        }
+                        {filteredProjects.map(project => (
+                            <ProjectCard key={project.id} {...project} onClick={() => navigate(`/works/${project.slug}`)} />
+                        ))}
                     </div>
                 </section>
             </FadeUp>

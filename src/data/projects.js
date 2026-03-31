@@ -1,5 +1,5 @@
 import thumbHm from '../assets/thumb-hm.webp';
-import thumbDeepBlueRescue from '../assets/thumb-deepbluerescue.webp';
+import thumbCatchTreasure from '../assets/coming-soon.webp';
 import thumbGlowbites from '../assets/thumb-glowbites.webp';
 import thumbThePapery from '../assets/thumb-thepapery.webp';
 
@@ -21,22 +21,6 @@ export const projects = [
         industry: 'E-commerce, Fashion Retail',
     },
     {
-        id: 2,
-        image: thumbDeepBlueRescue,
-        title: "Deep Blue Rescue",
-        tags: ["UX/UI", "Case Study", "Web Dev"],
-        description: "A web-based interactive game that encourages ocean cleanup awareness.",
-        slug: "deep-blue-rescue",
-    },
-    {
-        id: 3,
-        image: thumbGlowbites,
-        title: "Glowbites App Design",
-        tags: ["UX/UI", "Case Study"],
-        description: "A recipe app designed to help busy people cook quickly and easily.",
-        slug: "glow-bites",
-    },
-    {
         id: 4,
         image: thumbThePapery,
         title: "The Papery ",
@@ -51,4 +35,21 @@ export const projects = [
         timeline: '4 weeks',
         industry: 'E-commerce',
     },
+    {
+        id: 2,
+        image: thumbCatchTreasure,
+        title: "Catch Treasure",
+        tags: ["UX/UI", "Case Study", "Web Dev"],
+        description: "An interactive game turning ocean pollution awareness into an emotional experience.",
+        slug: "catch-treasure",
+    },
+    // {
+    //     id: 3,
+    //     image: thumbGlowbites,
+    //     title: "Glowbites App Design",
+    //     tags: ["UX/UI", "Case Study"],
+    //     description: "A recipe app designed to help busy people cook quickly and easily.",
+    //     slug: "glow-bites",
+    // },
+
 ];

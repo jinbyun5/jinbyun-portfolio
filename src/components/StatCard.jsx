@@ -25,7 +25,7 @@ function StatCard({ icon, number, description, color = 'blue' }) {
                 <span className={`text-xl ${style.iconText}`}>{icon}</span>
             </div>
             <span className={`text-2xl font-medium leading-none ${style.number}`}>{number}</span>
-            <span className="text-sm text-jb-brown/70">{description}</span>
+            <span className="text-base text-jb-brown/70">{description}</span>
         </div>
     );
 }
