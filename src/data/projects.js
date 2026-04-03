@@ -1,5 +1,5 @@
 import thumbHm from '../assets/thumb-hm.webp';
-import thumbCatchTreasure from '../assets/coming-soon.webp';
+import thumbCatchTreasure from '../assets/thumb-catchtreaure.webp';
 import thumbGlowbites from '../assets/thumb-glowbites.webp';
 import thumbThePapery from '../assets/thumb-thepapery.webp';
 
@@ -21,11 +21,27 @@ export const projects = [
         industry: 'E-commerce, Fashion Retail',
     },
     {
+        id: 2,
+        image: thumbCatchTreasure,
+        title: "Catch Treasure",
+        tags: ["UX/UI", "Case Study", "Web Dev", "WordPress"],
+        description: "An interactive game turning ocean pollution awareness into an emotional experience.",
+        slug: "catch-treasure",
+
+        titleLine1: 'Catch',
+        titleLine2: 'Treasure',
+        subtitle: 'A web-based interactive game created for an ocean conservation non-profit, turning ocean pollution awareness into an emotional experience.',
+        tools: 'HTML/CSS/JS , GSAP, Photoshop, WordPress',
+        role: 'UX/UI Designer, Web Developer',
+        timeline: '3 weeks',
+        industry: 'Environmental non-profit',
+    },
+    {
         id: 4,
         image: thumbThePapery,
         title: "The Papery ",
         tags: ["UX/UI", "Case Study"],
-        description: "Refining the stationery shopping experience through iterative UX design.",
+        description: "Refining the e-commerce shopping experience for a stationery brand through iterative UX design.",
         slug: "the-papery",
 
         titleLine1: 'The Papery',
@@ -34,14 +50,6 @@ export const projects = [
         role: 'UX/UI Designer',
         timeline: '4 weeks',
         industry: 'E-commerce',
-    },
-    {
-        id: 2,
-        image: thumbCatchTreasure,
-        title: "Catch Treasure",
-        tags: ["UX/UI", "Case Study", "Web Dev"],
-        description: "An interactive game turning ocean pollution awareness into an emotional experience.",
-        slug: "catch-treasure",
     },
     // {
     //     id: 3,
