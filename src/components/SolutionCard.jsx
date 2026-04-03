@@ -1,6 +1,6 @@
 import ZoomImage from "./ZoomImage";
 
-function SolutionCard({ number, title, before, after, image, alt }) {
+function SolutionCard({ number, title, before, after, image, alt, imageClassName, zoom = true }) {
     return (
         <div className="rounded-xl border border-jb-blue/10 bg-jb-white shadow-inner overflow-hidden">
             {/* Title */}
@@ -15,7 +15,11 @@ function SolutionCard({ number, title, before, after, image, alt }) {
             <div className="px-7 py-5 flex flex-col gap-4">
                 {before && <p>{before}</p>}
                 <p>{after}</p>
-                {image && <ZoomImage src={image} className="w-full rounded-xl" alt={alt} />}
+                {image && zoom ? (
+                    <ZoomImage src={image} className={imageClassName || "w-full rounded-xl"} alt={alt} />
+                ) : (
+                    <img src={image} className={imageClassName || "w-full rounded-xl"} alt={alt} />
+                )}
             </div>
         </div>
     );
