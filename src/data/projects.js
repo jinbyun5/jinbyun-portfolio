@@ -1,6 +1,6 @@
 import thumbHm from '../assets/thumb-hm.webp';
 import thumbCatchTreasure from '../assets/thumb-catchtreaure.webp';
-import thumbGlowbites from '../assets/thumb-glowbites.webp';
+import thumbJobTracker from '../assets/coming-soon.webp';
 import thumbThePapery from '../assets/thumb-thepapery.webp';
 
 export const projects = [
@@ -51,13 +51,13 @@ export const projects = [
         timeline: '4 weeks',
         industry: 'E-commerce',
     },
-    // {
-    //     id: 3,
-    //     image: thumbGlowbites,
-    //     title: "Glowbites App Design",
-    //     tags: ["UX/UI", "Case Study"],
-    //     description: "A recipe app designed to help busy people cook quickly and easily.",
-    //     slug: "glow-bites",
-    // },
+    {
+        id: 3,
+        image: thumbJobTracker,
+        title: "Job Application Tracker",
+        tags: ["UX/UI", "Case Study"],
+        description: "An AI-powered dashboard designed to make the job search feel less overwhelming and more intentional.",
+        slug: "job-application-tracker",
+    },
 
 ];

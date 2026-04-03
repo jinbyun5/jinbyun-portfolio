@@ -1,6 +1,6 @@
 import FadeUp from "../../components/FadeUp";
 
-function GlowBites() {
+function JobApplicationTracker() {
     return (
         <FadeUp>
             <div className="flex flex-col items-center justify-center min-h-screen gap-4">
@@ -11,4 +11,4 @@ function GlowBites() {
     );
 }
 
-export default GlowBites;
+export default JobApplicationTracker;
