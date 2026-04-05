@@ -10,11 +10,13 @@ function Header() {
     
     const [isOpen, setIsOpen] = useState(false);
     const [visible, setVisible] = useState(true);
+    const [scrolled, setScrolled] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
+            setScrolled(currentScrollY > 100);
             if (currentScrollY > lastScrollY && currentScrollY > 80) {
                 setVisible(false);
                 setIsOpen(false);
@@ -29,8 +31,8 @@ function Header() {
     }, [lastScrollY]);
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 mx-auto w-full z-50 transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
-            <div className="px-5 md:px-12 lg:px-[6.25rem] flex justify-between items-start py-6 md:py-10 md:max-w-[1440px] md:mx-auto" >
+        <nav className={`fixed top-0 left-0 right-0 mx-auto w-full z-50 transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'} ${scrolled ? 'backdrop-blur-md bg-jb-white/10 ' : ''}`}>
+            <div className="px-5 md:px-12 lg:px-[6.25rem] flex justify-between items-start py-6 md:pt-10 md:pb-6 md:max-w-[1440px] md:mx-auto" >
             <Link to="/" onClick={() => setIsOpen(false)} className="group relative w-14 md:w-18">
                 <img src={logoWhite} className="transition-opacity duration-300 group-hover:opacity-0" alt="Jin Byun Logo" />
                 <img src={logoBlue} className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" alt="Jin Byun Logo" />
