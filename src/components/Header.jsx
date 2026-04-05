@@ -6,7 +6,7 @@ import logoBlue from '../assets/logo-blue.svg';
 
 import { ListIcon, XIcon } from '@phosphor-icons/react';
 
-function Navbar() {
+function Header() {
     
     const [isOpen, setIsOpen] = useState(false);
     const [visible, setVisible] = useState(true);
@@ -68,4 +68,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default Header;

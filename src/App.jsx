@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
+import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -18,7 +18,7 @@ import ThePapery from './pages/works/ThePapery';
 function App() {
   return (
     <BrowserRouter>
-      <Navbar/>
+      <Header/>
         <ScrollToTop />
         <main className="container max-w-[1440px] min-w-[320px] pt-20 md:pt-24">
           <Routes>
