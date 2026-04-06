@@ -3,15 +3,15 @@ import { motion } from 'motion/react';
 
 import { heroStickers, plateTools } from '../data/stickers';
 
-import { HandTapIcon, CaretDoubleDownIcon } from '@phosphor-icons/react';
+import { SpeakerSlashIcon, SpeakerHighIcon, CaretDoubleDownIcon } from '@phosphor-icons/react';
 
-function playSound(src) {
+function useSound(src) {
     const audioRef = useRef(null);
 
     const play = () => {
         if (!src) return;
         audioRef.current = new Audio(src);
-        audioRef.current.volume = 0.5;
+        audioRef.current.volume = 1;
         audioRef.current.play().catch(() => {});
     };
 
@@ -27,9 +27,9 @@ function playSound(src) {
 }
 
 // Stickers
-function CameraSticker({ sticker }) {
+function CameraSticker({ sticker, audioUnlocked, onStickerHover }) {
     const [hovered, setHovered] = useState(false);
-    const { play, stop } = playSound(sticker.audio);
+    const { play, stop } = useSound(sticker.audio);
     const [dragging, setDragging] = useState(false);
 
     return (
@@ -40,7 +40,7 @@ function CameraSticker({ sticker }) {
             style={{ rotate: `${sticker.rotate}deg`, scale: hovered ? 1.05 : 1 }}
             onDragStart={() => setDragging(true)}
             onDragEnd={() => setDragging(false)}
-            onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
+            onMouseEnter={() => { if (dragging) return; setHovered(true); if (audioUnlocked) play(); onStickerHover?.(); }}
             onMouseLeave={() => { if (dragging) return; setHovered(false); stop(); }}
         >
             <div className="relative flex flex-col items-start">
@@ -61,9 +61,9 @@ function CameraSticker({ sticker }) {
     );
 }
 
-function PlateSticker({ sticker }) {
+function PlateSticker({ sticker, audioUnlocked, onStickerHover }) {
     const [hovered, setHovered] = useState(false);
-    const { play, stop } = playSound(sticker.audio);
+    const { play, stop } = useSound(sticker.audio);
     const [dragging, setDragging] = useState(false);
 
     return (
@@ -74,7 +74,7 @@ function PlateSticker({ sticker }) {
             style={{ rotate: `${sticker.rotate}deg` }}
             onDragStart={() => setDragging(true)}
             onDragEnd={() => setDragging(false)}
-            onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
+            onMouseEnter={() => { if (dragging) return; setHovered(true); if (audioUnlocked) play(); onStickerHover?.(); }}
             onMouseLeave={() => { if (dragging) return; setHovered(false); stop(); }}
         >
             <div className={`relative transition-transform duration-200 ${hovered ? 'scale-105 rotate-6' : 'scale-100'}`}>
@@ -112,9 +112,9 @@ function PlateSticker({ sticker }) {
     );
 }
 
-function MessageSticker({ sticker }) {
+function MessageSticker({ sticker, audioUnlocked, onStickerHover }) {
     const [hovered, setHovered] = useState(false);
-    const { play, stop } = playSound(sticker.audio);
+    const { play, stop } = useSound(sticker.audio);
     const [dragging, setDragging] = useState(false);
 
     const Reactions = ['❤️', '👍', '😂', '✨', '🔥'];
@@ -127,7 +127,7 @@ function MessageSticker({ sticker }) {
             style={{ rotate: `${sticker.rotate}deg` }}
             onDragStart={() => setDragging(true)}
             onDragEnd={() => setDragging(false)}
-            onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
+            onMouseEnter={() => { if (dragging) return; setHovered(true); if (audioUnlocked) play(); onStickerHover?.(); }}
             onMouseLeave={() => { if (dragging) return; setHovered(false); stop(); }}
         >
             {/* iMessage reaction bubble */}
@@ -158,9 +158,9 @@ function MessageSticker({ sticker }) {
     );
 }
 
-function BookSticker({ sticker }) {
+function BookSticker({ sticker, audioUnlocked, onStickerHover }) {
     const [hovered, setHovered] = useState(false);
-    const { play, stop } = playSound(sticker.audio);
+    const { play, stop } = useSound(sticker.audio);
     const [dragging, setDragging] = useState(false);
 
     return (
@@ -171,7 +171,7 @@ function BookSticker({ sticker }) {
             style={{ rotate: `${sticker.rotate}deg` }}
             onDragStart={() => setDragging(true)}
             onDragEnd={() => setDragging(false)}
-            onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
+            onMouseEnter={() => { if (dragging) return; setHovered(true); if (audioUnlocked) play(); onStickerHover?.(); }}
             onMouseLeave={() => { if (dragging) return; setHovered(false); stop(); }}
         >
             <div className={`transition-transform duration-300 ${hovered ? 'scale-105 -rotate-6' : 'scale-100'}`}>
@@ -186,9 +186,9 @@ function BookSticker({ sticker }) {
     );
 }
 
-function VinylSticker({ sticker }) {
+function VinylSticker({ sticker, audioUnlocked, onStickerHover }) {
     const [hovered, setHovered] = useState(false);
-    const { play, stop } = playSound(sticker.audio);
+    const { play, stop } = useSound(sticker.audio);
     const [dragging, setDragging] = useState(false);
 
     return (
@@ -199,7 +199,7 @@ function VinylSticker({ sticker }) {
             style={{ rotate: `${sticker.rotate}deg` }}
             onDragStart={() => setDragging(true)}
             onDragEnd={() => setDragging(false)}
-            onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
+            onMouseEnter={() => { if (dragging) return; setHovered(true); if (audioUnlocked) play(); onStickerHover?.(); }}
             onMouseLeave={() => { if (dragging) return; setHovered(false); stop(); }}
         >
             <div className={`transition-transform duration-300 ${hovered ? 'scale-105 rotate-6' : 'scale-100'}`}>
@@ -220,9 +220,9 @@ function VinylSticker({ sticker }) {
     );
 }
 
-function CatSticker({ sticker }) {
+function CatSticker({ sticker, audioUnlocked, onStickerHover }) {
     const [hovered, setHovered] = useState(false);
-    const { play, stop } = playSound(sticker.audio);
+    const { play, stop } = useSound(sticker.audio);
     const [dragging, setDragging] = useState(false);
 
     return (
@@ -233,7 +233,7 @@ function CatSticker({ sticker }) {
             style={{ rotate: `${sticker.rotate}deg` }}
             onDragStart={() => setDragging(true)}
             onDragEnd={() => setDragging(false)}
-            onMouseEnter={() => { if (dragging) return; setHovered(true); play(); }}
+            onMouseEnter={() => { if (dragging) return; setHovered(true); if (audioUnlocked) play(); onStickerHover?.(); }}
             onMouseLeave={() => { if (dragging) return; setHovered(false); stop(); }}
         >
             {/* open to work badge */}
@@ -256,14 +256,14 @@ function CatSticker({ sticker }) {
     );
 }
 
-function StickerItem({ sticker }) {
+function StickerItem({ sticker, audioUnlocked, onStickerHover }) {
     switch (sticker.type) {
-        case 'camera':  return <CameraSticker  sticker={sticker} />;
-        case 'plate':   return <PlateSticker   sticker={sticker} />;
-        case 'message': return <MessageSticker sticker={sticker} />;
-        case 'book':    return <BookSticker    sticker={sticker} />;
-        case 'vinyl':   return <VinylSticker   sticker={sticker} />;
-        case 'cat':     return <CatSticker     sticker={sticker} />;
+        case 'camera':  return <CameraSticker sticker={sticker} audioUnlocked={audioUnlocked} onStickerHover={onStickerHover} />;
+        case 'plate':   return <PlateSticker sticker={sticker} audioUnlocked={audioUnlocked} onStickerHover={onStickerHover} />;
+        case 'message': return <MessageSticker sticker={sticker} audioUnlocked={audioUnlocked} onStickerHover={onStickerHover} />;
+        case 'book':    return <BookSticker sticker={sticker} audioUnlocked={audioUnlocked} onStickerHover={onStickerHover} />;
+        case 'vinyl':   return <VinylSticker sticker={sticker} audioUnlocked={audioUnlocked} onStickerHover={onStickerHover} />;
+        case 'cat':     return <CatSticker sticker={sticker} audioUnlocked={audioUnlocked} onStickerHover={onStickerHover} />;
         default:        return null;
     }
 }
@@ -271,6 +271,8 @@ function StickerItem({ sticker }) {
 function HeroSection() {
     const [index, setIndex] = useState(0);
     const [nameHovered, setNameHovered] = useState(false);
+    const [audioUnlocked, setAudioUnlocked] = useState(false);
+    const [hintVisible, setHintVisible] = useState(true);
 
     const keywords = ['ux/ui', 'product', 'interaction', 'visual', 'web'];
 
@@ -282,19 +284,38 @@ function HeroSection() {
         return () => clearInterval(timer);
     }, []);
 
+    const handleEnableSound = () => {
+        setAudioUnlocked(true);
+    };
+
+    const handleStickerHover = () => {
+        if (audioUnlocked) setHintVisible(false);
+    };
+
     return (
         <section className="relative w-screen h-screen flex flex-col justify-center items-center border-b border-dashed border-jb-blue/50 overflow-hidden pb-20 left-1/2 -translate-x-1/2 -mt-20 md:-mt-24">
 
             {heroStickers.map((sticker) => (
-                <StickerItem key={sticker.id} sticker={sticker} />
+                <StickerItem
+                    key={sticker.id}
+                    sticker={sticker}
+                    audioUnlocked={audioUnlocked}
+                    onStickerHover={handleStickerHover} 
+                />
             ))}
 
-            <div className="flex flex-col justify-center items-center gap-6">
-                <div className="hidden font-mono text-sm text-gray-400 md:flex items-center gap-1.5 tracking-wide">
-                    <span><HandTapIcon size={18}/></span>click to play
+            <div className="flex flex-col justify-center items-center gap-8">
+                <div
+                    className={`hidden font-mono text-sm font-medium text-gray-400 md:flex items-center gap-1.5 tracking-wide cursor-pointer select-none transition-all duration-300 ${hintVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'} ${!audioUnlocked ? 'cursor-pointer hover:scale-105' : 'cursor-default'}`}
+                    onClick={handleEnableSound}
+                >
+                    {audioUnlocked
+                        ? <><SpeakerHighIcon size={18} /> Hover to play</>
+                        : <><SpeakerSlashIcon size={18} /> Click to enable sound</>
+                    }
                 </div>
-                <div className="flex flex-col justify-center items-center gap-10 text-center pointer-events-none">
 
+                <div className="flex flex-col justify-center items-center gap-10 text-center pointer-events-none">
                     <div
                         className="relative flex flex-col items-center gap-2 pointer-events-auto cursor-default"
                         onMouseEnter={() => setNameHovered(true)}
