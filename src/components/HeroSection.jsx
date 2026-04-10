@@ -295,7 +295,6 @@ function HeroSection() {
     return (
         <section className="relative w-screen max-w-[1440px] h-screen flex flex-col justify-center items-center border-b border-dashed border-jb-blue/50 left-1/2 -translate-x-1/2 overflow-hidden pb-20 -mt-20 md:-mt-24">
             <div className="relative w-full max-h-[1000px] min-h-[750px] mx-auto h-full mt-20">
-      
 
                 {heroStickers.map((sticker) => (
                     <StickerItem
