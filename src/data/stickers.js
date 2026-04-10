@@ -39,7 +39,7 @@ export const heroStickers = [
         src: heroCamera,
         filmSrc: heroFilm,
         audio: sfxCamera,
-        className: 'hidden md:block top-[15%] left-[26%] w-24 md:w-36 lg:w-36',
+        className: 'hidden md:block top-[15%] left-[25.5%] w-24 md:w-36 lg:w-36',
         rotate: 15,
     },
     {
@@ -47,7 +47,7 @@ export const heroStickers = [
         type: 'plate',
         src: heroPlate,
         audio: sfxPlate,
-        className: 'top-[68%] left-[8%] md:top-[36%] md:left-[8%] w-36 lg:w-44',
+        className: 'top-[68%] left-[8%] md:top-[36%] md:left-[7%] w-36 lg:w-44',
         rotate: -8,
     },
     {
@@ -55,7 +55,7 @@ export const heroStickers = [
         type: 'message',
         src: heroMessage,
         audio: sfxMessage,
-        className: 'bottom-[12%] md:bottom-[10%] left-[36%] md:left-[22%] w-32 md:w-36 lg:w-44',
+        className: 'bottom-[12%] md:bottom-[10%] left-[36%] md:left-[21.5%] w-32 md:w-36 lg:w-44',
         rotate: 0,
     },
     {
@@ -72,7 +72,7 @@ export const heroStickers = [
         src: heroVinyl,
         turntableSrc: heroTurntable,
         audio: vinylTurntable,
-        className: 'hidden md:block top-[20%] right-[16%] w-24 md:w-44 lg:w-48',
+        className: 'hidden md:block top-[20%] right-[15%] w-24 md:w-44 lg:w-48',
         rotate: 0,
     },
     {
@@ -80,7 +80,7 @@ export const heroStickers = [
         type: 'cat',
         src: heroCat,
         audio: sfxCat,
-        className: 'bottom-[18%] right-[10%] md:bottom-[22%] md:right-[16%] w-40 lg:w-48',
+        className: 'bottom-[18%] right-[10%] md:bottom-[22%] md:right-[15%] w-40 lg:w-48',
         rotate: 0,
     },
 ];

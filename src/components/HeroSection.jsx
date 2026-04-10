@@ -293,53 +293,56 @@ function HeroSection() {
     };
 
     return (
-        <section className="relative w-screen h-screen flex flex-col justify-center items-center border-b border-dashed border-jb-blue/50 overflow-hidden pb-20 left-1/2 -translate-x-1/2 -mt-20 md:-mt-24">
+        <section className="relative w-screen max-w-[1440px] h-screen flex flex-col justify-center items-center border-b border-dashed border-jb-blue/50 left-1/2 -translate-x-1/2 overflow-hidden pb-20 -mt-20 md:-mt-24">
+            <div className="relative w-full max-h-[1000px] min-h-[750px] mx-auto h-full mt-20">
+      
 
-            {heroStickers.map((sticker) => (
-                <StickerItem
-                    key={sticker.id}
-                    sticker={sticker}
-                    audioUnlocked={audioUnlocked}
-                    onStickerHover={handleStickerHover} 
-                />
-            ))}
+                {heroStickers.map((sticker) => (
+                    <StickerItem
+                        key={sticker.id}
+                        sticker={sticker}
+                        audioUnlocked={audioUnlocked}
+                        onStickerHover={handleStickerHover} 
+                    />
+                ))}
 
-            <div className="flex flex-col justify-center items-center gap-8">
-                <div
-                    className={`hidden font-mono text-sm font-medium text-gray-400 md:flex items-center gap-1.5 tracking-wide cursor-pointer select-none transition-all duration-300 ${hintVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'} ${!audioUnlocked ? 'cursor-pointer hover:scale-105' : 'cursor-default'}`}
-                    onClick={handleEnableSound}
-                >
-                    {audioUnlocked
-                        ? <><SpeakerHighIcon size={18} /> Hover to play</>
-                        : <><SpeakerSlashIcon size={18} /> Click to enable sound</>
-                    }
-                </div>
-
-                <div className="flex flex-col justify-center items-center gap-10 text-center pointer-events-none">
+                <div className="absolute inset-0 flex flex-col justify-center items-center gap-8 -mt-20">
                     <div
-                        className="relative flex flex-col items-center gap-2 pointer-events-auto cursor-default"
-                        onMouseEnter={() => setNameHovered(true)}
-                        onMouseLeave={() => setNameHovered(false)}
+                        className={`hidden font-mono text-sm font-medium text-gray-400 md:flex items-center gap-1.5 tracking-wide cursor-pointer select-none transition-all duration-300 ${hintVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'} ${!audioUnlocked ? 'cursor-pointer hover:scale-105' : 'cursor-default'}`}
+                        onClick={handleEnableSound}
                     >
-                        <div className={`absolute -top-14 -left-12 z-20 font-mono text-xs md:text-sm bg-jb-blue text-jb-white py-1 px-3 md:px-4 -rotate-[8deg] w-fit transition-all duration-300 ease-out ${nameHovered ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0 md:opacity-0 md:translate-y-3 md:pointer-events-none'}`}>
-                            Based in Vancouver
-                        </div>
-
-                        <h1 className={`emphasis font-medium text-4xl md:text-6xl transition-transform duration-200 ${nameHovered ? 'scale-105' : 'scale-100'}`}>Jin Byun</h1>
+                        {audioUnlocked
+                            ? <><SpeakerHighIcon size={18} /> Hover to play</>
+                            : <><SpeakerSlashIcon size={18} /> Click to enable sound</>
+                        }
                     </div>
 
-                    <p className="d6 leading-8 md:d5 md:leading-8 max-w-64 md:max-w-xl">
-                        A UX/UI designer with a front-end background, creating practical and user-centered experiences.
-                    </p>
+                    <div className="flex flex-col justify-center items-center gap-10 text-center pointer-events-none">
+                        <div
+                            className="relative flex flex-col items-center gap-2 pointer-events-auto cursor-default"
+                            onMouseEnter={() => setNameHovered(true)}
+                            onMouseLeave={() => setNameHovered(false)}
+                        >
+                            <div className={`absolute -top-14 -left-12 z-20 font-mono text-xs md:text-sm bg-jb-blue text-jb-white py-1 px-3 md:px-4 -rotate-[8deg] w-fit transition-all duration-300 ease-out ${nameHovered ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0 md:opacity-0 md:translate-y-3 md:pointer-events-none'}`}>
+                                Based in Vancouver
+                            </div>
 
-                    <div className="d6 md:d5 flex justify-center items-center gap-4 md:gap-6 mt-2 pointer-events-auto">
-                        <span>I'm a</span>
-                        <span className="inline-flex items-center justify-center border border-jb-blue border-dashed w-32 h-9 leading-none md:w-32 md:h-10">
-                            <span key={index} className="emphasis text-lg md:text-xl animate-fade-in-out">
-                                {keywords[index]}
+                            <h1 className={`emphasis font-medium text-4xl md:text-6xl transition-transform duration-200 ${nameHovered ? 'scale-105' : 'scale-100'}`}>Jin Byun</h1>
+                        </div>
+
+                        <p className="d6 leading-8 md:d5 md:leading-8">
+                            A UX/UI designer with a front-end background,<br/>creating practical and user-centered experiences.
+                        </p>
+
+                        <div className="d6 md:d5 flex justify-center items-center gap-4 md:gap-6 mt-2 pointer-events-auto">
+                            <span>I'm a</span>
+                            <span className="inline-flex items-center justify-center border border-jb-blue border-dashed w-32 h-9 leading-none md:w-32 md:h-10">
+                                <span key={index} className="emphasis text-lg md:text-xl animate-fade-in-out">
+                                    {keywords[index]}
+                                </span>
                             </span>
-                        </span>
-                        <span>designer.</span>
+                            <span>designer.</span>
+                        </div>
                     </div>
                 </div>
             </div>
