@@ -52,7 +52,7 @@ function Footer() {
                                 viewBox="0 0 1024 1024"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="w-6 h-6 p-0.5 fill-current text-jb-blue bg-jb-white rounded-sm hover:text-jb-white hover:bg-jb-blue transition-all duration-200"
+                                className="w-6 h-6 p-0.5 fill-current border-[0.5px] border-jb-white text-jb-blue bg-jb-white rounded-md hover:text-jb-white hover:bg-jb-blue transition-all duration-200"
                             >
                                 <path
                                 fillRule="evenodd"
@@ -66,7 +66,7 @@ function Footer() {
                             <svg
                                 viewBox="0 0 310 310"
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="w-6 h-6 p-1 fill-current text-jb-blue bg-jb-white rounded-sm hover:text-jb-white hover:bg-jb-blue transition-all duration-200"
+                                className="w-6 h-6 p-1 fill-current border-[0.5px] border-jb-white text-jb-blue bg-jb-white rounded-md hover:text-jb-white hover:bg-jb-blue transition-all duration-200"
                             >
                                 <g id="XMLID_801_">
                                 <path id="XMLID_802_" d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73C77.16,101.969,74.922,99.73,72.16,99.73z"/>
