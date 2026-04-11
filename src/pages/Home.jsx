@@ -15,7 +15,7 @@ function Home() {
                 <HeroSection />
             </FadeUp>
             <FadeUp>
-                <section className="md:pt-6">
+                <section className="md:pt-6 border-t border-dashed border-jb-blue/50">
                     <header className="flex items-center gap-3 py-12 md:py-14">
                         <span className="text-2xl md:text-3xl animate-pulse">★</span>
                         <h2 className="italic md:text-4xl">Selected Works</h2>

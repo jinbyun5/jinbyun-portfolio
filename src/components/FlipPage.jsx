@@ -4,14 +4,27 @@ import { motion } from 'motion/react';
 
 import { CaretDoubleLeftIcon, CaretDoubleRightIcon } from '@phosphor-icons/react';
 
-const FlipPage = forwardRef(({ image, alt, title, text, isLeft, isLast, isTwoPage }, ref) => {
+const FlipPage = forwardRef(({ image, alt, title, text, info, isLeft, isLast, isTwoPage }, ref) => {
 
     return (
         <div ref={ref} className={`bg-white border-gray-200 overflow-hidden flex flex-col rounded-xl md:rounded-none ${isLeft ? 'md:rounded-l-xl' : 'md:rounded-r-xl'}`}>
             <img src={image} alt={alt} className="w-full aspect-[4/3] object-cover mb-6" />
             <div className="px-6 flex flex-col gap-2">
-                <p className="d6 text-xs  tracking-widest font-bold">{title}</p>
-                <p className="d6 text-sm text-jb-brown leading-relaxed">{text}</p>
+                {title ? (
+                    <>
+                        <div className="flex flex-col gap-4">
+                            <p className="d6 text-sm tracking-widest font-bold">{title}</p>
+                            <p className="d6 text-sm text-jb-brown leading-relaxed">{text}</p>
+                        </div>
+                    </>
+                    ) : (
+                        <div className="flex flex-col items-end gap-1.5 pt-10">
+                            {info?.map((item, i) => (
+                                <p key={i} className="font-mono text-xs italic text-jb-brown/80">{item}</p>
+                            ))}
+                        </div>
+                    )
+                }
                 {(!isTwoPage || (!isLeft && !isLast) || (isTwoPage && isLast && isLeft)) && (
                 <motion.div
                     animate={{ opacity: [0.3, 1, 0.3] }}
