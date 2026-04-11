@@ -46,7 +46,7 @@ function StickyNavLayout({ children }) {
                             <button
                                 key={id}
                                 onClick={() => scrollTo(id)}
-                                className="flex items-center gap-2 w-full text-left"
+                                className="flex items-center gap-2 text-left w-fit"
                             >
                                 <span className={`w-5 h-5 rounded-full border flex items-center justify-center text-jb-white flex-shrink-0 transition-colors duration-200 ${isActive ? 'bg-jb-blue border-jb-blue' : 'bg-jb-blue/20 border-jb-blue/10'}`}>
                                     <CaretRightIcon
@@ -66,7 +66,7 @@ function StickyNavLayout({ children }) {
             {/* Content */}
             <article
                 ref={articleRef}
-                className="col-span-4 md:col-span-9 space-y-32 py-32 [&_p]:md:text-lg [&_p]:md:text-jb-brown/80 [&_p]:md:leading-[1.875rem] [&_h2]:text-2xl md:[&_h2]:text-3xl [&_h2]:font-medium [&_img]:border [&_img]:border-jb-blue/5 [&_img]:shadow-md [&_li]:md:text-lg"
+                className="col-span-4 md:col-span-9 space-y-32 py-32 [&_p]:md:text-lg [&_p]:md:text-jb-brown/80 [&_p]:md:leading-[1.875rem] [&_h2]:text-2xl md:[&_h2]:text-3xl [&_h2]:font-medium [&_li]:md:text-jb-brown/80 [&_img]:border [&_img]:border-jb-blue/5 [&_img]:shadow-md [&_li]:md:text-lg"
             >
                 {children}
             </article>
