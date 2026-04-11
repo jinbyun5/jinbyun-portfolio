@@ -293,7 +293,7 @@ function HeroSection() {
     };
 
     return (
-        <section className="relative w-screen max-w-[1440px] h-screen 2xl:h-auto flex flex-col justify-center items-center left-1/2 -translate-x-1/2 overflow-hidden pb-20 -mt-20 md:-mt-24">
+        <section className="relative w-screen max-w-[1440px] h-screen 3xl:h-auto flex flex-col justify-center items-center left-1/2 -translate-x-1/2 overflow-hidden pb-20 -mt-20 md:-mt-24">
             <div className="relative w-full h-full mx-auto min-h-[750px] 2xl:min-h-[860px] mt-20">
 
                 {heroStickers.map((sticker) => (
