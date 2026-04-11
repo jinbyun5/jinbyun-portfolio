@@ -78,7 +78,7 @@ function Footer() {
                     </div>
                     <div className="flex flex-col items-center lg:items-start justify-center lg:order-first">
                         <div className="text-xs">© 2026 Jin Byun</div>
-                        <div className="text-xs">Built with React & Tailwind CSS</div>
+                        <div className="text-xs">Built with React & Tailwind</div>
                     </div>
                 </div>
             </div>

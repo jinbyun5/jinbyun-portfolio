@@ -293,8 +293,8 @@ function HeroSection() {
     };
 
     return (
-        <section className="relative w-screen max-w-[1440px] h-screen flex flex-col justify-center items-center border-b border-dashed border-jb-blue/50 left-1/2 -translate-x-1/2 overflow-hidden pb-20 -mt-20 md:-mt-24">
-            <div className="relative w-full max-h-[1000px] min-h-[750px] mx-auto h-full mt-20">
+        <section className="relative w-screen max-w-[1440px] h-screen 2xl:h-auto flex flex-col justify-center items-center left-1/2 -translate-x-1/2 overflow-hidden pb-20 -mt-20 md:-mt-24">
+            <div className="relative w-full h-full mx-auto min-h-[750px] 2xl:min-h-[860px] mt-20">
 
                 {heroStickers.map((sticker) => (
                     <StickerItem
@@ -329,8 +329,8 @@ function HeroSection() {
                             <h1 className={`emphasis font-medium text-4xl md:text-6xl transition-transform duration-200 ${nameHovered ? 'scale-105' : 'scale-100'}`}>Jin Byun</h1>
                         </div>
 
-                        <p className="d6 leading-8 md:d5 md:leading-8">
-                            A UX/UI designer with a front-end background,<br/>creating practical and user-centered experiences.
+                        <p className="d6 leading-8 md:d5 md:leading-8 max-w-[17rem] md:max-w-md lg:max-w-xl">
+                            A UX/UI designer with a front-end background, creating practical and user-centered experiences.
                         </p>
 
                         <div className="d6 md:d5 flex justify-center items-center gap-4 md:gap-6 mt-2 pointer-events-auto">
