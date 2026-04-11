@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { motion } from 'motion/react'
 
 import HTMLFlipBook from 'react-pageflip';
 
-import { ArrowBendDownRightIcon, ArrowBendRightDownIcon } from '@phosphor-icons/react';
+import { ArrowBendDownRightIcon, ArrowLeftIcon, ArrowRightIcon } from '@phosphor-icons/react';
 
 import FadeUp from '../components/FadeUp';
 import FlipPage from '../components/FlipPage';
@@ -14,18 +14,22 @@ import tulip from '../assets/about/white-tulip.webp';
 import speechBubble from '../assets/about/speech-bubble.webp';
 import memo from '../assets/about/about-memo.webp';
 import cloud from '../assets/about/cloud.webp';
-import blueTape from '../assets/about/blue-tape.webp';
-import note from '../assets/about/blue-line-note.webp';
 
 import resumeBlue from '../assets/about/resume-blue.webp';
 import resumeWhite from '../assets/about/resume-white.webp';
 
-import joy1 from '../assets/about/about-joy-1.webp';
-import joy2 from '../assets/about/about-joy-2.webp';
-import joy3 from '../assets/about/about-joy-3.webp';
-import joy4 from '../assets/about/about-joy-4.webp';
-import joy5 from '../assets/about/about-joy-5.webp';
-import joy6 from '../assets/about/about-joy-6.webp';
+import film1 from '../assets/about/film-1.webp';
+import film2 from '../assets/about/film-2.webp';
+import hiking1 from '../assets/about/hiking-1.webp';
+import hiking2 from '../assets/about/hiking-2.webp';
+import cooking1 from '../assets/about/cooking-1.webp';
+import cooking2 from '../assets/about/cooking-2.webp';
+import book from '../assets/about/book.webp';
+import book2 from '../assets/about/book-2.webp';
+import travel1 from '../assets/about/travel-1.webp';
+import travel2 from '../assets/about/travel-2.webp';
+import paddleboarding1 from '../assets/about/paddleboarding-1.webp';
+import paddleboarding2 from '../assets/about/paddleboarding-2.webp';
 
 function About() {
 
@@ -36,27 +40,111 @@ function About() {
         animate: { opacity: [1, 0.15, 1] },
     };
 
+    const flipBookRef = useRef(null);
+    const [currentPage, setCurrentPage] = useState(0);
     const [isTwoPage, setIsTwoPage] = useState(window.innerWidth >= 768);
-
-    useEffect(() => {
-        const handleResize = () => setIsTwoPage(window.innerWidth >= 768);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    const isTabClick = useRef(false);
 
     const joyList = [
-        { image: joy1, title: 'Film photography', text: 'I enjoy wandering through the streets, noticing quiet details and hidden beauty along the way.' },
-        { image: joy2, title: 'Hiking', text: 'I feel most grounded when I hike. Moving at my own pace clears my thoughts and keeps me steady.' },
-        { image: joy3, title: 'Cooking', text: 'I see cooking as a way of caring. I love preparing food for the people around me and seeing how something small can brighten someone’s day.' },
-        { image: joy4, title: 'Coffee & Books', text: 'I love getting lost in another world through books, with ☕️ in hand. It helps me slow down and see the world a little differently.' },
-        { image: joy5, title: 'Travel', text: 'I am reminded how much there is to discover whenever I travel. Being in unfamiliar places keeps me curious and open to new perspectives.' },
-        { image: joy6, title: 'Paddleboarding', text: 'I love heading out with the hope of spotting a seal, open to whatever the water brings.🌊🌊' }
+        { 
+            image: film1, 
+            title: 'Film Photography', 
+            text: 'I enjoy wandering through the streets, noticing quiet details and hidden beauty along the way.', 
+            info: null
+        },
+        { 
+            image: film2, 
+            title: null, 
+            text: null, 
+            info: ['James Bay, Victoria, BC', 'Dallas Road, Victoria, BC'] 
+        },
+        { 
+            image: hiking1, 
+            title: 'Hiking', 
+            text: 'I feel most grounded when I hike. Moving at my own pace clears my thoughts and keeps me steady.', 
+            info: null 
+        },
+        { 
+            image: hiking2, 
+            title: null, 
+            text: null, 
+            info: ['A cold dip after a hike is the best!🐠', 'Joffre Lakes Park, BC'] 
+        },
+        { 
+            image: cooking1, 
+            title: 'Cooking', 
+            text: 'I see cooking as a way of caring. I love preparing food for the people around me and seeing how something small can brighten someone’s day.', 
+            info: null 
+        },
+        { 
+            image: cooking2, 
+            title: null, 
+            text: null, 
+            info: ['With one very special guest★', 'James Bay, Victoria, BC'] 
+        },
+        { 
+            image: book, 
+            title: 'Coffee & Books', 
+            text: 'I love getting lost in another world through books, with ☕️ in hand. It helps me slow down and see the world a little differently.', 
+            info: null 
+        },
+        { 
+            image: book2, 
+            title: null, 
+            text: null, 
+            info: ['...sometimes swapped for a glass of wine', 'Somewhere with a good view, 2025'] 
+        },
+        { 
+            image: travel1, 
+            title: 'Travel', 
+            text: 'I am reminded how much there is to discover whenever I travel. Being in unfamiliar places keeps me curious and open to new perspectives.', 
+            info: null 
+        },
+        { 
+            image: travel2, 
+            title: null, 
+            text: null, 
+            info: ['Kyoto, Japan, 2024', 'Bali, Indonesia, 2024']
+        },
+        { 
+            image: paddleboarding1, 
+            title: 'Paddleboarding', 
+            text: 'I love heading out with the hope of spotting a seal, open to whatever the water brings.🌊🌊', 
+            info: null 
+        },
+        { 
+            image: paddleboarding2, 
+            title: null, 
+            text: null, 
+            info: [ 'Once spotted seals napping on the rocks', '— so lucky!', 'Victoria Harbour, Victoria, BC']
+        }
     ];
+
+    const chapters = [
+        { title: 'Film Photography', pageIndex: 0 },
+        { title: 'Hiking', pageIndex: 2 },
+        { title: 'Cooking', pageIndex: 4 },
+        { title: 'Coffee & Books', pageIndex: 6 },
+        { title: 'Travel', pageIndex: 8 },
+        { title: 'Paddleboarding', pageIndex: 10 },
+    ];
+
+    useEffect(() => {
+        const handleResize = () => {
+            const newIsTwoPage = window.innerWidth >= 768;
+            if (newIsTwoPage !== isTwoPage) {
+                setCurrentPage(0);
+            }
+            setIsTwoPage(newIsTwoPage);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [isTwoPage]);
 
     return (
         <>
             <FadeUp>
-                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 items-center mt-10 lg:mt-10">
+                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 items-center mt-10 lg:mt-20">
 
                     {/* Mobile Headings */}
                     <header className="col-span-4 lg:hidden flex flex-col items-center gap-6 border-b-[1px] border-dashed border-jb-blue/50 pb-2 lg:pb-12">
@@ -168,7 +256,7 @@ function About() {
                     <div className="col-span-4 lg:col-span-8 lg:col-start-6 space-y-8">
                         {/* Design Skills */}
                         <div className="grid grid-cols-2 gap-4 border-b border-dashed border-jb-blue/50 pb-8">
-                            <h3 className="col-span-1 text-lg uppercas italic">Design Skills</h3>
+                            <h3 className="col-span-1 text-lg italic">Design Skills</h3>
                             <ul className="col-span-1 list-disc space-y-1 text-jb-brown/90 b6 lg:b5">
                                 <li>Wireframing</li>
                                 <li>Prototyping</li>
@@ -180,7 +268,7 @@ function About() {
 
                         {/* Design Tools */}
                         <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 border-b border-dashed border-jb-blue/50 pb-8">
-                            <h3 className="col-span-1 text-lg uppercas italic">Design Tools</h3>
+                            <h3 className="col-span-1 text-lg italic">Design Tools</h3>
                             <ul className="col-span-1 list-disc space-y-1 text-jb-brown/90 b6 lg:b5">
                                 <li>Figma</li>
                                 <li>Photoshop</li>
@@ -193,13 +281,14 @@ function About() {
 
                         {/* Web Tech */}
                         <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 border-b border-dashed border-jb-blue/50 pb-8">
-                            <h3 className="col-span-1 text-lg uppercas italic">Web Tech</h3>
+                            <h3 className="col-span-1 text-lg italic">Web Tech</h3>
                             <ul className="col-span-1 list-disc space-y-1 text-jb-brown/90 b6 lg:b5">
                                 <li>HTML/CSS</li>
                                 <li>JavaScript</li>
                                 <li>React</li>
                                 <li>GSAP</li>
-                                <li>TailwindCSS/Bootstrap</li>
+                                <li>Tailwind CSS</li>
+                                <li>GitHub</li>
                             </ul>
                         </div>
                     </div>
@@ -217,59 +306,100 @@ function About() {
                         </div>
                     </div>
 
-                    <div className="col-span-4 lg:col-start-1 lg:col-span-4 flex flex-col">
-                        <div className="flex items-center justify-start gap-4">
-                            <div className="relative w-[18%] min-w-[65px] max-w-[70px]"> 
-                                <img src={blueTape} alt="Things I love" className="w-full h-auto rotate-1" />
-                                <span className="absolute inset-0 flex items-center justify-center emphasis text-jb-white -rotate-90 whitespace-nowrap">Things I love</span>
-                            </div>
+                    <div className="col-span-4 lg:col-span-12 flex flex-col items-center gap-10">
 
-                            <div className="relative w-[75%] min-w-[285px] max-w-[320px] rounded-r-lg overflow-hidden">
-                                <img src={note} alt="Things I love list" className="w-full h-auto drop-shadow-lg rounded-r-lg" />
-                                <ul className="absolute inset-0 flex flex-col items-start justify-center text-jb-brown gap-1 list-disc font-mono text-sm pl-16">
-                                    {joyList.map((joy, index) => (
-                                        <li key={index}>{joy.title}</li>
-                                    ))}
-                                </ul>
-                            </div>
+                        {/* Header */}
+                        <div className="flex flex-col items-center gap-2 text-center">
+                            <p className="font-mono text-sm tracking-wider">Flip through my</p>
+                            <h3 className="italic">Photo Book</h3>
                         </div>
 
-                        <p className="col-span-4 text-jb-brown/90 md:text-lg mt-16">
-                            Off the clock, you’ll find me somewhere quiet — behind a film camera, on a trail, or curled up with a book and an almond latte. These are the moments that slow me down, fill me up, and remind me why I care about the details :)
-                        </p>
-                    </div>
-
-                    {/* Book Flip */}
-                    <div className="col-span-4 lg:col-start-5 lg:col-span-8 flex flex-col items-center justify-center lg:items-end pt-12 lg:py-0 lg:-mt-10">
-                        <p className="emphasis font-semibold mb-4 self-center lg:pl-20 flex items-end gap-2">
-                            Flip through my album
-                            <ArrowBendRightDownIcon size={18}/>
+                        {/* Description */}
+                        <p className="col-span-4 text-jb-brown/90 md:text-lg text-center">
+                            This is a small collection of moments from my off-the-clock life. <br/>
+                            These are the little things that slow me down, fill me up, and keep me going.
                         </p>
 
-                        <HTMLFlipBook 
-                            key={isTwoPage ? 'two-page' : 'one-page'}
-                            width={isTwoPage ? 360 : Math.min(400, window.innerWidth - 40)}
-                            height={isTwoPage ? 460 : 490}
-                            size="fixed"
-                            maxShadowOpacity={0.5}
-                            showCover={false}
-                            startPortrait={false}
-                            usePortrait={true}
-                            className="drop-shadow-2xl"
-                        >
-                            {joyList.map((joy, index) => (
-                                <FlipPage
+                        {/* Progress Tab Nav */}
+                        <div className="hidden lg:flex items-start w-full py-6">
+                            {chapters.map((chapter, index) => (
+                                <button
                                     key={index}
-                                    image={joy.image}
-                                    alt={joy.title}
-                                    title={joy.title}
-                                    text={joy.text}
-                                    isLeft={index % 2 === 0}
-                                    isLast={!isTwoPage ? index === joyList.length - 1 : index >= joyList.length - 2}
-                                    isTwoPage={isTwoPage}
-                                />
+                                    onClick={() => {
+                                        isTabClick.current = true;
+                                        flipBookRef.current?.pageFlip()?.turnToPage(chapter.pageIndex);
+                                        setCurrentPage(index);
+                                        setTimeout(() => {
+                                            isTabClick.current = false;
+                                        }, 500);
+                                    }}
+                                    className="flex-1 flex flex-col items-center gap-2 cursor-pointer relative"
+                                >
+                                    <div className="flex items-center w-full">
+                                        <div className={`h-[1.5px] flex-1 transition-colors duration-300 ${index === 0 ? 'opacity-0' : index <= currentPage ? 'bg-jb-blue' : 'bg-jb-brown/20'}`} />
+                                        <div className="px-2">
+                                            <div className={`w-2.5 h-2.5 rounded-full border-2 flex-shrink-0 transition-all duration-300 ${index <= currentPage ? 'bg-jb-blue border-jb-blue' : 'bg-transparent border-jb-brown/30'}`} />
+                                        </div>
+                                        <div className={`h-[1.5px] flex-1 transition-colors duration-300 ${index === chapters.length - 1 ? 'opacity-0' : index < currentPage ? 'bg-jb-blue' : 'bg-jb-brown/20'}`} />
+                                    </div>
+                                    <span className={`text-xs font-mono text-center transition-colors duration-100 ${index <= currentPage ? 'text-jb-blue font-semibold' : 'text-jb-brown/60 hover:text-jb-blue/80'}`}>
+                                        {chapter.title}
+                                    </span>
+                                </button>
                             ))}
-                        </HTMLFlipBook>
+                        </div>
+
+                        {/* Book Flip */}
+                        <div className="flex items-center justify-center gap-20">
+                            <button className="hidden lg:flex w-12 h-12 items-center justify-center border border-dashed border-jb-blue/40 rounded-full hover:bg-jb-blue hover:text-white hover:border-jb-blue transition-all duration-200 cursor-pointer"
+                                onClick={() => {
+                                    flipBookRef.current?.pageFlip()?.flipPrev();
+                                }}>
+                                <ArrowLeftIcon size={18} />
+                            </button>
+
+                            <HTMLFlipBook 
+                                key={isTwoPage ? 'two-page' : 'one-page'}
+                                width={isTwoPage ? 360 : Math.min(400, window.innerWidth - 40)}
+                                height={isTwoPage ? 460 : 490}
+                                size="fixed"
+                                maxShadowOpacity={0.5}
+                                showCover={false}
+                                startPortrait={false}
+                                usePortrait={!isTwoPage}
+                                className="drop-shadow-2xl mx-auto"
+                                ref={flipBookRef}
+                                onFlip={(e) => {
+                                    if (isTabClick.current) return;
+                                    const idx = chapters.findIndex((chapter, i) => {
+                                        const next = chapters[i + 1]?.pageIndex ?? joyList.length;
+                                        return e.data >= chapter.pageIndex && e.data < next;
+                                    });
+                                    setCurrentPage(idx);
+                                }}
+                            >
+                                {joyList.map((joy, index) => (
+                                    <FlipPage
+                                        key={index}
+                                        image={joy.image}
+                                        alt={joy.title}
+                                        title={joy.title}
+                                        text={joy.text}
+                                        info={joy.info}
+                                        isLeft={index % 2 === 0}
+                                        isLast={!isTwoPage ? index === joyList.length - 1 : index >= joyList.length - 2}
+                                        isTwoPage={isTwoPage}
+                                    />
+                                ))}
+                            </HTMLFlipBook>
+
+                            <button className="hidden lg:flex w-12 h-12 items-center justify-center border border-dashed border-jb-blue/40 rounded-full hover:bg-jb-blue hover:text-white hover:border-jb-blue transition-all duration-200 cursor-pointer"
+                                onClick={() => {
+                                    flipBookRef.current?.pageFlip()?.flipNext();
+                                }}>
+                                <ArrowRightIcon size={18} />
+                            </button>
+                        </div>
                     </div>
                 </section>
             </FadeUp>
