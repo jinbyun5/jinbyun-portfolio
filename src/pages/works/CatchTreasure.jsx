@@ -7,8 +7,8 @@ import ZoomImage from '../../components/ZoomImage';
 import ProjectHeader from '../../components/ProjectHeader';
 import StickyNavLayout from '../../components/StickyNavLayout';
 import WorkSectionLayout from '../../components/WorkSectionLayout';
-import ProjectCard from '../../components/ProjectCard';
 import SolutionCard from '../../components/SolutionCard';
+import MoreWork from '../../components/MoreWork';
 
 import { projects } from '../../data/projects';
 
@@ -46,6 +46,8 @@ import landingPage2 from '../../assets/catch-treasure/landing-page-2.webp';
 
 function CatchTreasure() {
 
+    const project = projects.find(p => p.slug === 'catch-treasure');
+
     const gameScreens = [
         { src: gameScreen1, alt: 'Title screen' },
         { src: gameScreen2, alt: 'Game start' },
@@ -59,58 +61,57 @@ function CatchTreasure() {
         { src: gameScreen10, alt: 'Net item' },
         { src: gameScreen11, alt: 'Debris item' },
         { src: gameScreen12, alt: 'Turtle scientist' },
-    ]
-
-    const project = projects.find(p => p.slug === 'catch-treasure');
-    const otherProjects = projects.filter(p => p.slug !== 'catch-treasure');
+    ];
 
     return (
-        <FadeUp>
+        <>
             <section className="w-full py-16 text-jb-brown">
-                <div className="grid grid-cols-4 md:grid-cols-12">
+                <FadeUp>
+                    <div className="grid grid-cols-4 md:grid-cols-12">
 
-                    {/* Link to All Works */}
-                    <nav className="col-span-4 md:col-span-12 mb-10">
-                        <Link
-                            to="/works"
-                            className="group flex items-center gap-2 text-sm font-semibold tracking-wider uppercase transition-all hover:text-jb-blue"
-                        >
-                            <ArrowLeftIcon size={20} />
-                            <span className="transition-transform duration-500 ease-in-out group-hover:translate-x-1">All Works</span>
-                        </Link>
-                    </nav>
+                        {/* Link to All Works */}
+                        <nav className="col-span-4 md:col-span-12 mb-10">
+                            <Link
+                                to="/works"
+                                className="group flex items-center gap-2 text-sm font-semibold tracking-wider uppercase transition-all hover:text-jb-blue"
+                            >
+                                <ArrowLeftIcon size={20} />
+                                <span className="transition-transform duration-500 ease-in-out group-hover:translate-x-1">All Works</span>
+                            </Link>
+                        </nav>
 
-                    {/* Header */}
-                    <ProjectHeader {...project} />
+                        {/* Header */}
+                        <ProjectHeader {...project} />
 
-                    {/* Thumbnail Image */}
-                    <figure className="col-span-4 md:col-span-12 pt-16 md:pt-20">
-                        <div className="w-full aspect-[4/3] md:aspect-[21/9] rounded-2xl overflow-hidden">
-                            <img
-                                src={heroImage}
-                                alt="Catch Treasure Overview"
-                                className="w-full h-full object-cover object-center"
-                            />
+                        {/* Thumbnail Image */}
+                        <figure className="col-span-4 md:col-span-12 pt-16 md:pt-20">
+                            <div className="w-full aspect-[4/3] md:aspect-[21/9] rounded-2xl overflow-hidden">
+                                <img
+                                    src={heroImage}
+                                    alt="Catch Treasure Overview"
+                                    className="w-full h-full object-cover object-center"
+                                />
+                            </div>
+                        </figure>
+
+                        <div className="col-span-4 md:col-span-12 flex items-center justify-center py-16">
+                            <a
+                                href="https://catchtreasure.jinbyun.ca/" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="bg-jb-white border border-jb-blue text-jb-blue text-lg rounded-full py-2 px-5 whitespace-nowrap transition-all duration-300 hover:bg-jb-blue hover:text-jb-white shadow-lg flex items-center gap-2"
+                            >
+                                <GameControllerIcon size={20} />
+                                Play the Game
+                            </a>
                         </div>
-                    </figure>
-
-                    <div className="col-span-4 md:col-span-12 flex items-center justify-center py-16">
-                        <a
-                            href="https://catchtreasure.jinbyun.ca/" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="bg-jb-white border border-jb-blue text-jb-blue text-lg rounded-full py-2 px-5 whitespace-nowrap transition-all duration-300 hover:bg-jb-blue hover:text-jb-white shadow-lg flex items-center gap-2"
-                        >
-                            <GameControllerIcon size={20} />
-                            Play the Game
-                        </a>
                     </div>
-                </div>
+                </FadeUp>
 
-                {/* Project Content */}
-                {/* <div className=" border-y border-dashed border-jb-blue/50 bg-jb-white px-5 md:px-12 lg:px-[6.25rem]"> */}
-                <div className="w-screen -ml-[calc((100vw-100%)/2)] border-y border-dashed border-jb-blue/50 bg-jb-white">
-                    <div className="max-w-[1440px] mx-auto px-5 md:px-12 lg:px-[6.25rem]">
+                <FadeUp>
+                    {/* Project Content */}
+                    <div className="border border-dashed border-jb-blue/50 bg-jb-white rounded-2xl -mx-5 md:-mx-12 lg:-mx-[6.25rem] px-5 md:px-12 lg:px-[6.25rem]">
+                        
                         <StickyNavLayout>
 
                             {/* 01 Project Overview */}
@@ -131,7 +132,7 @@ function CatchTreasure() {
                                     </ul>
                                 </div>
                                 <div className="space-y-8">
-                                    <h3 className="font-sans text-xl font-medium md:text-2xl md:leading-9">"How might we design an experience that feels lighthearted at first, but leaves players with a lasting awareness of ocean pollution?"</h3>
+                                    <h3 className="text-jb-blue italic font-sans text-xl font-medium md:text-2xl md:leading-9">"How might we design an experience that feels lighthearted at first, but leaves players with a lasting awareness of ocean pollution?"</h3>
                                 </div>
                             </WorkSectionLayout>
 
@@ -139,7 +140,7 @@ function CatchTreasure() {
                             <WorkSectionLayout number="03" title="Solution Highlights">
                                 <div className="space-y-8">
                                     <p>Instead of presenting environmental messaging upfront, the experience begins as a simple fishing game.</p>
-                                    <div className="flex items-center gap-12">
+                                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                                         <div className="flex-1">
                                             <h4 className="font-medium mb-4">Cast your line for treasure</h4>
                                             <p>Players cast a line into the deep ocean, expecting to reel in something valuable. So far, it feels like any other fishing game.</p>
@@ -159,8 +160,8 @@ function CatchTreasure() {
                                     </div>
                                 </div>
                                 <div className="space-y-8">
-                                    <div className="flex items-center gap-12">
-                                        <div className="flex-1 relative bg-black rounded-[2rem] p-3 shadow-xl border-4 border-gray-700">
+                                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                                        <div className="flex-1 order-2 md:order-1 relative bg-black rounded-[2rem] p-3 shadow-xl border-4 border-gray-700">
                                             <div className="rounded-[1.5rem] overflow-hidden">
                                                 <video
                                                 src={solution2}
@@ -172,7 +173,7 @@ function CatchTreasure() {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="flex-1">
+                                        <div className="flex-1 order-1 md:order-2">
                                             <h4 className="font-medium mb-4">A different kind of catch
                                             </h4>
                                             <p>Instead of treasure, the chest reveals ocean waste. Each catch uncovers a different piece of pollution, shifting the meaning of the game.</p>
@@ -180,7 +181,7 @@ function CatchTreasure() {
                                     </div>
                                 </div>
                                 <div className="space-y-8">
-                                    <div className="flex items-center gap-12">
+                                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                                         <div className="flex-1">
                                             <h4 className="font-medium mb-4">The truth behind the catch</h4>
                                             <p>After all three catches, a marine scientist turtle delivers the full picture of what’s really happening to the ocean and why it matters.</p>
@@ -205,12 +206,13 @@ function CatchTreasure() {
                             <WorkSectionLayout number="04" title="Research">
                                 <div className="space-y-8">
                                     <h2>Method 1: Secondary Research</h2>
-                                    <div className="flex gap-20 [&_img]:shadow-none [&_img]:border-none">
-                                        <img src={research1} className="w-[44%]" alt="Research 1" />
-                                        <img src={research2} className="w-[44%]" alt="Research 2" />
+                                    <div className="flex flex-col md:flex-row gap-10 md:gap-20 [&_img]:shadow-none [&_img]:border-none">
+                                        <img src={research1} className="w-full md:w-[44%]" alt="Research 1" />
+                                        <img src={research2} className="w-full md:w-[44%]" alt="Research 2" />
                                     </div>
                                     <p>Research shows that environmental serious games significantly enhance players' environmental awareness by building a sense of personal ownership — driving real behavioral change more effectively than statistics or infographics alone.</p>
                                 </div>
+
                                 <div className="space-y-8">
                                     {/* Competitive Analysis */}
                                     <h2>Method 2: Competitive Analysis</h2>
@@ -249,6 +251,7 @@ function CatchTreasure() {
                                             </tbody>
                                         </table>
                                     </div>
+
                                     <p>Unlike most ocean awareness games that present their message upfront, <span className="italic">Catch Treasure</span> introduces the issue through discovery. Players begin expecting a simple fishing game, and awareness unfolds through the experience itself.</p>
                                 </div>
                             </WorkSectionLayout>
@@ -257,13 +260,14 @@ function CatchTreasure() {
                             <WorkSectionLayout number="05" title="Design Process">
                                 <div className="space-y-8">
                                     <h2>Sketching the flow</h2>
-                                    <div className="flex gap-1">
-                                        <img src={sketch1} alt="Sketch-1" className="w-1/4" />
-                                        <img src={sketch2} alt="Sketch-1" className="w-1/4" />
-                                        <img src={sketch3} alt="Sketch-1" className="w-1/4" />
-                                        <img src={sketch4} alt="Sketch-1" className="w-1/4" />
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
+                                        <img src={sketch1} alt="Sketch-1" className="w-full h-full object-cover" />
+                                        <img src={sketch2} alt="Sketch-2" className="w-full h-full object-cover" />
+                                        <img src={sketch3} alt="Sketch-3" className="w-full h-full object-cover" />
+                                        <img src={sketch4} alt="Sketch-4" className="w-full h-full object-cover" />
                                     </div>
                                 </div>
+
                                 <div className="space-y-10">
                                     <h2>Design decision</h2>
                                     <SolutionCard 
@@ -327,7 +331,7 @@ function CatchTreasure() {
                                         <h4 className="font-medium mb-4">+) Bonus</h4>
                                         <p>After the turtle scientist delivers the final message, players are prompted with a "Learn More" button that links directly to Deep Blue Rescue's WordPress site, connecting the player's experience to real-world action.</p>
                                     </div>
-                                    <div className="flex gap-4 justify-center">
+                                    <div className="flex flex-col md:flex-row gap-4 justify-center">
                                         <ZoomImage src={landingPage1} alt="Landing Page 1" className="w-full rounded-xl" />
                                         <ZoomImage src={landingPage2} alt="Landing Page 2" className="w-full rounded-xl" />
                                     </div>
@@ -353,9 +357,13 @@ function CatchTreasure() {
                             </WorkSectionLayout>
                         </StickyNavLayout>
                     </div>
-                </div>
+                </FadeUp>
             </section>
-        </FadeUp>
+
+            <FadeUp>
+                <MoreWork currentSlug="catch-treasure" />
+            </FadeUp>
+        </>
     );
 }
 

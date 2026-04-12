@@ -12,7 +12,7 @@ function Works() {
     const navigate = useNavigate();
 
     const [filter, setFilter] = useState('All');
-    const categories = ['All', 'UX/UI', 'Case Study', 'Web Dev'];
+    const categories = ['All', 'Case Study', 'Web Dev'];
 
     const filteredProjects = filter === 'All' ? projects : projects.filter(project => project.tags.includes(filter));
 

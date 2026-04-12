@@ -1,12 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
 import { ArrowLeftIcon, CrosshairIcon, SmileySadIcon, NetworkSlashIcon, EyeSlashIcon, FigmaLogoIcon } from '@phosphor-icons/react';
 
 import FadeUp from '../../components/FadeUp';
@@ -15,10 +9,10 @@ import ProjectHeader from '../../components/ProjectHeader';
 import StickyNavLayout from '../../components/StickyNavLayout';
 import WorkSectionLayout from '../../components/WorkSectionLayout';
 import HighlightCard from '../../components/HighlightCard';
-import ProjectCard from '../../components/ProjectCard';
 import ToggleTabs from '../../components/ToggleTabs';
 import SolutionCard from '../../components/SolutionCard';
 import FigmaEmbed from '../../components/FigmaEmbed';
+import MoreWork from '../../components/MoreWork';
 
 import { projects } from '../../data/projects';
 
@@ -36,57 +30,59 @@ import solution4 from '../../assets/hm/solution-4.webp';
 
 function HM() {
 
+    const project = projects.find(p => p.slug === 'hm-app-redesign');
+
     const [activeWireframe, setActiveWireframe] = useState('lofi');
 
-    const project = projects.find(p => p.slug === 'hm-app-redesign');
-    const otherProjects = projects.filter(p => p.slug !== 'hm-app-redesign');
-
     return (
-        <FadeUp>
+        <>
             <section className="w-full py-16 text-jb-brown">
-                <div className="grid grid-cols-4 md:grid-cols-12">
+                <FadeUp>
+                    <div className="grid grid-cols-4 md:grid-cols-12">
 
-                    {/* Link to All Works */}
-                    <nav className="col-span-4 md:col-span-12 mb-10">
-                        <Link
-                            to="/works"
-                            className="group flex items-center gap-2 text-sm font-semibold tracking-wider uppercase transition-all hover:text-jb-blue"
-                        >
-                            <ArrowLeftIcon size={20} />
-                            <span className="transition-transform duration-500 ease-in-out group-hover:translate-x-1">All Works</span>
-                        </Link>
-                    </nav>
+                        {/* Link to All Works */}
+                        <nav className="col-span-4 md:col-span-12 mb-10">
+                            <Link
+                                to="/works"
+                                className="group flex items-center gap-2 text-sm font-semibold tracking-wider uppercase transition-all hover:text-jb-blue"
+                            >
+                                <ArrowLeftIcon size={20} />
+                                <span className="transition-transform duration-500 ease-in-out group-hover:translate-x-1">All Works</span>
+                            </Link>
+                        </nav>
 
-                    {/* Header */}
-                    <ProjectHeader {...project} />
+                        {/* Header */}
+                        <ProjectHeader {...project} />
 
-                    {/* Thumbnail Image */}
-                    <figure className="col-span-4 md:col-span-12 pt-16 md:pt-20">
-                        <div className="w-full aspect-[4/3] md:aspect-[21/9] rounded-2xl overflow-hidden">
-                            <img
-                                src={heroImage}
-                                alt="H&M App Redesign Overview"
-                                className="w-full h-full object-cover object-center"
-                            />
+                        {/* Thumbnail Image */}
+                        <figure className="col-span-4 md:col-span-12 pt-16 md:pt-20">
+                            <div className="w-full aspect-[4/3] md:aspect-[21/9] rounded-2xl overflow-hidden">
+                                <img
+                                    src={heroImage}
+                                    alt="H&M App Redesign Overview"
+                                    className="w-full h-full object-cover object-center"
+                                />
+                            </div>
+                        </figure>
+
+                        <div className="col-span-4 md:col-span-12 flex items-center justify-center py-16">
+                            <a
+                                href="https://www.figma.com/proto/htjDnzk9yXggt7GvEzx23P/The-Papery--Revision-?page-id=2258%3A3440&node-id=2258-3441&p=f&viewport=176%2C125%2C0.05&t=laXWPMMWzIStpVvw-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2258%3A3441" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="bg-jb-white border border-jb-blue text-jb-blue text-lg rounded-full py-2 px-5 whitespace-nowrap transition-all duration-300 hover:bg-jb-blue hover:text-jb-white shadow-lg flex items-center gap-2"
+                            >
+                                <FigmaLogoIcon size={20} />
+                                View in Figma
+                            </a>
                         </div>
-                    </figure>
-
-                    <div className="col-span-4 md:col-span-12 flex items-center justify-center py-16">
-                        <a
-                            href="https://www.figma.com/proto/htjDnzk9yXggt7GvEzx23P/The-Papery--Revision-?page-id=2258%3A3440&node-id=2258-3441&p=f&viewport=176%2C125%2C0.05&t=laXWPMMWzIStpVvw-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2258%3A3441" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="bg-jb-white border border-jb-blue text-jb-blue text-lg rounded-full py-2 px-5 whitespace-nowrap transition-all duration-300 hover:bg-jb-blue hover:text-jb-white shadow-lg flex items-center gap-2"
-                        >
-                            <FigmaLogoIcon size={20} />
-                            View in Figma
-                        </a>
                     </div>
-                </div>
+                </FadeUp>
 
-                {/* Project Content */}
-                <div className="w-screen -ml-[calc((100vw-100%)/2)] border-y border-dashed border-jb-blue/50 bg-jb-white">
-                    <div className="max-w-[1440px] mx-auto px-5 md:px-12 lg:px-[6.25rem]">
+                <FadeUp>
+                    {/* Project Content */}
+                    <div className="border border-dashed border-jb-blue/50 bg-jb-white rounded-2xl -mx-5 md:-mx-12 lg:-mx-[6.25rem] px-5 md:px-12 lg:px-[6.25rem]">
+
                         <StickyNavLayout>
 
                             {/* 01 Project Overview */}
@@ -247,9 +243,13 @@ function HM() {
                             </WorkSectionLayout>
                         </StickyNavLayout>
                     </div>
-                </div>
+                </FadeUp>
             </section>
-        </FadeUp>
+
+            <FadeUp>
+                <MoreWork currentSlug="hm-app-redesign" />
+            </FadeUp>
+        </>
     );
 }
 
