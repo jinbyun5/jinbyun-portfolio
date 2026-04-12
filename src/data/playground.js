@@ -58,7 +58,7 @@ export const playground = [
         id: 5,
         image: orchestraBrochure,
         title: "Orchestra Brochure Design",
-        category: "Graphic Design",
+        category: "Print",
         description: "A concert brochure for a classical music series",
         ratio: "aspect-[4/3]",
         tools: [indesign, photoshop]
@@ -76,7 +76,7 @@ export const playground = [
         id: 7,
         image: potteryCatalog,
         title: "Artisan Ceramics Catalog",
-        category: "Graphic Design",
+        category: "Print",
         description: "A catalog design for a ceramics fair at Vancouver Art Gallery",
         ratio: "aspect-[4/3]",
         tools: [indesign, photoshop]

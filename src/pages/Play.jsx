@@ -14,7 +14,7 @@ function Play() {
     const [selectedId, setSelectedId] = useState(null);
 
     const [filter, setFilter] = useState('All');
-    const categories = ['All', 'Graphic Design', 'Illustration', 'Animation'];
+    const categories = ['All', 'Graphic Design', 'Print', 'Illustration', 'Animation'];
 
     const breakpointColumnsObj = { 
         default: 3, 
