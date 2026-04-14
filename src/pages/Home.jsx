@@ -21,7 +21,7 @@ function Home() {
                         <h2 className="italic md:text-4xl">Selected Works</h2>
                     </header>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-11">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">
                         {projects
                             .map(project => (
                                 <ProjectCard

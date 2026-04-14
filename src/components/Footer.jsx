@@ -19,10 +19,10 @@ function Footer() {
 
     return (
         <footer className="flex flex-col gap-12 pt-64">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 md:px-12 lg:px-[6.25rem] max-w-[1440px] mx-auto w-full">
-                <p className="font-caslon leading-[3rem] tracking-normal text-[2.4rem] md:text-[3rem] md:leading-snug">Let’s bring<br/>better ideas to life</p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 md:px-12 lg:px-[5rem] max-w-[1440px] mx-auto w-full">
+                <p className="col-span-1 font-caslon leading-[3rem] tracking-normal text-[2.4rem] md:text-[3rem] md:leading-snug">Let’s bring<br/>better ideas to life</p>
 
-                <div className="flex justify-center items-center gap-20 lg:justify-start md:gap-40">
+                <div className="col-span-1 flex justify-center items-center gap-20 md:gap-48">
                     <button
                         onClick={handleCopy}
                         className="group relative border border-jb-blue rounded-oval py-2 w-32 text-center emphasis md:text-xl md:py-3 md:w-36">
@@ -40,7 +40,7 @@ function Footer() {
             </div>
 
             <div className="bg-jb-blue text-jb-white font-mono py-6">
-                <div className="w-full max-w-[1440px] mx-auto flex flex-col justify-center items-center px-5 md:px-12 lg:px-[6.25rem] lg:flex-row lg:justify-between gap-4">
+                <div className="w-full max-w-[1440px] mx-auto flex flex-col justify-center items-center px-5 md:px-12 lg:px-[5rem] lg:flex-row lg:justify-between gap-4">
                     <div className="flex flex-1 justify-center items-center gap-20 uppercase text-sm tracking-wider lg:gap-16">
                         <Link to="/about">About</Link>
                         <a href="/resume.pdf" target="_blank">Resume</a>
