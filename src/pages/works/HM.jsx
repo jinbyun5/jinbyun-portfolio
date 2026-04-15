@@ -67,7 +67,7 @@ function HM() {
 
                         <div className="col-span-4 md:col-span-12 flex items-center justify-center py-16">
                             <a
-                                href="https://www.figma.com/proto/htjDnzk9yXggt7GvEzx23P/The-Papery--Revision-?page-id=2258%3A3440&node-id=2258-3441&p=f&viewport=176%2C125%2C0.05&t=laXWPMMWzIStpVvw-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2258%3A3441" 
+                                href="https://www.figma.com/proto/QV5iVjqPfbXkafgrNaJDJ7/H-M-Redesign--Portfolio-?page-id=400%3A440&node-id=3001-1597&p=f&viewport=187%2C201%2C0.28&t=D72AEeChHhYGVNKS-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3001%3A1597" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="bg-jb-white border border-jb-blue text-jb-blue text-lg rounded-full py-2 px-5 whitespace-nowrap transition-all duration-300 hover:bg-jb-blue hover:text-jb-white shadow-lg flex items-center gap-2"

@@ -1,6 +1,6 @@
 import FadeUp from "../../components/FadeUp";
 
-function JobApplicationTracker() {
+function TrackWise() {
     return (
         <FadeUp>
             <div className="flex flex-col items-center justify-center min-h-screen gap-4">
@@ -11,4 +11,4 @@ function JobApplicationTracker() {
     );
 }
 
-export default JobApplicationTracker;
+export default TrackWise;

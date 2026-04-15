@@ -12,7 +12,7 @@ import NotFound from './pages/NotFound';
 
 import HM from './pages/works/HM';
 import CatchTreasure from './pages/works/CatchTreasure';
-import JobApplicationTracker from './pages/works/JobApplicationTracker';
+import TrackWise from './pages/works/TrackWise';
 import ThePapery from './pages/works/ThePapery';
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
             <Route path="/play" element={<Play/>}/>
             <Route path="/works/hm-app-redesign" element={<HM/>}/>
             <Route path="/works/catch-treasure" element={<CatchTreasure/>}/>
-            <Route path="/works/job-application-tracker" element={<JobApplicationTracker/>}/>
+            <Route path="/works/track-wise" element={<TrackWise/>}/>
             <Route path="/works/the-papery" element={<ThePapery/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>

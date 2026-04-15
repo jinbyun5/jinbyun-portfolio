@@ -321,7 +321,7 @@ function About() {
                         </p>
 
                         {/* Progress Tab Nav */}
-                        <div className="hidden lg:flex items-start w-full py-6">
+                        <div className="hidden lg:flex items-start w-full max-w-5xl 2xl:max-w-6xl py-6">
                             {chapters.map((chapter, index) => (
                                 <button
                                     key={index}

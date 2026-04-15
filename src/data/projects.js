@@ -1,6 +1,6 @@
 import thumbHm from '../assets/thumb-hm.webp';
 import thumbCatchTreasure from '../assets/thumb-catchtreaure.webp';
-import thumbJobTracker from '../assets/coming-soon.webp';
+import thumbJobTracker from '../assets/thumb-trackwise.webp';
 import thumbThePapery from '../assets/thumb-thepapery.webp';
 
 export const projects = [
@@ -37,6 +37,14 @@ export const projects = [
         industry: 'Environmental non-profit',
     },
     {
+        id: 3,
+        image: thumbJobTracker,
+        title: "TrackWise",
+        tags: ["UX/UI", "Case Study", "AI-Assisted"],
+        description: "An AI-assisted job tracker that analyzes resume versions and application outcomes to help job seekers refine their strategy.",
+        slug: "track-wise",
+    },
+    {
         id: 4,
         image: thumbThePapery,
         title: "The Papery ",
@@ -51,13 +59,4 @@ export const projects = [
         timeline: '4 weeks',
         industry: 'E-commerce',
     },
-    {
-        id: 3,
-        image: thumbJobTracker,
-        title: "Job Application Tracker",
-        tags: ["UX/UI", "Case Study", "AI-Assisted"],
-        description: "An AI-powered dashboard designed to make the job search feel less overwhelming and more intentional.",
-        slug: "job-application-tracker",
-    },
-
 ];
