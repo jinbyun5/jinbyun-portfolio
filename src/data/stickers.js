@@ -13,7 +13,7 @@ import toolIllustrator from '../assets/tools/illustrator.webp';
 import toolReact from '../assets/tools/react.webp';
 import toolCss from '../assets/tools/css.webp';
 import toolHtml from '../assets/tools/html.webp';
-import toolCanva from '../assets/tools/canva.webp';
+import toolClaude from '../assets/tools/claude.svg';
  
 import sfxCamera from '../assets/audio/sfx-camera.mp3';
 import sfxPlate from '../assets/audio/sfx-plate.mp3';
@@ -29,7 +29,7 @@ export const plateTools = [
     { id: 'react', src: toolReact, label: 'React', x: -18, y: 10 },
     { id: 'css', src: toolCss, label: 'CSS', x: 10, y: 0 },
     { id: 'html', src: toolHtml, label: 'HTML', x: 40, y: 8 },
-    { id: 'canva', src: toolCanva, label: 'Canva', x: 10, y: 32 },
+    { id: 'claude', src: toolClaude, label: 'claude', x: 10, y: 32 },
 ];
  
 export const heroStickers = [
