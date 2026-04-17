@@ -271,6 +271,7 @@ function About() {
                             <h3 className="col-span-1 text-lg italic">Design Tools</h3>
                             <ul className="col-span-1 list-disc space-y-1 text-jb-brown/90 b6 lg:b5">
                                 <li>Figma</li>
+                                <li>Claude AI</li>
                                 <li>Photoshop</li>
                                 <li>Illustrator</li>
                                 <li>Indesign</li>
