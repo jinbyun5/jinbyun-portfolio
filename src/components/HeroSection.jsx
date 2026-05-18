@@ -240,7 +240,7 @@ function CatSticker({ sticker, audioUnlocked, onStickerHover }) {
             <div className={`absolute -top-10 left-10 md:left-20 whitespace-nowrap transition-all duration-300 ${hovered ? 'opacity-100 -translate-y-1' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
                 <span className="bg-jb-blue text-jb-white text-xs font-mono px-3 py-1.5 rounded-full flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block"></span>
-                    Open to internships
+                    Open to Work
                 </span>
             </div>
 
