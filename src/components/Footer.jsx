@@ -43,7 +43,7 @@ function Footer() {
                 <div className="w-full max-w-[1440px] mx-auto flex flex-col justify-center items-center px-5 md:px-12 lg:px-[5rem] lg:flex-row lg:justify-between gap-4">
                     <div className="flex flex-1 justify-center items-center gap-20 uppercase text-sm tracking-wider lg:gap-16">
                         <Link to="/about">About</Link>
-                        <a href="/resume.pdf" target="_blank">Resume</a>
+                        <a href="/JinByun_Resume.pdf" target="_blank">Resume</a>
                         <a href="mailto:hyunjin8818@gmail.com">Contact</a>
                     </div>
                     <div className="flex items-center justify-center gap-3">

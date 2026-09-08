@@ -43,7 +43,7 @@ function Header() {
                     <li><Link to="/about" className="relative group py-1">About<span className="nav-desktop-hover"></span></Link></li>
                     <li><Link to="/works" className="relative group py-1">Works<span className="nav-desktop-hover"></span></Link></li>
                     <li><Link to="/play" className="relative group py-1">Play!<span className="nav-desktop-hover"></span></Link></li>
-                    <li><a href="/resume.pdf" target="_blank" className="border border-jb-blue bg-jb-white rounded-oval px-4 py-2 hover:bg-jb-blue hover:text-jb-white transition-all duration-300 ease-out">Resume</a></li>
+                    <li><a href="/JinByun_Resume.pdf" target="_blank" className="border border-jb-blue bg-jb-white rounded-oval px-4 py-2 hover:bg-jb-blue hover:text-jb-white transition-all duration-300 ease-out">Resume</a></li>
                 </ul>
                 
                 <button
@@ -62,7 +62,7 @@ function Header() {
                         <li><Link to="/about" onClick={() => setIsOpen(false)} className="nav-mobile-hover">About</Link></li>
                         <li><Link to="/works" onClick={() => setIsOpen(false)} className="nav-mobile-hover">Works</Link></li>
                         <li><Link to="/play" onClick={() => setIsOpen(false)} className="nav-mobile-hover">Play!</Link></li>
-                        <li className="pt-4 pb-2"><a href="/resume.pdf" target="_blank" onClick={() => setIsOpen(false)} className="d4 border border-jb-white rounded-oval px-4 py-2 hover:bg-jb-white hover:text-jb-blue transition-all duration-300 ease-out">Resume</a></li>
+                        <li className="pt-4 pb-2"><a href="/JinByun_Resume.pdf" target="_blank" onClick={() => setIsOpen(false)} className="d4 border border-jb-white rounded-oval px-4 py-2 hover:bg-jb-white hover:text-jb-blue transition-all duration-300 ease-out">Resume</a></li>
                     </ul>
                 </div>
             </div>
