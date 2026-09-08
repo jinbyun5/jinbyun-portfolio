@@ -144,7 +144,7 @@ function About() {
     return (
         <>
             <FadeUp>
-                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 items-center mt-10 lg:mt-20">
+                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 items-center mt-10 lg:mt-16">
 
                     {/* Mobile Headings */}
                     <header className="col-span-4 lg:hidden flex flex-col items-center gap-6 border-b-[1px] border-dashed border-jb-blue/50 pb-2 lg:pb-12">
@@ -222,85 +222,20 @@ function About() {
                             </p>
                         </div>
                         <p className="text-jb-brown/90 md:text-lg">
-                            My design journey began in web development, where I discovered not only the logic behind building things, but also a growing <span className="italic text-jb-blue font-semibold">curiosity</span> about how people feel when using them. This curiosity gradually led me toward designing experiences that make everyday interactions feel simpler and more enjoyable.
+                            My design journey began in front-end development. As I turned designs into working interfaces, I often caught myself questioning the choices behind them, why something was designed a certain way, or whether it could feel simpler to use. That <span className="italic text-jb-blue font-semibold">curiosity</span> gradually pulled me toward design, where I could shape not just how things work, but how they feel and why they matter.
                         </p>
-
                         <p className="text-jb-brown/90 md:text-lg">
-                            As I began living abroad, my way of thinking naturally broadened. It helped me see design as a way to connect different ideas, people, and cultures. I try to carry this perspective into my work by designing with <span className="italic text-jb-blue font-semibold">empathy</span>, <span className="italic text-jb-blue font-semibold">clarity</span>, and <span className="italic text-jb-blue font-semibold">intention</span>. With this mindset, I aim to keep growing as a designer who creates work that not only solves problems but also brings warmth and connection to everyday life.
+                            Living abroad changed how I see things. What felt natural to me turned out to be just one way of doing things. This reminds me to look beyond my own assumptions in design and stay aware that people bring different backgrounds, cultures, and perspectives. This has shaped the kind of designer I want to be, one who designs with <span className="italic text-jb-blue font-semibold">empathy</span> and creates experiences that feel <span className="italic text-jb-blue font-semibold">considerate</span> and <span className="italic text-jb-blue font-semibold">inclusive</span>.
                         </p>
-                    </div>
-                </section>
-            </FadeUp>
-            
-            <FadeUp>
-                {/* What I Do */}
-                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 py-36 lg:mt-24">
-        
-                    <div className="col-span-4 lg:col-span-12 mb-12 lg:mb-0">
-                        <div className="flex items-center gap-2">
-                            <ArrowBendDownRightIcon size={20}/>                    
-                            <h2 className="d6 md:d5 font-normal bg-jb-blue text-white px-4 py-1.5 tracking-widest uppercase">What I Do</h2>
-                        </div>
-                    </div>
-
-                    <div className="hidden lg:block lg:col-start-2 lg:col-span-4 self-end pb-20">
-                        <div 
-                            className="group relative w-full lg:w-3/4 rotate-6 drop-shadow-xl cursor-pointer hover:rotate-0 transition-transform duration-300"
-                            onClick={() => window.open('/resume.pdf', '_blank')}
-                        >
-                            <img src={resumeBlue} alt="Resume" className="w-full transition-opacity duration-300 group-hover:opacity-0" />
-                            <img src={resumeWhite} alt="Resume" className="absolute inset-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                        </div>
-                    </div>
-
-                    <div className="col-span-4 lg:col-span-8 lg:col-start-6 space-y-8">
-                        {/* Design Skills */}
-                        <div className="grid grid-cols-2 gap-4 border-b border-dashed border-jb-blue/50 pb-8">
-                            <h3 className="col-span-1 text-lg italic">Design Skills</h3>
-                            <ul className="col-span-1 list-disc space-y-1 text-jb-brown/90 b6 lg:b5">
-                                <li>Wireframing</li>
-                                <li>Prototyping</li>
-                                <li>User Research</li>
-                                <li>Usability Testing</li>
-                                <li>Information Architecture</li>
-                            </ul>
-                        </div>
-
-                        {/* Design Tools */}
-                        <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 border-b border-dashed border-jb-blue/50 pb-8">
-                            <h3 className="col-span-1 text-lg italic">Design Tools</h3>
-                            <ul className="col-span-1 list-disc space-y-1 text-jb-brown/90 b6 lg:b5">
-                                <li>Figma</li>
-                                <li>Claude AI</li>
-                                <li>Photoshop</li>
-                                <li>Illustrator</li>
-                                <li>Indesign</li>
-                                <li>After Effects</li>
-                                <li>CMS (WordPress, Wix)</li>
-                            </ul>
-                        </div>
-
-                        {/* Web Tech */}
-                        <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 border-b border-dashed border-jb-blue/50 pb-8">
-                            <h3 className="col-span-1 text-lg italic">Web Tech</h3>
-                            <ul className="col-span-1 list-disc space-y-1 text-jb-brown/90 b6 lg:b5">
-                                <li>HTML/CSS</li>
-                                <li>JavaScript</li>
-                                <li>React</li>
-                                <li>GSAP</li>
-                                <li>Tailwind CSS</li>
-                                <li>GitHub</li>
-                            </ul>
-                        </div>
                     </div>
                 </section>
             </FadeUp>
 
             <FadeUp>
                 {/* Little Joys */}
-                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4">
+                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 py-36 lg:mt-20">
                     
-                    <div className="col-span-4 lg:col-span-12 mb-12">
+                    <div className="col-span-4 lg:col-span-12 mb-8">
                         <div className="flex items-center gap-2">
                             <ArrowBendDownRightIcon size={20}/>                    
                             <h2 className="d6 md:d5 font-normal bg-jb-blue text-white px-4 py-1.5 tracking-widest uppercase">Little Joys</h2>
@@ -400,6 +335,70 @@ function About() {
                                 }}>
                                 <ArrowRightIcon size={18} />
                             </button>
+                        </div>
+                    </div>
+                </section>
+            </FadeUp>
+
+            <FadeUp>
+                {/* What I Do */}
+                <section className="grid grid-cols-4 lg:grid-cols-12 gap-4 lg:mt-0">
+        
+                    <div className="col-span-4 lg:col-span-12 mb-12 lg:mb-0">
+                        <div className="flex items-center gap-2">
+                            <ArrowBendDownRightIcon size={20}/>                    
+                            <h2 className="d6 md:d5 font-normal bg-jb-blue text-white px-4 py-1.5 tracking-widest uppercase">What I Do</h2>
+                        </div>
+                    </div>
+
+                    <div className="hidden lg:block lg:col-start-2 lg:col-span-4 self-end pb-20">
+                        <div 
+                            className="group relative w-full lg:w-3/4 rotate-6 drop-shadow-xl cursor-pointer hover:rotate-0 transition-transform duration-300"
+                            onClick={() => window.open('/JinByun_Resume.pdf', '_blank')}
+                        >
+                            <img src={resumeBlue} alt="Resume" className="w-full transition-opacity duration-300 group-hover:opacity-0" />
+                            <img src={resumeWhite} alt="Resume" className="absolute inset-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                        </div>
+                    </div>
+
+                    <div className="col-span-4 lg:col-span-8 lg:col-start-6 space-y-8">
+                        {/* Design Skills */}
+                        <div className="grid grid-cols-2 gap-4 border-b border-dashed border-jb-blue/50 pb-8">
+                            <h3 className="col-span-1 text-lg italic">Design Skills</h3>
+                            <ul className="col-span-1 list-disc space-y-1 text-jb-brown/90 b6 lg:b5">
+                                <li>Wireframing</li>
+                                <li>Prototyping</li>
+                                <li>User Research</li>
+                                <li>Usability Testing</li>
+                                <li>Information Architecture</li>
+                            </ul>
+                        </div>
+
+                        {/* Design Tools */}
+                        <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 border-b border-dashed border-jb-blue/50 pb-8">
+                            <h3 className="col-span-1 text-lg italic">Design Tools</h3>
+                            <ul className="col-span-1 list-disc space-y-1 text-jb-brown/90 b6 lg:b5">
+                                <li>Figma</li>
+                                <li>Claude AI</li>
+                                <li>Photoshop</li>
+                                <li>Illustrator</li>
+                                <li>Indesign</li>
+                                <li>After Effects</li>
+                                <li>CMS (WordPress, Wix)</li>
+                            </ul>
+                        </div>
+
+                        {/* Web Tech */}
+                        <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 border-b border-dashed border-jb-blue/50 pb-8">
+                            <h3 className="col-span-1 text-lg italic">Web Tech</h3>
+                            <ul className="col-span-1 list-disc space-y-1 text-jb-brown/90 b6 lg:b5">
+                                <li>HTML/CSS</li>
+                                <li>JavaScript</li>
+                                <li>React</li>
+                                <li>GSAP</li>
+                                <li>Tailwind CSS</li>
+                                <li>GitHub</li>
+                            </ul>
                         </div>
                     </div>
                 </section>
